@@ -1,0 +1,2640 @@
+jobs,country,month,demand
+accountant,Burundi,2023-10,3
+accountant,Burundi,2023-11,5
+accountant,Burundi,2023-12,1
+accountant,Burundi,2024-01,2
+accountant,Burundi,2024-02,1
+accountant,Burundi,2024-03,1
+accountant,Burundi,2024-04,5
+accountant,Burundi,2024-05,4
+accountant,Burundi,2024-06,1
+accountant,Burundi,2024-07,3
+accountant,Burundi,2024-08,3
+accountant,Burundi,2024-09,1
+accountant,Burundi,2024-10,2
+accountant,Burundi,2024-11,3
+accountant,Burundi,2024-12,5
+accountant,Ethiopia,2023-10,4
+accountant,Ethiopia,2023-11,5
+accountant,Ethiopia,2023-12,3
+accountant,Ethiopia,2024-01,7
+accountant,Ethiopia,2024-02,3
+accountant,Ethiopia,2024-03,6
+accountant,Ethiopia,2024-04,4
+accountant,Ethiopia,2024-05,6
+accountant,Ethiopia,2024-06,7
+accountant,Ethiopia,2024-07,4
+accountant,Ethiopia,2024-08,5
+accountant,Ethiopia,2024-09,3
+accountant,Ethiopia,2024-10,10
+accountant,Ethiopia,2024-11,3
+accountant,Ethiopia,2024-12,4
+accountant,Kenya,2023-10,36
+accountant,Kenya,2023-11,35
+accountant,Kenya,2023-12,20
+accountant,Kenya,2024-01,38
+accountant,Kenya,2024-02,29
+accountant,Kenya,2024-03,38
+accountant,Kenya,2024-04,43
+accountant,Kenya,2024-05,28
+accountant,Kenya,2024-06,29
+accountant,Kenya,2024-07,32
+accountant,Kenya,2024-08,36
+accountant,Kenya,2024-09,27
+accountant,Kenya,2024-10,34
+accountant,Kenya,2024-11,29
+accountant,Kenya,2024-12,37
+accountant,Rwanda,2023-10,6
+accountant,Rwanda,2023-11,9
+accountant,Rwanda,2023-12,14
+accountant,Rwanda,2024-01,13
+accountant,Rwanda,2024-02,10
+accountant,Rwanda,2024-03,2
+accountant,Rwanda,2024-04,6
+accountant,Rwanda,2024-05,13
+accountant,Rwanda,2024-06,8
+accountant,Rwanda,2024-07,5
+accountant,Rwanda,2024-08,8
+accountant,Rwanda,2024-09,7
+accountant,Rwanda,2024-10,8
+accountant,Rwanda,2024-11,6
+accountant,Rwanda,2024-12,14
+accountant,South Sudan,2023-10,4
+accountant,South Sudan,2023-11,1
+accountant,South Sudan,2023-12,1
+accountant,South Sudan,2024-01,1
+accountant,South Sudan,2024-02,1
+accountant,South Sudan,2024-03,1
+accountant,South Sudan,2024-04,1
+accountant,South Sudan,2024-06,2
+accountant,South Sudan,2024-07,1
+accountant,South Sudan,2024-09,2
+accountant,South Sudan,2024-11,4
+accountant,South Sudan,2024-12,2
+accountant,Tanzania,2023-10,24
+accountant,Tanzania,2023-11,17
+accountant,Tanzania,2023-12,19
+accountant,Tanzania,2024-01,14
+accountant,Tanzania,2024-02,23
+accountant,Tanzania,2024-03,21
+accountant,Tanzania,2024-04,17
+accountant,Tanzania,2024-05,25
+accountant,Tanzania,2024-06,10
+accountant,Tanzania,2024-07,21
+accountant,Tanzania,2024-08,20
+accountant,Tanzania,2024-09,20
+accountant,Tanzania,2024-10,18
+accountant,Tanzania,2024-11,14
+accountant,Tanzania,2024-12,21
+accountant,Uganda,2023-10,12
+accountant,Uganda,2023-11,10
+accountant,Uganda,2023-12,10
+accountant,Uganda,2024-01,20
+accountant,Uganda,2024-02,13
+accountant,Uganda,2024-03,21
+accountant,Uganda,2024-04,8
+accountant,Uganda,2024-05,8
+accountant,Uganda,2024-06,14
+accountant,Uganda,2024-07,9
+accountant,Uganda,2024-08,18
+accountant,Uganda,2024-09,9
+accountant,Uganda,2024-10,11
+accountant,Uganda,2024-11,13
+accountant,Uganda,2024-12,13
+business analyst,Burundi,2023-10,4
+business analyst,Burundi,2023-11,2
+business analyst,Burundi,2023-12,3
+business analyst,Burundi,2024-01,2
+business analyst,Burundi,2024-02,4
+business analyst,Burundi,2024-03,5
+business analyst,Burundi,2024-04,4
+business analyst,Burundi,2024-05,2
+business analyst,Burundi,2024-06,2
+business analyst,Burundi,2024-07,7
+business analyst,Burundi,2024-08,6
+business analyst,Burundi,2024-09,1
+business analyst,Burundi,2024-10,3
+business analyst,Burundi,2024-11,2
+business analyst,Burundi,2024-12,9
+business analyst,Ethiopia,2023-10,5
+business analyst,Ethiopia,2023-11,7
+business analyst,Ethiopia,2023-12,8
+business analyst,Ethiopia,2024-01,6
+business analyst,Ethiopia,2024-02,8
+business analyst,Ethiopia,2024-03,8
+business analyst,Ethiopia,2024-04,5
+business analyst,Ethiopia,2024-05,3
+business analyst,Ethiopia,2024-06,4
+business analyst,Ethiopia,2024-07,7
+business analyst,Ethiopia,2024-08,5
+business analyst,Ethiopia,2024-09,5
+business analyst,Ethiopia,2024-10,8
+business analyst,Ethiopia,2024-12,5
+business analyst,Kenya,2023-10,40
+business analyst,Kenya,2023-11,46
+business analyst,Kenya,2023-12,48
+business analyst,Kenya,2024-01,57
+business analyst,Kenya,2024-02,33
+business analyst,Kenya,2024-03,45
+business analyst,Kenya,2024-04,51
+business analyst,Kenya,2024-05,42
+business analyst,Kenya,2024-06,45
+business analyst,Kenya,2024-07,49
+business analyst,Kenya,2024-08,38
+business analyst,Kenya,2024-09,40
+business analyst,Kenya,2024-10,37
+business analyst,Kenya,2024-11,43
+business analyst,Kenya,2024-12,34
+business analyst,Rwanda,2023-10,12
+business analyst,Rwanda,2023-11,7
+business analyst,Rwanda,2023-12,14
+business analyst,Rwanda,2024-01,9
+business analyst,Rwanda,2024-02,8
+business analyst,Rwanda,2024-03,9
+business analyst,Rwanda,2024-04,9
+business analyst,Rwanda,2024-05,14
+business analyst,Rwanda,2024-06,10
+business analyst,Rwanda,2024-07,12
+business analyst,Rwanda,2024-08,13
+business analyst,Rwanda,2024-09,13
+business analyst,Rwanda,2024-10,10
+business analyst,Rwanda,2024-11,4
+business analyst,Rwanda,2024-12,11
+business analyst,South Sudan,2023-10,5
+business analyst,South Sudan,2023-11,2
+business analyst,South Sudan,2023-12,3
+business analyst,South Sudan,2024-01,4
+business analyst,South Sudan,2024-02,2
+business analyst,South Sudan,2024-03,3
+business analyst,South Sudan,2024-04,2
+business analyst,South Sudan,2024-05,5
+business analyst,South Sudan,2024-07,3
+business analyst,South Sudan,2024-08,1
+business analyst,South Sudan,2024-09,3
+business analyst,South Sudan,2024-10,3
+business analyst,South Sudan,2024-11,3
+business analyst,South Sudan,2024-12,1
+business analyst,Tanzania,2023-10,17
+business analyst,Tanzania,2023-11,21
+business analyst,Tanzania,2023-12,24
+business analyst,Tanzania,2024-01,22
+business analyst,Tanzania,2024-02,28
+business analyst,Tanzania,2024-03,30
+business analyst,Tanzania,2024-04,19
+business analyst,Tanzania,2024-05,35
+business analyst,Tanzania,2024-06,23
+business analyst,Tanzania,2024-07,27
+business analyst,Tanzania,2024-08,25
+business analyst,Tanzania,2024-09,28
+business analyst,Tanzania,2024-10,25
+business analyst,Tanzania,2024-11,31
+business analyst,Tanzania,2024-12,28
+business analyst,Uganda,2023-10,14
+business analyst,Uganda,2023-11,15
+business analyst,Uganda,2023-12,12
+business analyst,Uganda,2024-01,12
+business analyst,Uganda,2024-02,12
+business analyst,Uganda,2024-03,14
+business analyst,Uganda,2024-04,11
+business analyst,Uganda,2024-05,12
+business analyst,Uganda,2024-06,22
+business analyst,Uganda,2024-07,16
+business analyst,Uganda,2024-08,17
+business analyst,Uganda,2024-09,19
+business analyst,Uganda,2024-10,21
+business analyst,Uganda,2024-11,9
+business analyst,Uganda,2024-12,22
+cloud engineer,Burundi,2023-10,3
+cloud engineer,Burundi,2023-11,1
+cloud engineer,Burundi,2023-12,1
+cloud engineer,Burundi,2024-01,2
+cloud engineer,Burundi,2024-02,8
+cloud engineer,Burundi,2024-03,1
+cloud engineer,Burundi,2024-04,4
+cloud engineer,Burundi,2024-05,3
+cloud engineer,Burundi,2024-06,2
+cloud engineer,Burundi,2024-07,1
+cloud engineer,Burundi,2024-08,2
+cloud engineer,Burundi,2024-09,2
+cloud engineer,Burundi,2024-10,7
+cloud engineer,Burundi,2024-11,2
+cloud engineer,Burundi,2024-12,2
+cloud engineer,Ethiopia,2023-10,7
+cloud engineer,Ethiopia,2023-11,4
+cloud engineer,Ethiopia,2023-12,8
+cloud engineer,Ethiopia,2024-01,3
+cloud engineer,Ethiopia,2024-02,10
+cloud engineer,Ethiopia,2024-03,6
+cloud engineer,Ethiopia,2024-04,5
+cloud engineer,Ethiopia,2024-05,10
+cloud engineer,Ethiopia,2024-06,6
+cloud engineer,Ethiopia,2024-07,3
+cloud engineer,Ethiopia,2024-08,3
+cloud engineer,Ethiopia,2024-09,3
+cloud engineer,Ethiopia,2024-10,3
+cloud engineer,Ethiopia,2024-11,4
+cloud engineer,Ethiopia,2024-12,2
+cloud engineer,Kenya,2023-10,40
+cloud engineer,Kenya,2023-11,31
+cloud engineer,Kenya,2023-12,38
+cloud engineer,Kenya,2024-01,33
+cloud engineer,Kenya,2024-02,30
+cloud engineer,Kenya,2024-03,29
+cloud engineer,Kenya,2024-04,25
+cloud engineer,Kenya,2024-05,35
+cloud engineer,Kenya,2024-06,30
+cloud engineer,Kenya,2024-07,29
+cloud engineer,Kenya,2024-08,17
+cloud engineer,Kenya,2024-09,28
+cloud engineer,Kenya,2024-10,29
+cloud engineer,Kenya,2024-11,40
+cloud engineer,Kenya,2024-12,38
+cloud engineer,Rwanda,2023-10,6
+cloud engineer,Rwanda,2023-11,10
+cloud engineer,Rwanda,2023-12,1
+cloud engineer,Rwanda,2024-01,7
+cloud engineer,Rwanda,2024-02,9
+cloud engineer,Rwanda,2024-03,9
+cloud engineer,Rwanda,2024-04,7
+cloud engineer,Rwanda,2024-05,9
+cloud engineer,Rwanda,2024-06,6
+cloud engineer,Rwanda,2024-07,10
+cloud engineer,Rwanda,2024-08,6
+cloud engineer,Rwanda,2024-09,4
+cloud engineer,Rwanda,2024-10,7
+cloud engineer,Rwanda,2024-11,7
+cloud engineer,Rwanda,2024-12,9
+cloud engineer,South Sudan,2023-10,2
+cloud engineer,South Sudan,2023-11,1
+cloud engineer,South Sudan,2024-03,1
+cloud engineer,South Sudan,2024-06,4
+cloud engineer,South Sudan,2024-07,2
+cloud engineer,South Sudan,2024-08,1
+cloud engineer,South Sudan,2024-09,2
+cloud engineer,South Sudan,2024-10,1
+cloud engineer,South Sudan,2024-11,2
+cloud engineer,Tanzania,2023-10,20
+cloud engineer,Tanzania,2023-11,12
+cloud engineer,Tanzania,2023-12,21
+cloud engineer,Tanzania,2024-01,17
+cloud engineer,Tanzania,2024-02,18
+cloud engineer,Tanzania,2024-03,23
+cloud engineer,Tanzania,2024-04,18
+cloud engineer,Tanzania,2024-05,21
+cloud engineer,Tanzania,2024-06,21
+cloud engineer,Tanzania,2024-07,16
+cloud engineer,Tanzania,2024-08,16
+cloud engineer,Tanzania,2024-09,22
+cloud engineer,Tanzania,2024-10,22
+cloud engineer,Tanzania,2024-11,21
+cloud engineer,Tanzania,2024-12,25
+cloud engineer,Uganda,2023-10,14
+cloud engineer,Uganda,2023-11,16
+cloud engineer,Uganda,2023-12,14
+cloud engineer,Uganda,2024-01,6
+cloud engineer,Uganda,2024-02,6
+cloud engineer,Uganda,2024-03,18
+cloud engineer,Uganda,2024-04,13
+cloud engineer,Uganda,2024-05,15
+cloud engineer,Uganda,2024-06,12
+cloud engineer,Uganda,2024-07,18
+cloud engineer,Uganda,2024-08,12
+cloud engineer,Uganda,2024-09,10
+cloud engineer,Uganda,2024-10,11
+cloud engineer,Uganda,2024-11,14
+cloud engineer,Uganda,2024-12,11
+content writer,Burundi,2024-02,1
+content writer,Burundi,2024-08,1
+content writer,Ethiopia,2023-10,1
+content writer,Ethiopia,2024-03,2
+content writer,Ethiopia,2024-05,1
+content writer,Ethiopia,2024-11,1
+content writer,Kenya,2023-10,5
+content writer,Kenya,2023-11,3
+content writer,Kenya,2023-12,8
+content writer,Kenya,2024-01,2
+content writer,Kenya,2024-02,2
+content writer,Kenya,2024-03,3
+content writer,Kenya,2024-04,3
+content writer,Kenya,2024-05,4
+content writer,Kenya,2024-06,1
+content writer,Kenya,2024-07,3
+content writer,Kenya,2024-08,3
+content writer,Kenya,2024-09,2
+content writer,Kenya,2024-10,2
+content writer,Kenya,2024-11,2
+content writer,Kenya,2024-12,2
+content writer,Rwanda,2023-12,1
+content writer,Rwanda,2024-01,2
+content writer,Rwanda,2024-02,3
+content writer,Rwanda,2024-03,2
+content writer,Rwanda,2024-04,1
+content writer,Rwanda,2024-05,3
+content writer,Rwanda,2024-06,2
+content writer,Rwanda,2024-07,1
+content writer,Rwanda,2024-09,3
+content writer,South Sudan,2023-11,1
+content writer,South Sudan,2024-01,1
+content writer,South Sudan,2024-03,1
+content writer,South Sudan,2024-08,1
+content writer,Tanzania,2023-10,2
+content writer,Tanzania,2023-12,5
+content writer,Tanzania,2024-02,3
+content writer,Tanzania,2024-04,2
+content writer,Tanzania,2024-05,3
+content writer,Tanzania,2024-06,1
+content writer,Tanzania,2024-07,4
+content writer,Tanzania,2024-08,3
+content writer,Tanzania,2024-09,3
+content writer,Tanzania,2024-10,2
+content writer,Tanzania,2024-11,3
+content writer,Tanzania,2024-12,2
+content writer,Uganda,2023-10,2
+content writer,Uganda,2023-11,3
+content writer,Uganda,2023-12,1
+content writer,Uganda,2024-04,1
+content writer,Uganda,2024-05,1
+content writer,Uganda,2024-06,2
+content writer,Uganda,2024-08,3
+content writer,Uganda,2024-10,3
+content writer,Uganda,2024-11,1
+content writer,Uganda,2024-12,1
+customer service representative,Burundi,2023-11,1
+customer service representative,Burundi,2023-12,1
+customer service representative,Burundi,2024-02,1
+customer service representative,Burundi,2024-08,2
+customer service representative,Burundi,2024-10,1
+customer service representative,Burundi,2024-11,1
+customer service representative,Burundi,2024-12,1
+customer service representative,Ethiopia,2023-10,1
+customer service representative,Ethiopia,2023-12,1
+customer service representative,Ethiopia,2024-01,1
+customer service representative,Ethiopia,2024-06,2
+customer service representative,Ethiopia,2024-08,1
+customer service representative,Ethiopia,2024-09,1
+customer service representative,Kenya,2023-10,6
+customer service representative,Kenya,2023-11,3
+customer service representative,Kenya,2023-12,9
+customer service representative,Kenya,2024-01,5
+customer service representative,Kenya,2024-02,6
+customer service representative,Kenya,2024-03,8
+customer service representative,Kenya,2024-04,5
+customer service representative,Kenya,2024-05,6
+customer service representative,Kenya,2024-06,3
+customer service representative,Kenya,2024-07,11
+customer service representative,Kenya,2024-08,6
+customer service representative,Kenya,2024-09,9
+customer service representative,Kenya,2024-10,7
+customer service representative,Kenya,2024-11,6
+customer service representative,Kenya,2024-12,9
+customer service representative,Rwanda,2023-10,1
+customer service representative,Rwanda,2023-12,2
+customer service representative,Rwanda,2024-01,3
+customer service representative,Rwanda,2024-03,1
+customer service representative,Rwanda,2024-04,4
+customer service representative,Rwanda,2024-05,2
+customer service representative,Rwanda,2024-06,2
+customer service representative,Rwanda,2024-07,2
+customer service representative,Rwanda,2024-08,1
+customer service representative,Rwanda,2024-09,2
+customer service representative,Rwanda,2024-11,2
+customer service representative,Rwanda,2024-12,1
+customer service representative,South Sudan,2023-10,1
+customer service representative,South Sudan,2024-01,1
+customer service representative,South Sudan,2024-04,2
+customer service representative,Tanzania,2023-10,3
+customer service representative,Tanzania,2023-11,5
+customer service representative,Tanzania,2023-12,4
+customer service representative,Tanzania,2024-01,3
+customer service representative,Tanzania,2024-02,2
+customer service representative,Tanzania,2024-03,3
+customer service representative,Tanzania,2024-04,4
+customer service representative,Tanzania,2024-05,6
+customer service representative,Tanzania,2024-06,3
+customer service representative,Tanzania,2024-07,4
+customer service representative,Tanzania,2024-08,5
+customer service representative,Tanzania,2024-09,5
+customer service representative,Tanzania,2024-10,11
+customer service representative,Tanzania,2024-11,3
+customer service representative,Tanzania,2024-12,2
+customer service representative,Uganda,2023-10,2
+customer service representative,Uganda,2023-11,2
+customer service representative,Uganda,2023-12,6
+customer service representative,Uganda,2024-02,2
+customer service representative,Uganda,2024-03,3
+customer service representative,Uganda,2024-04,3
+customer service representative,Uganda,2024-05,1
+customer service representative,Uganda,2024-06,7
+customer service representative,Uganda,2024-08,3
+customer service representative,Uganda,2024-09,1
+customer service representative,Uganda,2024-10,1
+customer service representative,Uganda,2024-11,5
+cybersecurity analyst,Burundi,2023-10,4
+cybersecurity analyst,Burundi,2023-11,3
+cybersecurity analyst,Burundi,2023-12,2
+cybersecurity analyst,Burundi,2024-01,6
+cybersecurity analyst,Burundi,2024-02,3
+cybersecurity analyst,Burundi,2024-03,4
+cybersecurity analyst,Burundi,2024-04,4
+cybersecurity analyst,Burundi,2024-05,2
+cybersecurity analyst,Burundi,2024-06,4
+cybersecurity analyst,Burundi,2024-07,5
+cybersecurity analyst,Burundi,2024-08,6
+cybersecurity analyst,Burundi,2024-09,3
+cybersecurity analyst,Burundi,2024-10,4
+cybersecurity analyst,Burundi,2024-11,1
+cybersecurity analyst,Burundi,2024-12,7
+cybersecurity analyst,Ethiopia,2023-10,6
+cybersecurity analyst,Ethiopia,2023-11,8
+cybersecurity analyst,Ethiopia,2023-12,7
+cybersecurity analyst,Ethiopia,2024-01,4
+cybersecurity analyst,Ethiopia,2024-02,9
+cybersecurity analyst,Ethiopia,2024-03,7
+cybersecurity analyst,Ethiopia,2024-04,4
+cybersecurity analyst,Ethiopia,2024-05,6
+cybersecurity analyst,Ethiopia,2024-06,5
+cybersecurity analyst,Ethiopia,2024-07,12
+cybersecurity analyst,Ethiopia,2024-08,4
+cybersecurity analyst,Ethiopia,2024-09,7
+cybersecurity analyst,Ethiopia,2024-10,6
+cybersecurity analyst,Ethiopia,2024-11,1
+cybersecurity analyst,Ethiopia,2024-12,7
+cybersecurity analyst,Kenya,2023-10,35
+cybersecurity analyst,Kenya,2023-11,49
+cybersecurity analyst,Kenya,2023-12,62
+cybersecurity analyst,Kenya,2024-01,72
+cybersecurity analyst,Kenya,2024-02,42
+cybersecurity analyst,Kenya,2024-03,49
+cybersecurity analyst,Kenya,2024-04,48
+cybersecurity analyst,Kenya,2024-05,40
+cybersecurity analyst,Kenya,2024-06,42
+cybersecurity analyst,Kenya,2024-07,58
+cybersecurity analyst,Kenya,2024-08,43
+cybersecurity analyst,Kenya,2024-09,48
+cybersecurity analyst,Kenya,2024-10,46
+cybersecurity analyst,Kenya,2024-11,47
+cybersecurity analyst,Kenya,2024-12,47
+cybersecurity analyst,Rwanda,2023-10,14
+cybersecurity analyst,Rwanda,2023-11,12
+cybersecurity analyst,Rwanda,2023-12,17
+cybersecurity analyst,Rwanda,2024-01,11
+cybersecurity analyst,Rwanda,2024-02,6
+cybersecurity analyst,Rwanda,2024-03,15
+cybersecurity analyst,Rwanda,2024-04,11
+cybersecurity analyst,Rwanda,2024-05,13
+cybersecurity analyst,Rwanda,2024-06,11
+cybersecurity analyst,Rwanda,2024-07,19
+cybersecurity analyst,Rwanda,2024-08,10
+cybersecurity analyst,Rwanda,2024-09,16
+cybersecurity analyst,Rwanda,2024-10,13
+cybersecurity analyst,Rwanda,2024-11,7
+cybersecurity analyst,Rwanda,2024-12,11
+cybersecurity analyst,South Sudan,2023-10,3
+cybersecurity analyst,South Sudan,2023-11,2
+cybersecurity analyst,South Sudan,2023-12,4
+cybersecurity analyst,South Sudan,2024-01,5
+cybersecurity analyst,South Sudan,2024-02,2
+cybersecurity analyst,South Sudan,2024-03,2
+cybersecurity analyst,South Sudan,2024-04,2
+cybersecurity analyst,South Sudan,2024-05,8
+cybersecurity analyst,South Sudan,2024-07,2
+cybersecurity analyst,South Sudan,2024-08,1
+cybersecurity analyst,South Sudan,2024-09,5
+cybersecurity analyst,South Sudan,2024-10,7
+cybersecurity analyst,South Sudan,2024-11,3
+cybersecurity analyst,Tanzania,2023-10,20
+cybersecurity analyst,Tanzania,2023-11,25
+cybersecurity analyst,Tanzania,2023-12,30
+cybersecurity analyst,Tanzania,2024-01,42
+cybersecurity analyst,Tanzania,2024-02,30
+cybersecurity analyst,Tanzania,2024-03,35
+cybersecurity analyst,Tanzania,2024-04,21
+cybersecurity analyst,Tanzania,2024-05,43
+cybersecurity analyst,Tanzania,2024-06,29
+cybersecurity analyst,Tanzania,2024-07,36
+cybersecurity analyst,Tanzania,2024-08,36
+cybersecurity analyst,Tanzania,2024-09,25
+cybersecurity analyst,Tanzania,2024-10,26
+cybersecurity analyst,Tanzania,2024-11,37
+cybersecurity analyst,Tanzania,2024-12,32
+cybersecurity analyst,Uganda,2023-10,16
+cybersecurity analyst,Uganda,2023-11,15
+cybersecurity analyst,Uganda,2023-12,15
+cybersecurity analyst,Uganda,2024-01,11
+cybersecurity analyst,Uganda,2024-02,17
+cybersecurity analyst,Uganda,2024-03,15
+cybersecurity analyst,Uganda,2024-04,11
+cybersecurity analyst,Uganda,2024-05,18
+cybersecurity analyst,Uganda,2024-06,24
+cybersecurity analyst,Uganda,2024-07,18
+cybersecurity analyst,Uganda,2024-08,19
+cybersecurity analyst,Uganda,2024-09,20
+cybersecurity analyst,Uganda,2024-10,25
+cybersecurity analyst,Uganda,2024-11,11
+cybersecurity analyst,Uganda,2024-12,20
+data analyst,Burundi,2023-10,5
+data analyst,Burundi,2023-11,4
+data analyst,Burundi,2023-12,3
+data analyst,Burundi,2024-01,6
+data analyst,Burundi,2024-02,4
+data analyst,Burundi,2024-03,5
+data analyst,Burundi,2024-04,5
+data analyst,Burundi,2024-05,3
+data analyst,Burundi,2024-06,4
+data analyst,Burundi,2024-07,7
+data analyst,Burundi,2024-08,6
+data analyst,Burundi,2024-09,3
+data analyst,Burundi,2024-10,4
+data analyst,Burundi,2024-11,2
+data analyst,Burundi,2024-12,10
+data analyst,Ethiopia,2023-10,7
+data analyst,Ethiopia,2023-11,10
+data analyst,Ethiopia,2023-12,9
+data analyst,Ethiopia,2024-01,8
+data analyst,Ethiopia,2024-02,10
+data analyst,Ethiopia,2024-03,9
+data analyst,Ethiopia,2024-04,6
+data analyst,Ethiopia,2024-05,6
+data analyst,Ethiopia,2024-06,7
+data analyst,Ethiopia,2024-07,13
+data analyst,Ethiopia,2024-08,6
+data analyst,Ethiopia,2024-09,7
+data analyst,Ethiopia,2024-10,11
+data analyst,Ethiopia,2024-11,1
+data analyst,Ethiopia,2024-12,9
+data analyst,Kenya,2023-10,48
+data analyst,Kenya,2023-11,61
+data analyst,Kenya,2023-12,71
+data analyst,Kenya,2024-01,84
+data analyst,Kenya,2024-02,49
+data analyst,Kenya,2024-03,59
+data analyst,Kenya,2024-04,64
+data analyst,Kenya,2024-05,54
+data analyst,Kenya,2024-06,54
+data analyst,Kenya,2024-07,67
+data analyst,Kenya,2024-08,54
+data analyst,Kenya,2024-09,56
+data analyst,Kenya,2024-10,54
+data analyst,Kenya,2024-11,59
+data analyst,Kenya,2024-12,57
+data analyst,Rwanda,2023-10,17
+data analyst,Rwanda,2023-11,13
+data analyst,Rwanda,2023-12,20
+data analyst,Rwanda,2024-01,16
+data analyst,Rwanda,2024-02,11
+data analyst,Rwanda,2024-03,15
+data analyst,Rwanda,2024-04,14
+data analyst,Rwanda,2024-05,17
+data analyst,Rwanda,2024-06,14
+data analyst,Rwanda,2024-07,21
+data analyst,Rwanda,2024-08,15
+data analyst,Rwanda,2024-09,21
+data analyst,Rwanda,2024-10,17
+data analyst,Rwanda,2024-11,7
+data analyst,Rwanda,2024-12,15
+data analyst,South Sudan,2023-10,5
+data analyst,South Sudan,2023-11,2
+data analyst,South Sudan,2023-12,5
+data analyst,South Sudan,2024-01,6
+data analyst,South Sudan,2024-02,3
+data analyst,South Sudan,2024-03,3
+data analyst,South Sudan,2024-04,2
+data analyst,South Sudan,2024-05,8
+data analyst,South Sudan,2024-07,3
+data analyst,South Sudan,2024-08,1
+data analyst,South Sudan,2024-09,5
+data analyst,South Sudan,2024-10,7
+data analyst,South Sudan,2024-11,3
+data analyst,South Sudan,2024-12,1
+data analyst,Tanzania,2023-10,25
+data analyst,Tanzania,2023-11,29
+data analyst,Tanzania,2023-12,37
+data analyst,Tanzania,2024-01,45
+data analyst,Tanzania,2024-02,36
+data analyst,Tanzania,2024-03,41
+data analyst,Tanzania,2024-04,25
+data analyst,Tanzania,2024-05,50
+data analyst,Tanzania,2024-06,32
+data analyst,Tanzania,2024-07,41
+data analyst,Tanzania,2024-08,44
+data analyst,Tanzania,2024-09,31
+data analyst,Tanzania,2024-10,32
+data analyst,Tanzania,2024-11,43
+data analyst,Tanzania,2024-12,38
+data analyst,Uganda,2023-10,20
+data analyst,Uganda,2023-11,21
+data analyst,Uganda,2023-12,16
+data analyst,Uganda,2024-01,16
+data analyst,Uganda,2024-02,20
+data analyst,Uganda,2024-03,20
+data analyst,Uganda,2024-04,15
+data analyst,Uganda,2024-05,19
+data analyst,Uganda,2024-06,29
+data analyst,Uganda,2024-07,24
+data analyst,Uganda,2024-08,24
+data analyst,Uganda,2024-09,22
+data analyst,Uganda,2024-10,29
+data analyst,Uganda,2024-11,14
+data analyst,Uganda,2024-12,28
+data scientist,Burundi,2023-10,1
+data scientist,Burundi,2023-12,2
+data scientist,Burundi,2024-01,2
+data scientist,Burundi,2024-02,3
+data scientist,Burundi,2024-03,3
+data scientist,Burundi,2024-04,2
+data scientist,Burundi,2024-06,2
+data scientist,Burundi,2024-07,1
+data scientist,Burundi,2024-08,4
+data scientist,Burundi,2024-09,1
+data scientist,Burundi,2024-10,3
+data scientist,Burundi,2024-11,1
+data scientist,Burundi,2024-12,5
+data scientist,Ethiopia,2023-10,1
+data scientist,Ethiopia,2023-11,1
+data scientist,Ethiopia,2023-12,3
+data scientist,Ethiopia,2024-01,1
+data scientist,Ethiopia,2024-03,3
+data scientist,Ethiopia,2024-04,1
+data scientist,Ethiopia,2024-05,1
+data scientist,Ethiopia,2024-06,2
+data scientist,Ethiopia,2024-07,2
+data scientist,Ethiopia,2024-08,1
+data scientist,Ethiopia,2024-09,2
+data scientist,Ethiopia,2024-10,3
+data scientist,Ethiopia,2024-12,2
+data scientist,Kenya,2023-10,17
+data scientist,Kenya,2023-11,22
+data scientist,Kenya,2023-12,15
+data scientist,Kenya,2024-01,20
+data scientist,Kenya,2024-02,13
+data scientist,Kenya,2024-03,19
+data scientist,Kenya,2024-04,22
+data scientist,Kenya,2024-05,15
+data scientist,Kenya,2024-06,15
+data scientist,Kenya,2024-07,20
+data scientist,Kenya,2024-08,10
+data scientist,Kenya,2024-09,18
+data scientist,Kenya,2024-10,12
+data scientist,Kenya,2024-11,15
+data scientist,Kenya,2024-12,12
+data scientist,Rwanda,2023-10,4
+data scientist,Rwanda,2023-11,3
+data scientist,Rwanda,2023-12,6
+data scientist,Rwanda,2024-01,2
+data scientist,Rwanda,2024-02,1
+data scientist,Rwanda,2024-03,2
+data scientist,Rwanda,2024-04,5
+data scientist,Rwanda,2024-05,7
+data scientist,Rwanda,2024-06,3
+data scientist,Rwanda,2024-07,5
+data scientist,Rwanda,2024-08,3
+data scientist,Rwanda,2024-09,5
+data scientist,Rwanda,2024-10,6
+data scientist,Rwanda,2024-11,2
+data scientist,Rwanda,2024-12,4
+data scientist,South Sudan,2023-10,2
+data scientist,South Sudan,2023-11,1
+data scientist,South Sudan,2023-12,1
+data scientist,South Sudan,2024-01,2
+data scientist,South Sudan,2024-02,1
+data scientist,South Sudan,2024-04,1
+data scientist,South Sudan,2024-05,4
+data scientist,South Sudan,2024-07,2
+data scientist,South Sudan,2024-08,1
+data scientist,South Sudan,2024-09,3
+data scientist,South Sudan,2024-10,2
+data scientist,South Sudan,2024-11,1
+data scientist,Tanzania,2023-10,6
+data scientist,Tanzania,2023-11,10
+data scientist,Tanzania,2023-12,9
+data scientist,Tanzania,2024-01,10
+data scientist,Tanzania,2024-02,13
+data scientist,Tanzania,2024-03,10
+data scientist,Tanzania,2024-04,7
+data scientist,Tanzania,2024-05,13
+data scientist,Tanzania,2024-06,14
+data scientist,Tanzania,2024-07,10
+data scientist,Tanzania,2024-08,6
+data scientist,Tanzania,2024-09,13
+data scientist,Tanzania,2024-10,11
+data scientist,Tanzania,2024-11,13
+data scientist,Tanzania,2024-12,13
+data scientist,Uganda,2023-10,1
+data scientist,Uganda,2023-11,4
+data scientist,Uganda,2023-12,7
+data scientist,Uganda,2024-01,2
+data scientist,Uganda,2024-02,3
+data scientist,Uganda,2024-03,6
+data scientist,Uganda,2024-04,2
+data scientist,Uganda,2024-05,6
+data scientist,Uganda,2024-06,7
+data scientist,Uganda,2024-07,5
+data scientist,Uganda,2024-08,5
+data scientist,Uganda,2024-09,7
+data scientist,Uganda,2024-10,5
+data scientist,Uganda,2024-11,3
+data scientist,Uganda,2024-12,7
+database administrator,Burundi,2023-12,3
+database administrator,Burundi,2024-01,1
+database administrator,Burundi,2024-03,1
+database administrator,Burundi,2024-05,2
+database administrator,Burundi,2024-06,2
+database administrator,Burundi,2024-07,1
+database administrator,Burundi,2024-08,2
+database administrator,Burundi,2024-10,1
+database administrator,Burundi,2024-11,3
+database administrator,Ethiopia,2023-10,4
+database administrator,Ethiopia,2023-12,1
+database administrator,Ethiopia,2024-02,2
+database administrator,Ethiopia,2024-03,2
+database administrator,Ethiopia,2024-04,1
+database administrator,Ethiopia,2024-05,4
+database administrator,Ethiopia,2024-06,1
+database administrator,Ethiopia,2024-07,2
+database administrator,Ethiopia,2024-08,2
+database administrator,Ethiopia,2024-09,2
+database administrator,Ethiopia,2024-10,2
+database administrator,Ethiopia,2024-11,3
+database administrator,Ethiopia,2024-12,3
+database administrator,Kenya,2023-10,21
+database administrator,Kenya,2023-11,16
+database administrator,Kenya,2023-12,22
+database administrator,Kenya,2024-01,13
+database administrator,Kenya,2024-02,15
+database administrator,Kenya,2024-03,22
+database administrator,Kenya,2024-04,13
+database administrator,Kenya,2024-05,12
+database administrator,Kenya,2024-06,15
+database administrator,Kenya,2024-07,16
+database administrator,Kenya,2024-08,19
+database administrator,Kenya,2024-09,15
+database administrator,Kenya,2024-10,17
+database administrator,Kenya,2024-11,24
+database administrator,Kenya,2024-12,23
+database administrator,Rwanda,2023-10,6
+database administrator,Rwanda,2023-11,3
+database administrator,Rwanda,2023-12,2
+database administrator,Rwanda,2024-01,6
+database administrator,Rwanda,2024-02,4
+database administrator,Rwanda,2024-03,8
+database administrator,Rwanda,2024-04,4
+database administrator,Rwanda,2024-05,4
+database administrator,Rwanda,2024-06,5
+database administrator,Rwanda,2024-07,5
+database administrator,Rwanda,2024-08,4
+database administrator,Rwanda,2024-09,3
+database administrator,Rwanda,2024-10,5
+database administrator,Rwanda,2024-11,5
+database administrator,Rwanda,2024-12,3
+database administrator,South Sudan,2023-12,1
+database administrator,South Sudan,2024-02,2
+database administrator,South Sudan,2024-03,2
+database administrator,South Sudan,2024-04,1
+database administrator,South Sudan,2024-06,1
+database administrator,South Sudan,2024-07,3
+database administrator,South Sudan,2024-09,2
+database administrator,South Sudan,2024-12,2
+database administrator,Tanzania,2023-10,11
+database administrator,Tanzania,2023-11,7
+database administrator,Tanzania,2023-12,8
+database administrator,Tanzania,2024-01,10
+database administrator,Tanzania,2024-02,7
+database administrator,Tanzania,2024-03,10
+database administrator,Tanzania,2024-04,9
+database administrator,Tanzania,2024-05,12
+database administrator,Tanzania,2024-06,6
+database administrator,Tanzania,2024-07,9
+database administrator,Tanzania,2024-08,9
+database administrator,Tanzania,2024-09,10
+database administrator,Tanzania,2024-10,12
+database administrator,Tanzania,2024-11,6
+database administrator,Tanzania,2024-12,11
+database administrator,Uganda,2023-10,5
+database administrator,Uganda,2023-11,7
+database administrator,Uganda,2023-12,5
+database administrator,Uganda,2024-01,9
+database administrator,Uganda,2024-02,7
+database administrator,Uganda,2024-03,5
+database administrator,Uganda,2024-04,4
+database administrator,Uganda,2024-05,7
+database administrator,Uganda,2024-06,5
+database administrator,Uganda,2024-07,6
+database administrator,Uganda,2024-08,6
+database administrator,Uganda,2024-09,3
+database administrator,Uganda,2024-10,5
+database administrator,Uganda,2024-11,5
+database administrator,Uganda,2024-12,3
+devops engineer,Burundi,2023-10,5
+devops engineer,Burundi,2023-11,4
+devops engineer,Burundi,2023-12,4
+devops engineer,Burundi,2024-01,2
+devops engineer,Burundi,2024-02,7
+devops engineer,Burundi,2024-04,2
+devops engineer,Burundi,2024-05,5
+devops engineer,Burundi,2024-06,4
+devops engineer,Burundi,2024-07,3
+devops engineer,Burundi,2024-08,2
+devops engineer,Burundi,2024-09,2
+devops engineer,Burundi,2024-10,4
+devops engineer,Burundi,2024-11,4
+devops engineer,Burundi,2024-12,2
+devops engineer,Ethiopia,2023-10,3
+devops engineer,Ethiopia,2023-11,7
+devops engineer,Ethiopia,2023-12,10
+devops engineer,Ethiopia,2024-01,7
+devops engineer,Ethiopia,2024-02,8
+devops engineer,Ethiopia,2024-03,9
+devops engineer,Ethiopia,2024-04,3
+devops engineer,Ethiopia,2024-05,5
+devops engineer,Ethiopia,2024-06,6
+devops engineer,Ethiopia,2024-07,11
+devops engineer,Ethiopia,2024-08,6
+devops engineer,Ethiopia,2024-09,8
+devops engineer,Ethiopia,2024-10,3
+devops engineer,Ethiopia,2024-11,6
+devops engineer,Ethiopia,2024-12,8
+devops engineer,Kenya,2023-10,49
+devops engineer,Kenya,2023-11,53
+devops engineer,Kenya,2023-12,48
+devops engineer,Kenya,2024-01,47
+devops engineer,Kenya,2024-02,35
+devops engineer,Kenya,2024-03,56
+devops engineer,Kenya,2024-04,40
+devops engineer,Kenya,2024-05,57
+devops engineer,Kenya,2024-06,53
+devops engineer,Kenya,2024-07,42
+devops engineer,Kenya,2024-08,44
+devops engineer,Kenya,2024-09,45
+devops engineer,Kenya,2024-10,41
+devops engineer,Kenya,2024-11,50
+devops engineer,Kenya,2024-12,49
+devops engineer,Rwanda,2023-10,14
+devops engineer,Rwanda,2023-11,12
+devops engineer,Rwanda,2023-12,11
+devops engineer,Rwanda,2024-01,10
+devops engineer,Rwanda,2024-02,10
+devops engineer,Rwanda,2024-03,18
+devops engineer,Rwanda,2024-04,14
+devops engineer,Rwanda,2024-05,10
+devops engineer,Rwanda,2024-06,10
+devops engineer,Rwanda,2024-07,12
+devops engineer,Rwanda,2024-08,14
+devops engineer,Rwanda,2024-09,13
+devops engineer,Rwanda,2024-10,12
+devops engineer,Rwanda,2024-11,17
+devops engineer,Rwanda,2024-12,9
+devops engineer,South Sudan,2023-10,3
+devops engineer,South Sudan,2023-11,3
+devops engineer,South Sudan,2023-12,1
+devops engineer,South Sudan,2024-01,2
+devops engineer,South Sudan,2024-02,3
+devops engineer,South Sudan,2024-03,1
+devops engineer,South Sudan,2024-05,1
+devops engineer,South Sudan,2024-06,2
+devops engineer,South Sudan,2024-07,1
+devops engineer,South Sudan,2024-08,3
+devops engineer,South Sudan,2024-09,4
+devops engineer,South Sudan,2024-10,3
+devops engineer,South Sudan,2024-11,2
+devops engineer,South Sudan,2024-12,2
+devops engineer,Tanzania,2023-10,25
+devops engineer,Tanzania,2023-11,29
+devops engineer,Tanzania,2023-12,31
+devops engineer,Tanzania,2024-01,36
+devops engineer,Tanzania,2024-02,37
+devops engineer,Tanzania,2024-03,31
+devops engineer,Tanzania,2024-04,24
+devops engineer,Tanzania,2024-05,26
+devops engineer,Tanzania,2024-06,35
+devops engineer,Tanzania,2024-07,25
+devops engineer,Tanzania,2024-08,26
+devops engineer,Tanzania,2024-09,37
+devops engineer,Tanzania,2024-10,35
+devops engineer,Tanzania,2024-11,32
+devops engineer,Tanzania,2024-12,35
+devops engineer,Uganda,2023-10,26
+devops engineer,Uganda,2023-11,15
+devops engineer,Uganda,2023-12,20
+devops engineer,Uganda,2024-01,18
+devops engineer,Uganda,2024-02,17
+devops engineer,Uganda,2024-03,22
+devops engineer,Uganda,2024-04,19
+devops engineer,Uganda,2024-05,20
+devops engineer,Uganda,2024-06,21
+devops engineer,Uganda,2024-07,24
+devops engineer,Uganda,2024-08,19
+devops engineer,Uganda,2024-09,18
+devops engineer,Uganda,2024-10,22
+devops engineer,Uganda,2024-11,17
+devops engineer,Uganda,2024-12,19
+doctor,Burundi,2023-10,3
+doctor,Burundi,2023-11,4
+doctor,Burundi,2023-12,4
+doctor,Burundi,2024-01,9
+doctor,Burundi,2024-02,7
+doctor,Burundi,2024-03,4
+doctor,Burundi,2024-04,2
+doctor,Burundi,2024-05,3
+doctor,Burundi,2024-06,6
+doctor,Burundi,2024-07,1
+doctor,Burundi,2024-08,4
+doctor,Burundi,2024-09,5
+doctor,Burundi,2024-10,4
+doctor,Burundi,2024-11,5
+doctor,Burundi,2024-12,3
+doctor,Ethiopia,2023-10,7
+doctor,Ethiopia,2023-11,6
+doctor,Ethiopia,2023-12,9
+doctor,Ethiopia,2024-01,12
+doctor,Ethiopia,2024-02,7
+doctor,Ethiopia,2024-03,4
+doctor,Ethiopia,2024-04,3
+doctor,Ethiopia,2024-05,10
+doctor,Ethiopia,2024-06,10
+doctor,Ethiopia,2024-07,8
+doctor,Ethiopia,2024-08,3
+doctor,Ethiopia,2024-09,5
+doctor,Ethiopia,2024-10,5
+doctor,Ethiopia,2024-11,7
+doctor,Ethiopia,2024-12,8
+doctor,Kenya,2023-10,47
+doctor,Kenya,2023-11,54
+doctor,Kenya,2023-12,47
+doctor,Kenya,2024-01,46
+doctor,Kenya,2024-02,47
+doctor,Kenya,2024-03,52
+doctor,Kenya,2024-04,41
+doctor,Kenya,2024-05,59
+doctor,Kenya,2024-06,47
+doctor,Kenya,2024-07,52
+doctor,Kenya,2024-08,56
+doctor,Kenya,2024-09,59
+doctor,Kenya,2024-10,45
+doctor,Kenya,2024-11,52
+doctor,Kenya,2024-12,52
+doctor,Rwanda,2023-10,16
+doctor,Rwanda,2023-11,15
+doctor,Rwanda,2023-12,18
+doctor,Rwanda,2024-01,9
+doctor,Rwanda,2024-02,11
+doctor,Rwanda,2024-03,12
+doctor,Rwanda,2024-04,16
+doctor,Rwanda,2024-05,18
+doctor,Rwanda,2024-06,11
+doctor,Rwanda,2024-07,16
+doctor,Rwanda,2024-08,23
+doctor,Rwanda,2024-09,17
+doctor,Rwanda,2024-10,13
+doctor,Rwanda,2024-11,19
+doctor,Rwanda,2024-12,9
+doctor,South Sudan,2023-10,1
+doctor,South Sudan,2023-11,1
+doctor,South Sudan,2023-12,2
+doctor,South Sudan,2024-01,1
+doctor,South Sudan,2024-02,2
+doctor,South Sudan,2024-03,2
+doctor,South Sudan,2024-04,3
+doctor,South Sudan,2024-05,2
+doctor,South Sudan,2024-06,4
+doctor,South Sudan,2024-07,3
+doctor,South Sudan,2024-08,2
+doctor,South Sudan,2024-09,1
+doctor,South Sudan,2024-10,2
+doctor,South Sudan,2024-11,3
+doctor,South Sudan,2024-12,4
+doctor,Tanzania,2023-10,37
+doctor,Tanzania,2023-11,32
+doctor,Tanzania,2023-12,31
+doctor,Tanzania,2024-01,30
+doctor,Tanzania,2024-02,35
+doctor,Tanzania,2024-03,36
+doctor,Tanzania,2024-04,30
+doctor,Tanzania,2024-05,36
+doctor,Tanzania,2024-06,29
+doctor,Tanzania,2024-07,26
+doctor,Tanzania,2024-08,35
+doctor,Tanzania,2024-09,30
+doctor,Tanzania,2024-10,21
+doctor,Tanzania,2024-11,42
+doctor,Tanzania,2024-12,34
+doctor,Uganda,2023-10,18
+doctor,Uganda,2023-11,23
+doctor,Uganda,2023-12,14
+doctor,Uganda,2024-01,18
+doctor,Uganda,2024-02,19
+doctor,Uganda,2024-03,19
+doctor,Uganda,2024-04,24
+doctor,Uganda,2024-05,21
+doctor,Uganda,2024-06,14
+doctor,Uganda,2024-07,20
+doctor,Uganda,2024-08,21
+doctor,Uganda,2024-09,21
+doctor,Uganda,2024-10,24
+doctor,Uganda,2024-11,21
+doctor,Uganda,2024-12,22
+finance analyst,Burundi,2023-10,4
+finance analyst,Burundi,2023-11,3
+finance analyst,Burundi,2023-12,4
+finance analyst,Burundi,2024-01,3
+finance analyst,Burundi,2024-02,4
+finance analyst,Burundi,2024-03,5
+finance analyst,Burundi,2024-04,5
+finance analyst,Burundi,2024-05,4
+finance analyst,Burundi,2024-06,3
+finance analyst,Burundi,2024-07,4
+finance analyst,Burundi,2024-08,7
+finance analyst,Burundi,2024-09,2
+finance analyst,Burundi,2024-10,4
+finance analyst,Burundi,2024-11,3
+finance analyst,Burundi,2024-12,9
+finance analyst,Ethiopia,2023-10,2
+finance analyst,Ethiopia,2023-11,7
+finance analyst,Ethiopia,2023-12,9
+finance analyst,Ethiopia,2024-01,8
+finance analyst,Ethiopia,2024-02,4
+finance analyst,Ethiopia,2024-03,10
+finance analyst,Ethiopia,2024-04,7
+finance analyst,Ethiopia,2024-05,2
+finance analyst,Ethiopia,2024-06,4
+finance analyst,Ethiopia,2024-07,5
+finance analyst,Ethiopia,2024-08,7
+finance analyst,Ethiopia,2024-09,2
+finance analyst,Ethiopia,2024-10,10
+finance analyst,Ethiopia,2024-11,1
+finance analyst,Ethiopia,2024-12,5
+finance analyst,Kenya,2023-10,50
+finance analyst,Kenya,2023-11,48
+finance analyst,Kenya,2023-12,46
+finance analyst,Kenya,2024-01,55
+finance analyst,Kenya,2024-02,36
+finance analyst,Kenya,2024-03,49
+finance analyst,Kenya,2024-04,64
+finance analyst,Kenya,2024-05,58
+finance analyst,Kenya,2024-06,51
+finance analyst,Kenya,2024-07,52
+finance analyst,Kenya,2024-08,45
+finance analyst,Kenya,2024-09,41
+finance analyst,Kenya,2024-10,45
+finance analyst,Kenya,2024-11,48
+finance analyst,Kenya,2024-12,46
+finance analyst,Rwanda,2023-10,13
+finance analyst,Rwanda,2023-11,12
+finance analyst,Rwanda,2023-12,14
+finance analyst,Rwanda,2024-01,13
+finance analyst,Rwanda,2024-02,12
+finance analyst,Rwanda,2024-03,9
+finance analyst,Rwanda,2024-04,14
+finance analyst,Rwanda,2024-05,16
+finance analyst,Rwanda,2024-06,13
+finance analyst,Rwanda,2024-07,10
+finance analyst,Rwanda,2024-08,14
+finance analyst,Rwanda,2024-09,19
+finance analyst,Rwanda,2024-10,16
+finance analyst,Rwanda,2024-11,7
+finance analyst,Rwanda,2024-12,13
+finance analyst,South Sudan,2023-10,6
+finance analyst,South Sudan,2023-11,3
+finance analyst,South Sudan,2023-12,2
+finance analyst,South Sudan,2024-01,3
+finance analyst,South Sudan,2024-02,3
+finance analyst,South Sudan,2024-03,3
+finance analyst,South Sudan,2024-04,4
+finance analyst,South Sudan,2024-05,5
+finance analyst,South Sudan,2024-06,2
+finance analyst,South Sudan,2024-07,4
+finance analyst,South Sudan,2024-08,1
+finance analyst,South Sudan,2024-09,5
+finance analyst,South Sudan,2024-10,4
+finance analyst,South Sudan,2024-11,2
+finance analyst,South Sudan,2024-12,3
+finance analyst,Tanzania,2023-10,21
+finance analyst,Tanzania,2023-11,30
+finance analyst,Tanzania,2023-12,29
+finance analyst,Tanzania,2024-01,28
+finance analyst,Tanzania,2024-02,32
+finance analyst,Tanzania,2024-03,26
+finance analyst,Tanzania,2024-04,27
+finance analyst,Tanzania,2024-05,34
+finance analyst,Tanzania,2024-06,32
+finance analyst,Tanzania,2024-07,27
+finance analyst,Tanzania,2024-08,29
+finance analyst,Tanzania,2024-09,37
+finance analyst,Tanzania,2024-10,29
+finance analyst,Tanzania,2024-11,34
+finance analyst,Tanzania,2024-12,28
+finance analyst,Uganda,2023-10,11
+finance analyst,Uganda,2023-11,16
+finance analyst,Uganda,2023-12,16
+finance analyst,Uganda,2024-01,12
+finance analyst,Uganda,2024-02,13
+finance analyst,Uganda,2024-03,20
+finance analyst,Uganda,2024-04,18
+finance analyst,Uganda,2024-05,16
+finance analyst,Uganda,2024-06,18
+finance analyst,Uganda,2024-07,16
+finance analyst,Uganda,2024-08,17
+finance analyst,Uganda,2024-09,20
+finance analyst,Uganda,2024-10,25
+finance analyst,Uganda,2024-11,15
+finance analyst,Uganda,2024-12,21
+human resources officer,Burundi,2023-10,5
+human resources officer,Burundi,2023-11,8
+human resources officer,Burundi,2023-12,9
+human resources officer,Burundi,2024-01,9
+human resources officer,Burundi,2024-02,7
+human resources officer,Burundi,2024-03,7
+human resources officer,Burundi,2024-04,5
+human resources officer,Burundi,2024-05,10
+human resources officer,Burundi,2024-06,7
+human resources officer,Burundi,2024-07,3
+human resources officer,Burundi,2024-08,4
+human resources officer,Burundi,2024-09,8
+human resources officer,Burundi,2024-10,10
+human resources officer,Burundi,2024-11,6
+human resources officer,Burundi,2024-12,7
+human resources officer,Ethiopia,2023-10,13
+human resources officer,Ethiopia,2023-11,15
+human resources officer,Ethiopia,2023-12,6
+human resources officer,Ethiopia,2024-01,15
+human resources officer,Ethiopia,2024-02,8
+human resources officer,Ethiopia,2024-03,8
+human resources officer,Ethiopia,2024-04,13
+human resources officer,Ethiopia,2024-05,14
+human resources officer,Ethiopia,2024-06,7
+human resources officer,Ethiopia,2024-07,12
+human resources officer,Ethiopia,2024-08,12
+human resources officer,Ethiopia,2024-09,16
+human resources officer,Ethiopia,2024-10,11
+human resources officer,Ethiopia,2024-11,14
+human resources officer,Ethiopia,2024-12,14
+human resources officer,Kenya,2023-10,87
+human resources officer,Kenya,2023-11,74
+human resources officer,Kenya,2023-12,86
+human resources officer,Kenya,2024-01,83
+human resources officer,Kenya,2024-02,81
+human resources officer,Kenya,2024-03,74
+human resources officer,Kenya,2024-04,72
+human resources officer,Kenya,2024-05,78
+human resources officer,Kenya,2024-06,74
+human resources officer,Kenya,2024-07,82
+human resources officer,Kenya,2024-08,76
+human resources officer,Kenya,2024-09,89
+human resources officer,Kenya,2024-10,69
+human resources officer,Kenya,2024-11,65
+human resources officer,Kenya,2024-12,56
+human resources officer,Rwanda,2023-10,23
+human resources officer,Rwanda,2023-11,15
+human resources officer,Rwanda,2023-12,27
+human resources officer,Rwanda,2024-01,21
+human resources officer,Rwanda,2024-02,18
+human resources officer,Rwanda,2024-03,17
+human resources officer,Rwanda,2024-04,21
+human resources officer,Rwanda,2024-05,12
+human resources officer,Rwanda,2024-06,15
+human resources officer,Rwanda,2024-07,23
+human resources officer,Rwanda,2024-08,22
+human resources officer,Rwanda,2024-09,20
+human resources officer,Rwanda,2024-10,24
+human resources officer,Rwanda,2024-11,19
+human resources officer,Rwanda,2024-12,18
+human resources officer,South Sudan,2023-10,3
+human resources officer,South Sudan,2023-11,5
+human resources officer,South Sudan,2023-12,5
+human resources officer,South Sudan,2024-01,5
+human resources officer,South Sudan,2024-02,2
+human resources officer,South Sudan,2024-03,4
+human resources officer,South Sudan,2024-04,4
+human resources officer,South Sudan,2024-05,6
+human resources officer,South Sudan,2024-06,4
+human resources officer,South Sudan,2024-07,3
+human resources officer,South Sudan,2024-08,3
+human resources officer,South Sudan,2024-09,6
+human resources officer,South Sudan,2024-10,5
+human resources officer,South Sudan,2024-11,5
+human resources officer,South Sudan,2024-12,2
+human resources officer,Tanzania,2023-10,43
+human resources officer,Tanzania,2023-11,51
+human resources officer,Tanzania,2023-12,48
+human resources officer,Tanzania,2024-01,57
+human resources officer,Tanzania,2024-02,67
+human resources officer,Tanzania,2024-03,53
+human resources officer,Tanzania,2024-04,46
+human resources officer,Tanzania,2024-05,53
+human resources officer,Tanzania,2024-06,42
+human resources officer,Tanzania,2024-07,51
+human resources officer,Tanzania,2024-08,46
+human resources officer,Tanzania,2024-09,39
+human resources officer,Tanzania,2024-10,62
+human resources officer,Tanzania,2024-11,49
+human resources officer,Tanzania,2024-12,42
+human resources officer,Uganda,2023-10,37
+human resources officer,Uganda,2023-11,41
+human resources officer,Uganda,2023-12,33
+human resources officer,Uganda,2024-01,22
+human resources officer,Uganda,2024-02,36
+human resources officer,Uganda,2024-03,36
+human resources officer,Uganda,2024-04,41
+human resources officer,Uganda,2024-05,33
+human resources officer,Uganda,2024-06,25
+human resources officer,Uganda,2024-07,30
+human resources officer,Uganda,2024-08,32
+human resources officer,Uganda,2024-09,31
+human resources officer,Uganda,2024-10,25
+human resources officer,Uganda,2024-11,34
+human resources officer,Uganda,2024-12,31
+it support specialist,Burundi,2023-10,2
+it support specialist,Burundi,2023-11,4
+it support specialist,Burundi,2023-12,3
+it support specialist,Burundi,2024-01,2
+it support specialist,Burundi,2024-02,4
+it support specialist,Burundi,2024-03,3
+it support specialist,Burundi,2024-04,2
+it support specialist,Burundi,2024-05,6
+it support specialist,Burundi,2024-06,1
+it support specialist,Burundi,2024-07,1
+it support specialist,Burundi,2024-10,2
+it support specialist,Burundi,2024-11,4
+it support specialist,Burundi,2024-12,2
+it support specialist,Ethiopia,2023-10,3
+it support specialist,Ethiopia,2023-11,5
+it support specialist,Ethiopia,2023-12,4
+it support specialist,Ethiopia,2024-01,11
+it support specialist,Ethiopia,2024-02,2
+it support specialist,Ethiopia,2024-03,4
+it support specialist,Ethiopia,2024-04,3
+it support specialist,Ethiopia,2024-05,1
+it support specialist,Ethiopia,2024-06,2
+it support specialist,Ethiopia,2024-07,5
+it support specialist,Ethiopia,2024-08,8
+it support specialist,Ethiopia,2024-09,5
+it support specialist,Ethiopia,2024-10,3
+it support specialist,Ethiopia,2024-11,2
+it support specialist,Ethiopia,2024-12,6
+it support specialist,Kenya,2023-10,26
+it support specialist,Kenya,2023-11,49
+it support specialist,Kenya,2023-12,28
+it support specialist,Kenya,2024-01,42
+it support specialist,Kenya,2024-02,25
+it support specialist,Kenya,2024-03,28
+it support specialist,Kenya,2024-04,36
+it support specialist,Kenya,2024-05,41
+it support specialist,Kenya,2024-06,37
+it support specialist,Kenya,2024-07,28
+it support specialist,Kenya,2024-08,30
+it support specialist,Kenya,2024-09,39
+it support specialist,Kenya,2024-10,31
+it support specialist,Kenya,2024-11,36
+it support specialist,Kenya,2024-12,25
+it support specialist,Rwanda,2023-10,11
+it support specialist,Rwanda,2023-11,5
+it support specialist,Rwanda,2023-12,7
+it support specialist,Rwanda,2024-01,6
+it support specialist,Rwanda,2024-02,5
+it support specialist,Rwanda,2024-03,11
+it support specialist,Rwanda,2024-04,11
+it support specialist,Rwanda,2024-05,8
+it support specialist,Rwanda,2024-06,6
+it support specialist,Rwanda,2024-07,10
+it support specialist,Rwanda,2024-08,9
+it support specialist,Rwanda,2024-09,12
+it support specialist,Rwanda,2024-10,9
+it support specialist,Rwanda,2024-11,7
+it support specialist,Rwanda,2024-12,9
+it support specialist,South Sudan,2023-10,4
+it support specialist,South Sudan,2023-11,2
+it support specialist,South Sudan,2023-12,1
+it support specialist,South Sudan,2024-01,1
+it support specialist,South Sudan,2024-02,2
+it support specialist,South Sudan,2024-06,2
+it support specialist,South Sudan,2024-08,2
+it support specialist,South Sudan,2024-09,2
+it support specialist,South Sudan,2024-10,3
+it support specialist,South Sudan,2024-12,1
+it support specialist,Tanzania,2023-10,23
+it support specialist,Tanzania,2023-11,24
+it support specialist,Tanzania,2023-12,21
+it support specialist,Tanzania,2024-01,16
+it support specialist,Tanzania,2024-02,20
+it support specialist,Tanzania,2024-03,21
+it support specialist,Tanzania,2024-04,27
+it support specialist,Tanzania,2024-05,21
+it support specialist,Tanzania,2024-06,18
+it support specialist,Tanzania,2024-07,26
+it support specialist,Tanzania,2024-08,19
+it support specialist,Tanzania,2024-09,20
+it support specialist,Tanzania,2024-10,24
+it support specialist,Tanzania,2024-11,26
+it support specialist,Tanzania,2024-12,22
+it support specialist,Uganda,2023-10,18
+it support specialist,Uganda,2023-11,9
+it support specialist,Uganda,2023-12,12
+it support specialist,Uganda,2024-01,15
+it support specialist,Uganda,2024-02,13
+it support specialist,Uganda,2024-03,12
+it support specialist,Uganda,2024-04,11
+it support specialist,Uganda,2024-05,14
+it support specialist,Uganda,2024-06,15
+it support specialist,Uganda,2024-07,12
+it support specialist,Uganda,2024-08,15
+it support specialist,Uganda,2024-09,10
+it support specialist,Uganda,2024-10,14
+it support specialist,Uganda,2024-11,10
+it support specialist,Uganda,2024-12,11
+logistics manager,Burundi,2023-10,2
+logistics manager,Burundi,2023-11,9
+logistics manager,Burundi,2023-12,3
+logistics manager,Burundi,2024-01,5
+logistics manager,Burundi,2024-02,6
+logistics manager,Burundi,2024-03,5
+logistics manager,Burundi,2024-04,6
+logistics manager,Burundi,2024-05,2
+logistics manager,Burundi,2024-06,5
+logistics manager,Burundi,2024-07,3
+logistics manager,Burundi,2024-08,3
+logistics manager,Burundi,2024-09,2
+logistics manager,Burundi,2024-10,6
+logistics manager,Burundi,2024-11,6
+logistics manager,Burundi,2024-12,2
+logistics manager,Ethiopia,2023-10,10
+logistics manager,Ethiopia,2023-11,7
+logistics manager,Ethiopia,2023-12,7
+logistics manager,Ethiopia,2024-01,9
+logistics manager,Ethiopia,2024-02,3
+logistics manager,Ethiopia,2024-03,11
+logistics manager,Ethiopia,2024-04,11
+logistics manager,Ethiopia,2024-05,8
+logistics manager,Ethiopia,2024-06,12
+logistics manager,Ethiopia,2024-07,9
+logistics manager,Ethiopia,2024-08,9
+logistics manager,Ethiopia,2024-09,8
+logistics manager,Ethiopia,2024-10,6
+logistics manager,Ethiopia,2024-11,5
+logistics manager,Ethiopia,2024-12,6
+logistics manager,Kenya,2023-10,70
+logistics manager,Kenya,2023-11,52
+logistics manager,Kenya,2023-12,76
+logistics manager,Kenya,2024-01,59
+logistics manager,Kenya,2024-02,57
+logistics manager,Kenya,2024-03,69
+logistics manager,Kenya,2024-04,59
+logistics manager,Kenya,2024-05,69
+logistics manager,Kenya,2024-06,59
+logistics manager,Kenya,2024-07,50
+logistics manager,Kenya,2024-08,59
+logistics manager,Kenya,2024-09,62
+logistics manager,Kenya,2024-10,58
+logistics manager,Kenya,2024-11,49
+logistics manager,Kenya,2024-12,67
+logistics manager,Rwanda,2023-10,14
+logistics manager,Rwanda,2023-11,18
+logistics manager,Rwanda,2023-12,16
+logistics manager,Rwanda,2024-01,12
+logistics manager,Rwanda,2024-02,14
+logistics manager,Rwanda,2024-03,8
+logistics manager,Rwanda,2024-04,15
+logistics manager,Rwanda,2024-05,9
+logistics manager,Rwanda,2024-06,19
+logistics manager,Rwanda,2024-07,11
+logistics manager,Rwanda,2024-08,28
+logistics manager,Rwanda,2024-09,20
+logistics manager,Rwanda,2024-10,13
+logistics manager,Rwanda,2024-11,12
+logistics manager,Rwanda,2024-12,16
+logistics manager,South Sudan,2023-10,2
+logistics manager,South Sudan,2023-11,8
+logistics manager,South Sudan,2023-12,3
+logistics manager,South Sudan,2024-01,1
+logistics manager,South Sudan,2024-02,1
+logistics manager,South Sudan,2024-03,4
+logistics manager,South Sudan,2024-04,3
+logistics manager,South Sudan,2024-05,3
+logistics manager,South Sudan,2024-06,4
+logistics manager,South Sudan,2024-07,5
+logistics manager,South Sudan,2024-08,3
+logistics manager,South Sudan,2024-09,2
+logistics manager,South Sudan,2024-10,2
+logistics manager,South Sudan,2024-11,4
+logistics manager,Tanzania,2023-10,37
+logistics manager,Tanzania,2023-11,32
+logistics manager,Tanzania,2023-12,36
+logistics manager,Tanzania,2024-01,35
+logistics manager,Tanzania,2024-02,40
+logistics manager,Tanzania,2024-03,33
+logistics manager,Tanzania,2024-04,30
+logistics manager,Tanzania,2024-05,33
+logistics manager,Tanzania,2024-06,48
+logistics manager,Tanzania,2024-07,29
+logistics manager,Tanzania,2024-08,26
+logistics manager,Tanzania,2024-09,34
+logistics manager,Tanzania,2024-10,36
+logistics manager,Tanzania,2024-11,38
+logistics manager,Tanzania,2024-12,35
+logistics manager,Uganda,2023-10,28
+logistics manager,Uganda,2023-11,17
+logistics manager,Uganda,2023-12,22
+logistics manager,Uganda,2024-01,18
+logistics manager,Uganda,2024-02,26
+logistics manager,Uganda,2024-03,34
+logistics manager,Uganda,2024-04,17
+logistics manager,Uganda,2024-05,27
+logistics manager,Uganda,2024-06,21
+logistics manager,Uganda,2024-07,19
+logistics manager,Uganda,2024-08,18
+logistics manager,Uganda,2024-09,21
+logistics manager,Uganda,2024-10,14
+logistics manager,Uganda,2024-11,21
+logistics manager,Uganda,2024-12,23
+mobile developer,Burundi,2023-10,4
+mobile developer,Burundi,2023-11,3
+mobile developer,Burundi,2023-12,6
+mobile developer,Burundi,2024-01,3
+mobile developer,Burundi,2024-03,2
+mobile developer,Burundi,2024-04,2
+mobile developer,Burundi,2024-05,5
+mobile developer,Burundi,2024-06,5
+mobile developer,Burundi,2024-07,3
+mobile developer,Burundi,2024-08,4
+mobile developer,Burundi,2024-09,4
+mobile developer,Burundi,2024-10,3
+mobile developer,Burundi,2024-11,4
+mobile developer,Burundi,2024-12,1
+mobile developer,Ethiopia,2023-10,5
+mobile developer,Ethiopia,2023-11,7
+mobile developer,Ethiopia,2023-12,4
+mobile developer,Ethiopia,2024-01,14
+mobile developer,Ethiopia,2024-02,3
+mobile developer,Ethiopia,2024-03,8
+mobile developer,Ethiopia,2024-04,4
+mobile developer,Ethiopia,2024-05,2
+mobile developer,Ethiopia,2024-06,13
+mobile developer,Ethiopia,2024-07,10
+mobile developer,Ethiopia,2024-08,5
+mobile developer,Ethiopia,2024-09,6
+mobile developer,Ethiopia,2024-10,4
+mobile developer,Ethiopia,2024-11,3
+mobile developer,Ethiopia,2024-12,8
+mobile developer,Kenya,2023-10,47
+mobile developer,Kenya,2023-11,45
+mobile developer,Kenya,2023-12,47
+mobile developer,Kenya,2024-01,42
+mobile developer,Kenya,2024-02,39
+mobile developer,Kenya,2024-03,50
+mobile developer,Kenya,2024-04,39
+mobile developer,Kenya,2024-05,60
+mobile developer,Kenya,2024-06,53
+mobile developer,Kenya,2024-07,45
+mobile developer,Kenya,2024-08,47
+mobile developer,Kenya,2024-09,49
+mobile developer,Kenya,2024-10,55
+mobile developer,Kenya,2024-11,40
+mobile developer,Kenya,2024-12,52
+mobile developer,Rwanda,2023-10,9
+mobile developer,Rwanda,2023-11,11
+mobile developer,Rwanda,2023-12,13
+mobile developer,Rwanda,2024-01,18
+mobile developer,Rwanda,2024-02,8
+mobile developer,Rwanda,2024-03,15
+mobile developer,Rwanda,2024-04,20
+mobile developer,Rwanda,2024-05,11
+mobile developer,Rwanda,2024-06,10
+mobile developer,Rwanda,2024-07,9
+mobile developer,Rwanda,2024-08,15
+mobile developer,Rwanda,2024-09,16
+mobile developer,Rwanda,2024-10,15
+mobile developer,Rwanda,2024-11,15
+mobile developer,Rwanda,2024-12,17
+mobile developer,South Sudan,2023-11,2
+mobile developer,South Sudan,2024-01,1
+mobile developer,South Sudan,2024-02,2
+mobile developer,South Sudan,2024-03,1
+mobile developer,South Sudan,2024-05,5
+mobile developer,South Sudan,2024-06,3
+mobile developer,South Sudan,2024-07,2
+mobile developer,South Sudan,2024-08,4
+mobile developer,South Sudan,2024-09,2
+mobile developer,South Sudan,2024-10,2
+mobile developer,South Sudan,2024-11,2
+mobile developer,South Sudan,2024-12,1
+mobile developer,Tanzania,2023-10,24
+mobile developer,Tanzania,2023-11,28
+mobile developer,Tanzania,2023-12,31
+mobile developer,Tanzania,2024-01,31
+mobile developer,Tanzania,2024-02,32
+mobile developer,Tanzania,2024-03,45
+mobile developer,Tanzania,2024-04,22
+mobile developer,Tanzania,2024-05,23
+mobile developer,Tanzania,2024-06,33
+mobile developer,Tanzania,2024-07,26
+mobile developer,Tanzania,2024-08,31
+mobile developer,Tanzania,2024-09,35
+mobile developer,Tanzania,2024-10,34
+mobile developer,Tanzania,2024-11,27
+mobile developer,Tanzania,2024-12,25
+mobile developer,Uganda,2023-10,21
+mobile developer,Uganda,2023-11,22
+mobile developer,Uganda,2023-12,16
+mobile developer,Uganda,2024-01,20
+mobile developer,Uganda,2024-02,13
+mobile developer,Uganda,2024-03,18
+mobile developer,Uganda,2024-04,24
+mobile developer,Uganda,2024-05,20
+mobile developer,Uganda,2024-06,13
+mobile developer,Uganda,2024-07,18
+mobile developer,Uganda,2024-08,18
+mobile developer,Uganda,2024-09,15
+mobile developer,Uganda,2024-10,20
+mobile developer,Uganda,2024-11,19
+mobile developer,Uganda,2024-12,21
+network engineer,Burundi,2023-10,3
+network engineer,Burundi,2023-11,5
+network engineer,Burundi,2023-12,8
+network engineer,Burundi,2024-01,3
+network engineer,Burundi,2024-02,6
+network engineer,Burundi,2024-03,5
+network engineer,Burundi,2024-04,6
+network engineer,Burundi,2024-05,6
+network engineer,Burundi,2024-06,7
+network engineer,Burundi,2024-07,5
+network engineer,Burundi,2024-08,7
+network engineer,Burundi,2024-09,8
+network engineer,Burundi,2024-10,4
+network engineer,Burundi,2024-11,6
+network engineer,Burundi,2024-12,2
+network engineer,Ethiopia,2023-10,8
+network engineer,Ethiopia,2023-11,13
+network engineer,Ethiopia,2023-12,9
+network engineer,Ethiopia,2024-01,13
+network engineer,Ethiopia,2024-02,9
+network engineer,Ethiopia,2024-03,6
+network engineer,Ethiopia,2024-04,6
+network engineer,Ethiopia,2024-05,5
+network engineer,Ethiopia,2024-06,4
+network engineer,Ethiopia,2024-07,8
+network engineer,Ethiopia,2024-08,6
+network engineer,Ethiopia,2024-09,12
+network engineer,Ethiopia,2024-10,9
+network engineer,Ethiopia,2024-11,10
+network engineer,Ethiopia,2024-12,12
+network engineer,Kenya,2023-10,63
+network engineer,Kenya,2023-11,81
+network engineer,Kenya,2023-12,77
+network engineer,Kenya,2024-01,83
+network engineer,Kenya,2024-02,71
+network engineer,Kenya,2024-03,83
+network engineer,Kenya,2024-04,74
+network engineer,Kenya,2024-05,74
+network engineer,Kenya,2024-06,57
+network engineer,Kenya,2024-07,64
+network engineer,Kenya,2024-08,71
+network engineer,Kenya,2024-09,78
+network engineer,Kenya,2024-10,78
+network engineer,Kenya,2024-11,70
+network engineer,Kenya,2024-12,64
+network engineer,Rwanda,2023-10,20
+network engineer,Rwanda,2023-11,14
+network engineer,Rwanda,2023-12,17
+network engineer,Rwanda,2024-01,19
+network engineer,Rwanda,2024-02,14
+network engineer,Rwanda,2024-03,21
+network engineer,Rwanda,2024-04,23
+network engineer,Rwanda,2024-05,15
+network engineer,Rwanda,2024-06,16
+network engineer,Rwanda,2024-07,13
+network engineer,Rwanda,2024-08,13
+network engineer,Rwanda,2024-09,17
+network engineer,Rwanda,2024-10,13
+network engineer,Rwanda,2024-11,23
+network engineer,Rwanda,2024-12,20
+network engineer,South Sudan,2023-10,3
+network engineer,South Sudan,2023-11,3
+network engineer,South Sudan,2023-12,3
+network engineer,South Sudan,2024-01,3
+network engineer,South Sudan,2024-02,1
+network engineer,South Sudan,2024-03,2
+network engineer,South Sudan,2024-04,2
+network engineer,South Sudan,2024-05,1
+network engineer,South Sudan,2024-06,5
+network engineer,South Sudan,2024-07,6
+network engineer,South Sudan,2024-08,2
+network engineer,South Sudan,2024-09,3
+network engineer,South Sudan,2024-10,4
+network engineer,South Sudan,2024-11,4
+network engineer,South Sudan,2024-12,5
+network engineer,Tanzania,2023-10,48
+network engineer,Tanzania,2023-11,47
+network engineer,Tanzania,2023-12,45
+network engineer,Tanzania,2024-01,39
+network engineer,Tanzania,2024-02,51
+network engineer,Tanzania,2024-03,48
+network engineer,Tanzania,2024-04,49
+network engineer,Tanzania,2024-05,42
+network engineer,Tanzania,2024-06,37
+network engineer,Tanzania,2024-07,33
+network engineer,Tanzania,2024-08,31
+network engineer,Tanzania,2024-09,43
+network engineer,Tanzania,2024-10,35
+network engineer,Tanzania,2024-11,30
+network engineer,Tanzania,2024-12,39
+network engineer,Uganda,2023-10,36
+network engineer,Uganda,2023-11,19
+network engineer,Uganda,2023-12,28
+network engineer,Uganda,2024-01,24
+network engineer,Uganda,2024-02,21
+network engineer,Uganda,2024-03,30
+network engineer,Uganda,2024-04,26
+network engineer,Uganda,2024-05,35
+network engineer,Uganda,2024-06,28
+network engineer,Uganda,2024-07,27
+network engineer,Uganda,2024-08,28
+network engineer,Uganda,2024-09,30
+network engineer,Uganda,2024-10,28
+network engineer,Uganda,2024-11,20
+network engineer,Uganda,2024-12,25
+nurse,Burundi,2023-10,3
+nurse,Burundi,2023-11,3
+nurse,Burundi,2023-12,5
+nurse,Burundi,2024-01,4
+nurse,Burundi,2024-02,4
+nurse,Burundi,2024-03,5
+nurse,Burundi,2024-04,4
+nurse,Burundi,2024-05,4
+nurse,Burundi,2024-06,7
+nurse,Burundi,2024-07,4
+nurse,Burundi,2024-08,2
+nurse,Burundi,2024-09,5
+nurse,Burundi,2024-10,2
+nurse,Burundi,2024-11,1
+nurse,Burundi,2024-12,5
+nurse,Ethiopia,2023-10,4
+nurse,Ethiopia,2023-11,3
+nurse,Ethiopia,2023-12,7
+nurse,Ethiopia,2024-01,11
+nurse,Ethiopia,2024-02,4
+nurse,Ethiopia,2024-03,5
+nurse,Ethiopia,2024-04,4
+nurse,Ethiopia,2024-05,9
+nurse,Ethiopia,2024-06,6
+nurse,Ethiopia,2024-07,6
+nurse,Ethiopia,2024-08,3
+nurse,Ethiopia,2024-09,5
+nurse,Ethiopia,2024-10,2
+nurse,Ethiopia,2024-11,6
+nurse,Ethiopia,2024-12,4
+nurse,Kenya,2023-10,42
+nurse,Kenya,2023-11,39
+nurse,Kenya,2023-12,39
+nurse,Kenya,2024-01,38
+nurse,Kenya,2024-02,41
+nurse,Kenya,2024-03,42
+nurse,Kenya,2024-04,38
+nurse,Kenya,2024-05,37
+nurse,Kenya,2024-06,39
+nurse,Kenya,2024-07,35
+nurse,Kenya,2024-08,46
+nurse,Kenya,2024-09,44
+nurse,Kenya,2024-10,51
+nurse,Kenya,2024-11,29
+nurse,Kenya,2024-12,38
+nurse,Rwanda,2023-10,16
+nurse,Rwanda,2023-11,8
+nurse,Rwanda,2023-12,10
+nurse,Rwanda,2024-01,12
+nurse,Rwanda,2024-02,10
+nurse,Rwanda,2024-03,11
+nurse,Rwanda,2024-04,10
+nurse,Rwanda,2024-05,15
+nurse,Rwanda,2024-06,9
+nurse,Rwanda,2024-07,11
+nurse,Rwanda,2024-08,5
+nurse,Rwanda,2024-09,6
+nurse,Rwanda,2024-10,9
+nurse,Rwanda,2024-11,8
+nurse,Rwanda,2024-12,11
+nurse,South Sudan,2023-10,2
+nurse,South Sudan,2023-11,2
+nurse,South Sudan,2023-12,3
+nurse,South Sudan,2024-01,2
+nurse,South Sudan,2024-02,1
+nurse,South Sudan,2024-03,2
+nurse,South Sudan,2024-05,1
+nurse,South Sudan,2024-06,3
+nurse,South Sudan,2024-07,3
+nurse,South Sudan,2024-08,3
+nurse,South Sudan,2024-09,1
+nurse,South Sudan,2024-10,2
+nurse,South Sudan,2024-11,1
+nurse,South Sudan,2024-12,1
+nurse,Tanzania,2023-10,21
+nurse,Tanzania,2023-11,40
+nurse,Tanzania,2023-12,19
+nurse,Tanzania,2024-01,21
+nurse,Tanzania,2024-02,22
+nurse,Tanzania,2024-03,32
+nurse,Tanzania,2024-04,26
+nurse,Tanzania,2024-05,27
+nurse,Tanzania,2024-06,18
+nurse,Tanzania,2024-07,39
+nurse,Tanzania,2024-08,35
+nurse,Tanzania,2024-09,23
+nurse,Tanzania,2024-10,23
+nurse,Tanzania,2024-11,26
+nurse,Tanzania,2024-12,22
+nurse,Uganda,2023-10,16
+nurse,Uganda,2023-11,15
+nurse,Uganda,2023-12,10
+nurse,Uganda,2024-01,17
+nurse,Uganda,2024-02,7
+nurse,Uganda,2024-03,17
+nurse,Uganda,2024-04,11
+nurse,Uganda,2024-05,10
+nurse,Uganda,2024-06,19
+nurse,Uganda,2024-07,19
+nurse,Uganda,2024-08,14
+nurse,Uganda,2024-09,12
+nurse,Uganda,2024-10,12
+nurse,Uganda,2024-11,13
+nurse,Uganda,2024-12,21
+project manager,Burundi,2023-10,3
+project manager,Burundi,2023-11,4
+project manager,Burundi,2023-12,5
+project manager,Burundi,2024-01,3
+project manager,Burundi,2024-02,1
+project manager,Burundi,2024-03,2
+project manager,Burundi,2024-04,3
+project manager,Burundi,2024-05,1
+project manager,Burundi,2024-06,1
+project manager,Burundi,2024-07,3
+project manager,Burundi,2024-08,6
+project manager,Burundi,2024-09,3
+project manager,Burundi,2024-10,3
+project manager,Burundi,2024-11,4
+project manager,Burundi,2024-12,2
+project manager,Ethiopia,2023-10,4
+project manager,Ethiopia,2023-11,6
+project manager,Ethiopia,2023-12,8
+project manager,Ethiopia,2024-01,1
+project manager,Ethiopia,2024-02,2
+project manager,Ethiopia,2024-03,8
+project manager,Ethiopia,2024-04,5
+project manager,Ethiopia,2024-05,6
+project manager,Ethiopia,2024-06,5
+project manager,Ethiopia,2024-07,4
+project manager,Ethiopia,2024-08,3
+project manager,Ethiopia,2024-09,9
+project manager,Ethiopia,2024-10,4
+project manager,Ethiopia,2024-11,7
+project manager,Ethiopia,2024-12,3
+project manager,Kenya,2023-10,54
+project manager,Kenya,2023-11,49
+project manager,Kenya,2023-12,59
+project manager,Kenya,2024-01,44
+project manager,Kenya,2024-02,51
+project manager,Kenya,2024-03,58
+project manager,Kenya,2024-04,47
+project manager,Kenya,2024-05,53
+project manager,Kenya,2024-06,46
+project manager,Kenya,2024-07,49
+project manager,Kenya,2024-08,37
+project manager,Kenya,2024-09,37
+project manager,Kenya,2024-10,38
+project manager,Kenya,2024-11,39
+project manager,Kenya,2024-12,45
+project manager,Rwanda,2023-10,13
+project manager,Rwanda,2023-11,9
+project manager,Rwanda,2023-12,8
+project manager,Rwanda,2024-01,9
+project manager,Rwanda,2024-02,27
+project manager,Rwanda,2024-03,13
+project manager,Rwanda,2024-04,8
+project manager,Rwanda,2024-05,11
+project manager,Rwanda,2024-06,9
+project manager,Rwanda,2024-07,6
+project manager,Rwanda,2024-08,11
+project manager,Rwanda,2024-09,12
+project manager,Rwanda,2024-10,8
+project manager,Rwanda,2024-11,9
+project manager,Rwanda,2024-12,15
+project manager,South Sudan,2023-10,1
+project manager,South Sudan,2023-11,2
+project manager,South Sudan,2023-12,4
+project manager,South Sudan,2024-01,5
+project manager,South Sudan,2024-02,1
+project manager,South Sudan,2024-03,2
+project manager,South Sudan,2024-04,2
+project manager,South Sudan,2024-06,1
+project manager,South Sudan,2024-07,1
+project manager,South Sudan,2024-08,4
+project manager,South Sudan,2024-09,3
+project manager,South Sudan,2024-11,3
+project manager,South Sudan,2024-12,2
+project manager,Tanzania,2023-10,30
+project manager,Tanzania,2023-11,18
+project manager,Tanzania,2023-12,30
+project manager,Tanzania,2024-01,29
+project manager,Tanzania,2024-02,25
+project manager,Tanzania,2024-03,30
+project manager,Tanzania,2024-04,25
+project manager,Tanzania,2024-05,34
+project manager,Tanzania,2024-06,35
+project manager,Tanzania,2024-07,30
+project manager,Tanzania,2024-08,32
+project manager,Tanzania,2024-09,32
+project manager,Tanzania,2024-10,29
+project manager,Tanzania,2024-11,26
+project manager,Tanzania,2024-12,17
+project manager,Uganda,2023-10,16
+project manager,Uganda,2023-11,18
+project manager,Uganda,2023-12,16
+project manager,Uganda,2024-01,17
+project manager,Uganda,2024-02,13
+project manager,Uganda,2024-03,23
+project manager,Uganda,2024-04,14
+project manager,Uganda,2024-05,21
+project manager,Uganda,2024-06,17
+project manager,Uganda,2024-07,21
+project manager,Uganda,2024-08,18
+project manager,Uganda,2024-09,16
+project manager,Uganda,2024-10,15
+project manager,Uganda,2024-11,15
+project manager,Uganda,2024-12,29
+researcher,Burundi,2023-10,1
+researcher,Burundi,2023-12,2
+researcher,Burundi,2024-01,3
+researcher,Burundi,2024-02,1
+researcher,Burundi,2024-03,1
+researcher,Burundi,2024-04,1
+researcher,Burundi,2024-06,1
+researcher,Burundi,2024-08,2
+researcher,Burundi,2024-09,3
+researcher,Burundi,2024-10,1
+researcher,Ethiopia,2023-10,1
+researcher,Ethiopia,2023-11,1
+researcher,Ethiopia,2023-12,1
+researcher,Ethiopia,2024-01,2
+researcher,Ethiopia,2024-02,2
+researcher,Ethiopia,2024-04,1
+researcher,Ethiopia,2024-05,3
+researcher,Ethiopia,2024-06,4
+researcher,Ethiopia,2024-07,1
+researcher,Ethiopia,2024-08,2
+researcher,Ethiopia,2024-09,2
+researcher,Ethiopia,2024-10,3
+researcher,Ethiopia,2024-11,1
+researcher,Kenya,2023-10,10
+researcher,Kenya,2023-11,19
+researcher,Kenya,2023-12,6
+researcher,Kenya,2024-01,15
+researcher,Kenya,2024-02,10
+researcher,Kenya,2024-03,6
+researcher,Kenya,2024-04,8
+researcher,Kenya,2024-05,23
+researcher,Kenya,2024-06,9
+researcher,Kenya,2024-07,15
+researcher,Kenya,2024-08,14
+researcher,Kenya,2024-09,14
+researcher,Kenya,2024-10,11
+researcher,Kenya,2024-11,15
+researcher,Kenya,2024-12,19
+researcher,Rwanda,2023-10,2
+researcher,Rwanda,2023-11,6
+researcher,Rwanda,2023-12,6
+researcher,Rwanda,2024-01,2
+researcher,Rwanda,2024-02,4
+researcher,Rwanda,2024-03,3
+researcher,Rwanda,2024-04,2
+researcher,Rwanda,2024-05,4
+researcher,Rwanda,2024-06,3
+researcher,Rwanda,2024-07,5
+researcher,Rwanda,2024-08,7
+researcher,Rwanda,2024-09,1
+researcher,Rwanda,2024-10,5
+researcher,Rwanda,2024-11,8
+researcher,Rwanda,2024-12,4
+researcher,South Sudan,2024-01,1
+researcher,South Sudan,2024-03,1
+researcher,South Sudan,2024-05,1
+researcher,South Sudan,2024-11,2
+researcher,South Sudan,2024-12,4
+researcher,Tanzania,2023-10,9
+researcher,Tanzania,2023-11,5
+researcher,Tanzania,2023-12,9
+researcher,Tanzania,2024-01,8
+researcher,Tanzania,2024-02,9
+researcher,Tanzania,2024-03,12
+researcher,Tanzania,2024-04,11
+researcher,Tanzania,2024-05,9
+researcher,Tanzania,2024-06,13
+researcher,Tanzania,2024-07,7
+researcher,Tanzania,2024-08,10
+researcher,Tanzania,2024-09,7
+researcher,Tanzania,2024-10,1
+researcher,Tanzania,2024-11,10
+researcher,Tanzania,2024-12,7
+researcher,Uganda,2023-10,3
+researcher,Uganda,2023-11,8
+researcher,Uganda,2023-12,3
+researcher,Uganda,2024-01,3
+researcher,Uganda,2024-02,4
+researcher,Uganda,2024-03,3
+researcher,Uganda,2024-04,7
+researcher,Uganda,2024-05,2
+researcher,Uganda,2024-06,3
+researcher,Uganda,2024-07,5
+researcher,Uganda,2024-08,6
+researcher,Uganda,2024-09,4
+researcher,Uganda,2024-10,9
+researcher,Uganda,2024-11,6
+researcher,Uganda,2024-12,10
+sales manager,Burundi,2023-10,8
+sales manager,Burundi,2023-11,9
+sales manager,Burundi,2023-12,3
+sales manager,Burundi,2024-01,1
+sales manager,Burundi,2024-02,4
+sales manager,Burundi,2024-03,4
+sales manager,Burundi,2024-04,4
+sales manager,Burundi,2024-05,3
+sales manager,Burundi,2024-06,4
+sales manager,Burundi,2024-07,2
+sales manager,Burundi,2024-08,4
+sales manager,Burundi,2024-09,4
+sales manager,Burundi,2024-10,5
+sales manager,Burundi,2024-11,7
+sales manager,Burundi,2024-12,2
+sales manager,Ethiopia,2023-10,10
+sales manager,Ethiopia,2023-11,7
+sales manager,Ethiopia,2023-12,9
+sales manager,Ethiopia,2024-01,9
+sales manager,Ethiopia,2024-02,5
+sales manager,Ethiopia,2024-03,11
+sales manager,Ethiopia,2024-04,6
+sales manager,Ethiopia,2024-05,10
+sales manager,Ethiopia,2024-06,11
+sales manager,Ethiopia,2024-07,11
+sales manager,Ethiopia,2024-08,12
+sales manager,Ethiopia,2024-09,7
+sales manager,Ethiopia,2024-10,9
+sales manager,Ethiopia,2024-11,5
+sales manager,Ethiopia,2024-12,6
+sales manager,Kenya,2023-10,60
+sales manager,Kenya,2023-11,52
+sales manager,Kenya,2023-12,84
+sales manager,Kenya,2024-01,63
+sales manager,Kenya,2024-02,68
+sales manager,Kenya,2024-03,51
+sales manager,Kenya,2024-04,56
+sales manager,Kenya,2024-05,74
+sales manager,Kenya,2024-06,71
+sales manager,Kenya,2024-07,56
+sales manager,Kenya,2024-08,72
+sales manager,Kenya,2024-09,65
+sales manager,Kenya,2024-10,49
+sales manager,Kenya,2024-11,64
+sales manager,Kenya,2024-12,55
+sales manager,Rwanda,2023-10,14
+sales manager,Rwanda,2023-11,22
+sales manager,Rwanda,2023-12,15
+sales manager,Rwanda,2024-01,13
+sales manager,Rwanda,2024-02,14
+sales manager,Rwanda,2024-03,18
+sales manager,Rwanda,2024-04,18
+sales manager,Rwanda,2024-05,8
+sales manager,Rwanda,2024-06,16
+sales manager,Rwanda,2024-07,14
+sales manager,Rwanda,2024-08,24
+sales manager,Rwanda,2024-09,23
+sales manager,Rwanda,2024-10,16
+sales manager,Rwanda,2024-11,10
+sales manager,Rwanda,2024-12,19
+sales manager,South Sudan,2023-10,1
+sales manager,South Sudan,2023-11,7
+sales manager,South Sudan,2023-12,5
+sales manager,South Sudan,2024-01,1
+sales manager,South Sudan,2024-02,3
+sales manager,South Sudan,2024-03,2
+sales manager,South Sudan,2024-04,3
+sales manager,South Sudan,2024-05,6
+sales manager,South Sudan,2024-06,3
+sales manager,South Sudan,2024-07,3
+sales manager,South Sudan,2024-08,4
+sales manager,South Sudan,2024-09,1
+sales manager,South Sudan,2024-10,1
+sales manager,South Sudan,2024-11,4
+sales manager,South Sudan,2024-12,2
+sales manager,Tanzania,2023-10,39
+sales manager,Tanzania,2023-11,39
+sales manager,Tanzania,2023-12,47
+sales manager,Tanzania,2024-01,34
+sales manager,Tanzania,2024-02,42
+sales manager,Tanzania,2024-03,46
+sales manager,Tanzania,2024-04,32
+sales manager,Tanzania,2024-05,39
+sales manager,Tanzania,2024-06,47
+sales manager,Tanzania,2024-07,33
+sales manager,Tanzania,2024-08,32
+sales manager,Tanzania,2024-09,37
+sales manager,Tanzania,2024-10,36
+sales manager,Tanzania,2024-11,39
+sales manager,Tanzania,2024-12,35
+sales manager,Uganda,2023-10,40
+sales manager,Uganda,2023-11,24
+sales manager,Uganda,2023-12,27
+sales manager,Uganda,2024-01,23
+sales manager,Uganda,2024-02,27
+sales manager,Uganda,2024-03,31
+sales manager,Uganda,2024-04,14
+sales manager,Uganda,2024-05,28
+sales manager,Uganda,2024-06,27
+sales manager,Uganda,2024-07,20
+sales manager,Uganda,2024-08,17
+sales manager,Uganda,2024-09,25
+sales manager,Uganda,2024-10,18
+sales manager,Uganda,2024-11,24
+sales manager,Uganda,2024-12,20
+social media manager,Burundi,2023-11,1
+social media manager,Burundi,2023-12,2
+social media manager,Burundi,2024-01,1
+social media manager,Burundi,2024-02,2
+social media manager,Burundi,2024-05,4
+social media manager,Burundi,2024-06,1
+social media manager,Burundi,2024-08,1
+social media manager,Burundi,2024-09,2
+social media manager,Burundi,2024-10,2
+social media manager,Burundi,2024-11,2
+social media manager,Burundi,2024-12,1
+social media manager,Ethiopia,2023-10,1
+social media manager,Ethiopia,2023-11,1
+social media manager,Ethiopia,2023-12,3
+social media manager,Ethiopia,2024-01,1
+social media manager,Ethiopia,2024-02,1
+social media manager,Ethiopia,2024-03,5
+social media manager,Ethiopia,2024-05,2
+social media manager,Ethiopia,2024-06,3
+social media manager,Ethiopia,2024-09,2
+social media manager,Ethiopia,2024-10,2
+social media manager,Ethiopia,2024-11,6
+social media manager,Ethiopia,2024-12,1
+social media manager,Kenya,2023-10,16
+social media manager,Kenya,2023-11,14
+social media manager,Kenya,2023-12,15
+social media manager,Kenya,2024-01,13
+social media manager,Kenya,2024-02,11
+social media manager,Kenya,2024-03,17
+social media manager,Kenya,2024-04,21
+social media manager,Kenya,2024-05,12
+social media manager,Kenya,2024-06,16
+social media manager,Kenya,2024-07,12
+social media manager,Kenya,2024-08,10
+social media manager,Kenya,2024-09,13
+social media manager,Kenya,2024-10,9
+social media manager,Kenya,2024-11,14
+social media manager,Kenya,2024-12,19
+social media manager,Rwanda,2023-10,9
+social media manager,Rwanda,2023-11,2
+social media manager,Rwanda,2023-12,4
+social media manager,Rwanda,2024-01,2
+social media manager,Rwanda,2024-02,5
+social media manager,Rwanda,2024-03,6
+social media manager,Rwanda,2024-04,5
+social media manager,Rwanda,2024-05,3
+social media manager,Rwanda,2024-06,5
+social media manager,Rwanda,2024-07,3
+social media manager,Rwanda,2024-08,2
+social media manager,Rwanda,2024-09,3
+social media manager,Rwanda,2024-10,4
+social media manager,Rwanda,2024-11,4
+social media manager,Rwanda,2024-12,1
+social media manager,South Sudan,2023-11,2
+social media manager,South Sudan,2023-12,1
+social media manager,South Sudan,2024-01,1
+social media manager,South Sudan,2024-04,1
+social media manager,South Sudan,2024-07,1
+social media manager,South Sudan,2024-11,1
+social media manager,Tanzania,2023-10,6
+social media manager,Tanzania,2023-11,7
+social media manager,Tanzania,2023-12,7
+social media manager,Tanzania,2024-01,8
+social media manager,Tanzania,2024-02,8
+social media manager,Tanzania,2024-03,9
+social media manager,Tanzania,2024-04,8
+social media manager,Tanzania,2024-05,11
+social media manager,Tanzania,2024-06,12
+social media manager,Tanzania,2024-07,7
+social media manager,Tanzania,2024-08,13
+social media manager,Tanzania,2024-09,14
+social media manager,Tanzania,2024-10,8
+social media manager,Tanzania,2024-11,6
+social media manager,Tanzania,2024-12,10
+social media manager,Uganda,2023-10,4
+social media manager,Uganda,2023-11,5
+social media manager,Uganda,2023-12,7
+social media manager,Uganda,2024-01,2
+social media manager,Uganda,2024-02,4
+social media manager,Uganda,2024-03,1
+social media manager,Uganda,2024-04,4
+social media manager,Uganda,2024-05,7
+social media manager,Uganda,2024-06,5
+social media manager,Uganda,2024-07,9
+social media manager,Uganda,2024-08,5
+social media manager,Uganda,2024-09,3
+social media manager,Uganda,2024-10,3
+social media manager,Uganda,2024-11,6
+social media manager,Uganda,2024-12,6
+software developer,Burundi,2023-10,6
+software developer,Burundi,2023-11,4
+software developer,Burundi,2023-12,6
+software developer,Burundi,2024-01,3
+software developer,Burundi,2024-02,5
+software developer,Burundi,2024-03,2
+software developer,Burundi,2024-04,3
+software developer,Burundi,2024-05,6
+software developer,Burundi,2024-06,10
+software developer,Burundi,2024-07,4
+software developer,Burundi,2024-08,7
+software developer,Burundi,2024-09,7
+software developer,Burundi,2024-10,7
+software developer,Burundi,2024-11,7
+software developer,Burundi,2024-12,3
+software developer,Ethiopia,2023-10,6
+software developer,Ethiopia,2023-11,11
+software developer,Ethiopia,2023-12,7
+software developer,Ethiopia,2024-01,16
+software developer,Ethiopia,2024-02,8
+software developer,Ethiopia,2024-03,12
+software developer,Ethiopia,2024-04,6
+software developer,Ethiopia,2024-05,6
+software developer,Ethiopia,2024-06,17
+software developer,Ethiopia,2024-07,12
+software developer,Ethiopia,2024-08,8
+software developer,Ethiopia,2024-09,7
+software developer,Ethiopia,2024-10,5
+software developer,Ethiopia,2024-11,9
+software developer,Ethiopia,2024-12,10
+software developer,Kenya,2023-10,87
+software developer,Kenya,2023-11,64
+software developer,Kenya,2023-12,71
+software developer,Kenya,2024-01,65
+software developer,Kenya,2024-02,66
+software developer,Kenya,2024-03,76
+software developer,Kenya,2024-04,63
+software developer,Kenya,2024-05,84
+software developer,Kenya,2024-06,90
+software developer,Kenya,2024-07,71
+software developer,Kenya,2024-08,60
+software developer,Kenya,2024-09,82
+software developer,Kenya,2024-10,80
+software developer,Kenya,2024-11,73
+software developer,Kenya,2024-12,84
+software developer,Rwanda,2023-10,16
+software developer,Rwanda,2023-11,19
+software developer,Rwanda,2023-12,17
+software developer,Rwanda,2024-01,21
+software developer,Rwanda,2024-02,11
+software developer,Rwanda,2024-03,23
+software developer,Rwanda,2024-04,23
+software developer,Rwanda,2024-05,18
+software developer,Rwanda,2024-06,14
+software developer,Rwanda,2024-07,16
+software developer,Rwanda,2024-08,19
+software developer,Rwanda,2024-09,24
+software developer,Rwanda,2024-10,22
+software developer,Rwanda,2024-11,26
+software developer,Rwanda,2024-12,23
+software developer,South Sudan,2023-10,2
+software developer,South Sudan,2023-11,3
+software developer,South Sudan,2024-01,1
+software developer,South Sudan,2024-02,2
+software developer,South Sudan,2024-03,1
+software developer,South Sudan,2024-05,5
+software developer,South Sudan,2024-06,5
+software developer,South Sudan,2024-07,2
+software developer,South Sudan,2024-08,6
+software developer,South Sudan,2024-09,5
+software developer,South Sudan,2024-10,5
+software developer,South Sudan,2024-11,4
+software developer,South Sudan,2024-12,2
+software developer,Tanzania,2023-10,34
+software developer,Tanzania,2023-11,45
+software developer,Tanzania,2023-12,48
+software developer,Tanzania,2024-01,48
+software developer,Tanzania,2024-02,52
+software developer,Tanzania,2024-03,56
+software developer,Tanzania,2024-04,42
+software developer,Tanzania,2024-05,44
+software developer,Tanzania,2024-06,48
+software developer,Tanzania,2024-07,40
+software developer,Tanzania,2024-08,41
+software developer,Tanzania,2024-09,56
+software developer,Tanzania,2024-10,56
+software developer,Tanzania,2024-11,45
+software developer,Tanzania,2024-12,48
+software developer,Uganda,2023-10,36
+software developer,Uganda,2023-11,29
+software developer,Uganda,2023-12,27
+software developer,Uganda,2024-01,33
+software developer,Uganda,2024-02,17
+software developer,Uganda,2024-03,32
+software developer,Uganda,2024-04,42
+software developer,Uganda,2024-05,38
+software developer,Uganda,2024-06,23
+software developer,Uganda,2024-07,39
+software developer,Uganda,2024-08,35
+software developer,Uganda,2024-09,31
+software developer,Uganda,2024-10,31
+software developer,Uganda,2024-11,32
+software developer,Uganda,2024-12,37
+systems analyst,Burundi,2023-10,4
+systems analyst,Burundi,2023-11,3
+systems analyst,Burundi,2023-12,2
+systems analyst,Burundi,2024-01,6
+systems analyst,Burundi,2024-02,3
+systems analyst,Burundi,2024-03,4
+systems analyst,Burundi,2024-04,4
+systems analyst,Burundi,2024-05,2
+systems analyst,Burundi,2024-06,4
+systems analyst,Burundi,2024-07,5
+systems analyst,Burundi,2024-08,6
+systems analyst,Burundi,2024-09,3
+systems analyst,Burundi,2024-10,4
+systems analyst,Burundi,2024-11,1
+systems analyst,Burundi,2024-12,7
+systems analyst,Ethiopia,2023-10,6
+systems analyst,Ethiopia,2023-11,8
+systems analyst,Ethiopia,2023-12,7
+systems analyst,Ethiopia,2024-01,4
+systems analyst,Ethiopia,2024-02,9
+systems analyst,Ethiopia,2024-03,7
+systems analyst,Ethiopia,2024-04,4
+systems analyst,Ethiopia,2024-05,6
+systems analyst,Ethiopia,2024-06,5
+systems analyst,Ethiopia,2024-07,12
+systems analyst,Ethiopia,2024-08,4
+systems analyst,Ethiopia,2024-09,7
+systems analyst,Ethiopia,2024-10,6
+systems analyst,Ethiopia,2024-11,1
+systems analyst,Ethiopia,2024-12,7
+systems analyst,Kenya,2023-10,35
+systems analyst,Kenya,2023-11,49
+systems analyst,Kenya,2023-12,62
+systems analyst,Kenya,2024-01,72
+systems analyst,Kenya,2024-02,42
+systems analyst,Kenya,2024-03,49
+systems analyst,Kenya,2024-04,48
+systems analyst,Kenya,2024-05,40
+systems analyst,Kenya,2024-06,42
+systems analyst,Kenya,2024-07,58
+systems analyst,Kenya,2024-08,43
+systems analyst,Kenya,2024-09,48
+systems analyst,Kenya,2024-10,46
+systems analyst,Kenya,2024-11,47
+systems analyst,Kenya,2024-12,47
+systems analyst,Rwanda,2023-10,14
+systems analyst,Rwanda,2023-11,12
+systems analyst,Rwanda,2023-12,17
+systems analyst,Rwanda,2024-01,11
+systems analyst,Rwanda,2024-02,6
+systems analyst,Rwanda,2024-03,15
+systems analyst,Rwanda,2024-04,11
+systems analyst,Rwanda,2024-05,13
+systems analyst,Rwanda,2024-06,11
+systems analyst,Rwanda,2024-07,19
+systems analyst,Rwanda,2024-08,10
+systems analyst,Rwanda,2024-09,16
+systems analyst,Rwanda,2024-10,13
+systems analyst,Rwanda,2024-11,7
+systems analyst,Rwanda,2024-12,11
+systems analyst,South Sudan,2023-10,3
+systems analyst,South Sudan,2023-11,2
+systems analyst,South Sudan,2023-12,4
+systems analyst,South Sudan,2024-01,5
+systems analyst,South Sudan,2024-02,2
+systems analyst,South Sudan,2024-03,2
+systems analyst,South Sudan,2024-04,2
+systems analyst,South Sudan,2024-05,8
+systems analyst,South Sudan,2024-07,2
+systems analyst,South Sudan,2024-08,1
+systems analyst,South Sudan,2024-09,5
+systems analyst,South Sudan,2024-10,7
+systems analyst,South Sudan,2024-11,3
+systems analyst,Tanzania,2023-10,20
+systems analyst,Tanzania,2023-11,25
+systems analyst,Tanzania,2023-12,30
+systems analyst,Tanzania,2024-01,42
+systems analyst,Tanzania,2024-02,30
+systems analyst,Tanzania,2024-03,35
+systems analyst,Tanzania,2024-04,21
+systems analyst,Tanzania,2024-05,43
+systems analyst,Tanzania,2024-06,29
+systems analyst,Tanzania,2024-07,36
+systems analyst,Tanzania,2024-08,36
+systems analyst,Tanzania,2024-09,25
+systems analyst,Tanzania,2024-10,26
+systems analyst,Tanzania,2024-11,37
+systems analyst,Tanzania,2024-12,32
+systems analyst,Uganda,2023-10,16
+systems analyst,Uganda,2023-11,15
+systems analyst,Uganda,2023-12,15
+systems analyst,Uganda,2024-01,11
+systems analyst,Uganda,2024-02,17
+systems analyst,Uganda,2024-03,15
+systems analyst,Uganda,2024-04,11
+systems analyst,Uganda,2024-05,18
+systems analyst,Uganda,2024-06,24
+systems analyst,Uganda,2024-07,18
+systems analyst,Uganda,2024-08,19
+systems analyst,Uganda,2024-09,20
+systems analyst,Uganda,2024-10,25
+systems analyst,Uganda,2024-11,11
+systems analyst,Uganda,2024-12,20
+teacher,Burundi,2023-10,7
+teacher,Burundi,2023-11,4
+teacher,Burundi,2023-12,3
+teacher,Burundi,2024-01,5
+teacher,Burundi,2024-02,5
+teacher,Burundi,2024-03,1
+teacher,Burundi,2024-04,4
+teacher,Burundi,2024-05,4
+teacher,Burundi,2024-06,7
+teacher,Burundi,2024-07,6
+teacher,Burundi,2024-08,6
+teacher,Burundi,2024-09,12
+teacher,Burundi,2024-10,3
+teacher,Burundi,2024-11,3
+teacher,Burundi,2024-12,4
+teacher,Ethiopia,2023-10,9
+teacher,Ethiopia,2023-11,8
+teacher,Ethiopia,2023-12,12
+teacher,Ethiopia,2024-01,13
+teacher,Ethiopia,2024-02,6
+teacher,Ethiopia,2024-03,4
+teacher,Ethiopia,2024-04,6
+teacher,Ethiopia,2024-05,9
+teacher,Ethiopia,2024-06,6
+teacher,Ethiopia,2024-07,4
+teacher,Ethiopia,2024-08,7
+teacher,Ethiopia,2024-09,4
+teacher,Ethiopia,2024-10,8
+teacher,Ethiopia,2024-11,8
+teacher,Ethiopia,2024-12,9
+teacher,Kenya,2023-10,49
+teacher,Kenya,2023-11,64
+teacher,Kenya,2023-12,58
+teacher,Kenya,2024-01,57
+teacher,Kenya,2024-02,50
+teacher,Kenya,2024-03,54
+teacher,Kenya,2024-04,51
+teacher,Kenya,2024-05,50
+teacher,Kenya,2024-06,54
+teacher,Kenya,2024-07,62
+teacher,Kenya,2024-08,61
+teacher,Kenya,2024-09,53
+teacher,Kenya,2024-10,59
+teacher,Kenya,2024-11,41
+teacher,Kenya,2024-12,55
+teacher,Rwanda,2023-10,17
+teacher,Rwanda,2023-11,13
+teacher,Rwanda,2023-12,16
+teacher,Rwanda,2024-01,19
+teacher,Rwanda,2024-02,10
+teacher,Rwanda,2024-03,17
+teacher,Rwanda,2024-04,11
+teacher,Rwanda,2024-05,13
+teacher,Rwanda,2024-06,6
+teacher,Rwanda,2024-07,20
+teacher,Rwanda,2024-08,12
+teacher,Rwanda,2024-09,7
+teacher,Rwanda,2024-10,17
+teacher,Rwanda,2024-11,14
+teacher,Rwanda,2024-12,15
+teacher,South Sudan,2023-10,2
+teacher,South Sudan,2023-11,8
+teacher,South Sudan,2023-12,2
+teacher,South Sudan,2024-01,6
+teacher,South Sudan,2024-02,4
+teacher,South Sudan,2024-03,4
+teacher,South Sudan,2024-04,3
+teacher,South Sudan,2024-05,2
+teacher,South Sudan,2024-06,3
+teacher,South Sudan,2024-07,6
+teacher,South Sudan,2024-08,3
+teacher,South Sudan,2024-09,1
+teacher,South Sudan,2024-10,2
+teacher,South Sudan,2024-11,7
+teacher,South Sudan,2024-12,3
+teacher,Tanzania,2023-10,29
+teacher,Tanzania,2023-11,48
+teacher,Tanzania,2023-12,32
+teacher,Tanzania,2024-01,36
+teacher,Tanzania,2024-02,40
+teacher,Tanzania,2024-03,37
+teacher,Tanzania,2024-04,33
+teacher,Tanzania,2024-05,48
+teacher,Tanzania,2024-06,38
+teacher,Tanzania,2024-07,33
+teacher,Tanzania,2024-08,31
+teacher,Tanzania,2024-09,34
+teacher,Tanzania,2024-10,34
+teacher,Tanzania,2024-11,36
+teacher,Tanzania,2024-12,27
+teacher,Uganda,2023-10,17
+teacher,Uganda,2023-11,23
+teacher,Uganda,2023-12,25
+teacher,Uganda,2024-01,17
+teacher,Uganda,2024-02,20
+teacher,Uganda,2024-03,16
+teacher,Uganda,2024-04,24
+teacher,Uganda,2024-05,19
+teacher,Uganda,2024-06,30
+teacher,Uganda,2024-07,22
+teacher,Uganda,2024-08,27
+teacher,Uganda,2024-09,18
+teacher,Uganda,2024-10,31
+teacher,Uganda,2024-11,17
+teacher,Uganda,2024-12,25
+ui/ux designer,Burundi,2023-10,2
+ui/ux designer,Burundi,2023-11,3
+ui/ux designer,Burundi,2024-01,2
+ui/ux designer,Burundi,2024-03,3
+ui/ux designer,Burundi,2024-04,1
+ui/ux designer,Burundi,2024-05,2
+ui/ux designer,Burundi,2024-06,4
+ui/ux designer,Burundi,2024-07,2
+ui/ux designer,Burundi,2024-09,1
+ui/ux designer,Burundi,2024-11,1
+ui/ux designer,Burundi,2024-12,1
+ui/ux designer,Ethiopia,2023-10,1
+ui/ux designer,Ethiopia,2023-11,2
+ui/ux designer,Ethiopia,2024-01,1
+ui/ux designer,Ethiopia,2024-02,1
+ui/ux designer,Ethiopia,2024-03,3
+ui/ux designer,Ethiopia,2024-04,2
+ui/ux designer,Ethiopia,2024-05,1
+ui/ux designer,Ethiopia,2024-06,3
+ui/ux designer,Ethiopia,2024-07,1
+ui/ux designer,Ethiopia,2024-08,1
+ui/ux designer,Ethiopia,2024-09,1
+ui/ux designer,Ethiopia,2024-11,3
+ui/ux designer,Kenya,2023-10,20
+ui/ux designer,Kenya,2023-11,22
+ui/ux designer,Kenya,2023-12,15
+ui/ux designer,Kenya,2024-01,15
+ui/ux designer,Kenya,2024-02,10
+ui/ux designer,Kenya,2024-03,13
+ui/ux designer,Kenya,2024-04,14
+ui/ux designer,Kenya,2024-05,19
+ui/ux designer,Kenya,2024-06,21
+ui/ux designer,Kenya,2024-07,20
+ui/ux designer,Kenya,2024-08,16
+ui/ux designer,Kenya,2024-09,11
+ui/ux designer,Kenya,2024-10,20
+ui/ux designer,Kenya,2024-11,20
+ui/ux designer,Kenya,2024-12,14
+ui/ux designer,Rwanda,2023-10,4
+ui/ux designer,Rwanda,2023-11,3
+ui/ux designer,Rwanda,2023-12,2
+ui/ux designer,Rwanda,2024-01,3
+ui/ux designer,Rwanda,2024-02,3
+ui/ux designer,Rwanda,2024-03,1
+ui/ux designer,Rwanda,2024-04,1
+ui/ux designer,Rwanda,2024-05,6
+ui/ux designer,Rwanda,2024-06,3
+ui/ux designer,Rwanda,2024-07,2
+ui/ux designer,Rwanda,2024-08,3
+ui/ux designer,Rwanda,2024-09,4
+ui/ux designer,Rwanda,2024-10,2
+ui/ux designer,Rwanda,2024-11,3
+ui/ux designer,Rwanda,2024-12,2
+ui/ux designer,South Sudan,2023-11,1
+ui/ux designer,South Sudan,2024-03,2
+ui/ux designer,South Sudan,2024-04,1
+ui/ux designer,South Sudan,2024-05,2
+ui/ux designer,South Sudan,2024-07,2
+ui/ux designer,South Sudan,2024-08,1
+ui/ux designer,Tanzania,2023-10,4
+ui/ux designer,Tanzania,2023-11,7
+ui/ux designer,Tanzania,2023-12,7
+ui/ux designer,Tanzania,2024-01,10
+ui/ux designer,Tanzania,2024-02,13
+ui/ux designer,Tanzania,2024-03,16
+ui/ux designer,Tanzania,2024-04,7
+ui/ux designer,Tanzania,2024-05,10
+ui/ux designer,Tanzania,2024-06,8
+ui/ux designer,Tanzania,2024-07,7
+ui/ux designer,Tanzania,2024-08,8
+ui/ux designer,Tanzania,2024-09,7
+ui/ux designer,Tanzania,2024-10,8
+ui/ux designer,Tanzania,2024-11,9
+ui/ux designer,Tanzania,2024-12,10
+ui/ux designer,Uganda,2023-10,3
+ui/ux designer,Uganda,2023-11,7
+ui/ux designer,Uganda,2023-12,5
+ui/ux designer,Uganda,2024-01,9
+ui/ux designer,Uganda,2024-02,6
+ui/ux designer,Uganda,2024-03,15
+ui/ux designer,Uganda,2024-04,4
+ui/ux designer,Uganda,2024-05,4
+ui/ux designer,Uganda,2024-06,7
+ui/ux designer,Uganda,2024-07,1
+ui/ux designer,Uganda,2024-08,10
+ui/ux designer,Uganda,2024-09,9
+ui/ux designer,Uganda,2024-10,4
+ui/ux designer,Uganda,2024-11,7
+ui/ux designer,Uganda,2024-12,4
+web developer,Burundi,2023-10,4
+web developer,Burundi,2023-11,1
+web developer,Burundi,2023-12,4
+web developer,Burundi,2024-01,2
+web developer,Burundi,2024-03,2
+web developer,Burundi,2024-05,5
+web developer,Burundi,2024-06,4
+web developer,Burundi,2024-07,2
+web developer,Burundi,2024-08,1
+web developer,Burundi,2024-09,3
+web developer,Burundi,2024-10,2
+web developer,Burundi,2024-11,2
+web developer,Burundi,2024-12,1
+web developer,Ethiopia,2023-10,2
+web developer,Ethiopia,2023-11,3
+web developer,Ethiopia,2023-12,3
+web developer,Ethiopia,2024-01,9
+web developer,Ethiopia,2024-02,3
+web developer,Ethiopia,2024-03,7
+web developer,Ethiopia,2024-04,4
+web developer,Ethiopia,2024-05,1
+web developer,Ethiopia,2024-06,9
+web developer,Ethiopia,2024-07,10
+web developer,Ethiopia,2024-08,4
+web developer,Ethiopia,2024-09,5
+web developer,Ethiopia,2024-10,2
+web developer,Ethiopia,2024-11,2
+web developer,Ethiopia,2024-12,6
+web developer,Kenya,2023-10,27
+web developer,Kenya,2023-11,28
+web developer,Kenya,2023-12,34
+web developer,Kenya,2024-01,23
+web developer,Kenya,2024-02,19
+web developer,Kenya,2024-03,33
+web developer,Kenya,2024-04,21
+web developer,Kenya,2024-05,42
+web developer,Kenya,2024-06,34
+web developer,Kenya,2024-07,30
+web developer,Kenya,2024-08,33
+web developer,Kenya,2024-09,29
+web developer,Kenya,2024-10,35
+web developer,Kenya,2024-11,29
+web developer,Kenya,2024-12,38
+web developer,Rwanda,2023-10,6
+web developer,Rwanda,2023-11,6
+web developer,Rwanda,2023-12,10
+web developer,Rwanda,2024-01,10
+web developer,Rwanda,2024-02,5
+web developer,Rwanda,2024-03,15
+web developer,Rwanda,2024-04,15
+web developer,Rwanda,2024-05,6
+web developer,Rwanda,2024-06,7
+web developer,Rwanda,2024-07,5
+web developer,Rwanda,2024-08,10
+web developer,Rwanda,2024-09,13
+web developer,Rwanda,2024-10,10
+web developer,Rwanda,2024-11,10
+web developer,Rwanda,2024-12,8
+web developer,South Sudan,2023-11,1
+web developer,South Sudan,2024-01,1
+web developer,South Sudan,2024-02,2
+web developer,South Sudan,2024-03,1
+web developer,South Sudan,2024-05,1
+web developer,South Sudan,2024-06,1
+web developer,South Sudan,2024-07,1
+web developer,South Sudan,2024-08,3
+web developer,South Sudan,2024-10,1
+web developer,South Sudan,2024-11,2
+web developer,South Sudan,2024-12,1
+web developer,Tanzania,2023-10,17
+web developer,Tanzania,2023-11,19
+web developer,Tanzania,2023-12,19
+web developer,Tanzania,2024-01,23
+web developer,Tanzania,2024-02,23
+web developer,Tanzania,2024-03,29
+web developer,Tanzania,2024-04,15
+web developer,Tanzania,2024-05,15
+web developer,Tanzania,2024-06,20
+web developer,Tanzania,2024-07,18
+web developer,Tanzania,2024-08,23
+web developer,Tanzania,2024-09,21
+web developer,Tanzania,2024-10,24
+web developer,Tanzania,2024-11,16
+web developer,Tanzania,2024-12,17
+web developer,Uganda,2023-10,12
+web developer,Uganda,2023-11,12
+web developer,Uganda,2023-12,10
+web developer,Uganda,2024-01,12
+web developer,Uganda,2024-02,8
+web developer,Uganda,2024-03,15
+web developer,Uganda,2024-04,15
+web developer,Uganda,2024-05,13
+web developer,Uganda,2024-06,10
+web developer,Uganda,2024-07,12
+web developer,Uganda,2024-08,12
+web developer,Uganda,2024-09,12
+web developer,Uganda,2024-10,15
+web developer,Uganda,2024-11,16
+web developer,Uganda,2024-12,14

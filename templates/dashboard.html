@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechPulse EA — Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root {
+  --primary:#2a73cc; --primary-dark:#1a5aaa; --primary-light:#4d8fd9;
+  --primary-pale:#e8f1fb; --accent:#00c896; --accent2:#f97316;
+  --bg:#f6f8fa; --sb-bg:#0f1e35; --white:#fff;
+  --text:#1a2332; --text2:#64748b; --muted:#94a3b8; --border:#e2e8f0;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(42,115,204,.08);
+  --shadow-h:0 8px 32px rgba(42,115,204,.18);
+  --sb-w:236px; --sb-col:64px; --r:12px; --rs:8px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+
+/* ── SIDEBAR ── */
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sb-w);background:var(--sb-bg);z-index:100;display:flex;flex-direction:column;transition:width .3s cubic-bezier(.4,0,.2,1);overflow:hidden}
+.sidebar.col{width:var(--sb-col)}
+.sb-brand{display:flex;align-items:center;gap:10px;padding:0 18px;height:64px;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--primary),#4d8fd9);display:flex;align-items:center;justify-content:center;font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(42,115,204,.4);text-decoration:none}
+.sb-text{transition:opacity .2s;white-space:nowrap;text-decoration:none}
+.sb-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:#fff}
+.sb-sub{font-size:10px;color:rgba(255,255,255,.4)}
+.sidebar.col .sb-text{opacity:0;pointer-events:none}
+.toggle-btn{margin-left:auto;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.1);border:none;color:rgba(255,255,255,.6);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;transition:all .2s}
+.toggle-btn:hover{background:var(--primary);color:#fff}
+.sb-nav{flex:1;padding:12px 0;overflow-y:auto;overflow-x:hidden}
+.sb-label{font-size:9px;font-weight:700;letter-spacing:1.2px;color:rgba(255,255,255,.3);text-transform:uppercase;padding:14px 20px 6px;white-space:nowrap;transition:opacity .2s}
+.sidebar.col .sb-label{opacity:0}
+.nav-item{display:flex;align-items:center;gap:12px;padding:10px 18px;margin:2px 10px;border-radius:8px;cursor:pointer;color:rgba(255,255,255,.6);font-size:13px;font-weight:500;transition:all .2s;white-space:nowrap;text-decoration:none}
+.nav-item:hover{background:rgba(255,255,255,.07);color:#fff}
+.nav-item.active{background:var(--primary);color:#fff;box-shadow:0 4px 12px rgba(42,115,204,.35)}
+.nav-item i{width:18px;text-align:center;font-size:14px;flex-shrink:0}
+.sidebar.col .nav-lbl{opacity:0;pointer-events:none}
+.sb-footer{padding:14px;border-top:1px solid rgba(255,255,255,.07)}
+.sb-user{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px}
+.sb-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--primary-light),var(--accent));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.sb-uinfo{transition:opacity .2s;white-space:nowrap;min-width:0}
+.sb-uname{font-size:12px;font-weight:600;color:rgba(255,255,255,.9)}
+.sb-urole{font-size:10px;color:rgba(255,255,255,.4);overflow:hidden;text-overflow:ellipsis;max-width:130px}
+.sidebar.col .sb-uinfo{opacity:0}
+.sb-logout{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:7px;color:rgba(255,255,255,.4);font-size:12px;text-decoration:none;transition:all .2s;margin-top:2px}
+.sb-logout:hover{background:rgba(239,68,68,.15);color:#f87171}
+
+/* ── MAIN ── */
+.main{margin-left:var(--sb-w);min-height:100vh;display:flex;flex-direction:column;transition:margin-left .3s cubic-bezier(.4,0,.2,1)}
+.main.col{margin-left:var(--sb-col)}
+
+/* ── TOPBAR ── */
+.topbar{background:rgba(246,248,250,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;padding:0 24px}
+.topbar-row1{height:64px;display:flex;align-items:center;gap:12px}
+.topbar-title{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--text);white-space:nowrap}
+.topbar-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.tb-search{position:relative}
+.tb-search input{width:220px;padding:7px 12px 7px 32px;border:1px solid var(--border);border-radius:var(--rs);font-size:12px;font-family:'Inter',sans-serif;background:#fff;outline:none;transition:border-color .2s,box-shadow .2s}
+.tb-search input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(42,115,204,.12)}
+.tb-search i{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:12px}
+.tb-btn{width:34px;height:34px;border-radius:50%;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;color:var(--text2);font-size:13px;transition:all .2s;position:relative}
+.tb-btn:hover{border-color:var(--primary);color:var(--primary)}
+.notif-dot{width:7px;height:7px;background:#ef4444;border-radius:50%;position:absolute;top:5px;right:5px;border:1.5px solid var(--bg)}
+.btn-export{padding:7px 14px;background:var(--primary);color:#fff;border:none;border-radius:var(--rs);cursor:pointer;font-size:12px;font-weight:600;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:6px;transition:all .2s}
+.btn-export:hover{background:var(--primary-dark);transform:translateY(-1px);box-shadow:0 4px 12px rgba(42,115,204,.3)}
+.prof-btn{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;cursor:pointer;box-shadow:0 2px 8px rgba(42,115,204,.3);transition:transform .2s}
+.prof-btn:hover{transform:scale(1.08)}
+.prof-dropdown{display:none;position:absolute;right:0;top:42px;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:200px;z-index:200;overflow:hidden}
+.prof-info{padding:14px 16px;border-bottom:1px solid var(--border)}
+.prof-info .name{font-size:13px;font-weight:600;color:var(--text)}
+.prof-info .email{font-size:11px;color:var(--muted);margin-top:2px}
+.prof-dropdown a{display:flex;align-items:center;gap:8px;padding:11px 16px;font-size:13px;color:#ef4444;text-decoration:none;transition:background .15s}
+.prof-dropdown a:hover{background:#fee2e2}
+
+/* ── FILTER ROW ── */
+.filter-row{display:flex;align-items:center;gap:8px;padding:10px 0 12px;flex-wrap:wrap}
+.f-label{font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;white-space:nowrap}
+.f-select{padding:6px 24px 6px 10px;border:1px solid var(--border);border-radius:var(--rs);font-size:12px;font-family:'Inter',sans-serif;color:var(--text);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2364748b'/%3E%3C/svg%3E") no-repeat right 7px center;appearance:none;outline:none;cursor:pointer;transition:border-color .2s,box-shadow .2s}
+.f-select:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(42,115,204,.12)}
+.f-select.on{border-color:var(--primary);background-color:var(--primary-pale)}
+.f-div{width:1px;height:18px;background:var(--border);margin:0 2px}
+.btn-clear{padding:6px 12px;border:1px solid var(--border);border-radius:var(--rs);font-size:11px;font-weight:600;color:var(--text2);background:none;cursor:pointer;font-family:'Inter',sans-serif;transition:all .2s;display:flex;align-items:center;gap:5px}
+.btn-clear:hover{border-color:#ef4444;color:#ef4444}
+.f-badge{background:var(--primary);color:#fff;font-size:10px;font-weight:700;padding:3px 9px;border-radius:20px;display:none}
+
+/* ── CONTENT ── */
+.content{padding:24px;flex:1}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.sec-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
+.sec-title::before{content:'';width:3px;height:16px;background:var(--primary);border-radius:2px}
+
+/* ── KPI ── */
+.kpi-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-bottom:24px}
+.kpi-card{background:#fff;border-radius:var(--r);padding:18px;box-shadow:var(--shadow);border:1px solid transparent;transition:all .25s cubic-bezier(.4,0,.2,1);animation:fadeUp .4s ease both}
+.kpi-card:nth-child(1){animation-delay:.05s}.kpi-card:nth-child(2){animation-delay:.1s}
+.kpi-card:nth-child(3){animation-delay:.15s}.kpi-card:nth-child(4){animation-delay:.2s}
+.kpi-card:nth-child(5){animation-delay:.25s}
+.kpi-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-h);border-color:rgba(42,115,204,.15)}
+.kpi-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px}
+.kpi-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px}
+.kpi-badge{font-size:10px;font-weight:600;padding:3px 8px;border-radius:20px}
+.kpi-val{font-family:'Josefin Sans',sans-serif;font-size:24px;font-weight:700;color:var(--text);line-height:1;margin-bottom:4px;word-break:break-word}
+.kpi-val.sm{font-size:15px;line-height:1.3}
+.kpi-lbl{font-size:11px;color:var(--muted)}
+
+/* ── CHARTS ── */
+.charts-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+.charts-3{display:grid;grid-template-columns:2fr 1fr 1fr;gap:14px;margin-bottom:24px}
+.ch-card{background:#fff;border-radius:var(--r);padding:18px;box-shadow:var(--shadow);border:1px solid transparent;transition:all .2s}
+.ch-card:hover{box-shadow:var(--shadow-h);border-color:rgba(42,115,204,.1)}
+.ch-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--text);margin-bottom:14px}
+
+/* ── TABLE ── */
+.tbl-card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:24px;overflow:hidden}
+.tbl-toolbar{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px}
+.tbl-search{position:relative}
+.tbl-search input{width:240px;padding:7px 12px 7px 30px;border:1px solid var(--border);border-radius:var(--rs);font-size:12px;outline:none;font-family:'Inter',sans-serif;transition:border-color .2s}
+.tbl-search input:focus{border-color:var(--primary)}
+.tbl-search i{position:absolute;left:9px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:11px}
+.btn-sec{padding:7px 12px;background:#fff;color:var(--text2);border:1px solid var(--border);border-radius:var(--rs);cursor:pointer;font-size:12px;font-weight:600;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:5px;transition:all .2s}
+.btn-sec:hover{border-color:var(--primary);color:var(--primary)}
+.tbl-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:900px}
+thead th{padding:9px 13px;text-align:left;background:#f8fafc;color:var(--text2);font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--border);white-space:nowrap;cursor:pointer;user-select:none;transition:background .15s}
+thead th:hover{background:#f1f5f9;color:var(--primary)}
+tbody td{padding:10px 13px;border-bottom:1px solid #f1f5f9;color:var(--text);vertical-align:middle;white-space:nowrap}
+tbody tr:hover td{background:#fafcff}
+tbody tr:last-child td{border-bottom:none}
+.tag{display:inline-flex;align-items:center;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:600;white-space:nowrap}
+.t-blue{background:#dbeafe;color:#1d4ed8}.t-green{background:#dcfce7;color:#16a34a}
+.t-orange{background:#ffedd5;color:#c2410c}.t-gray{background:#f1f5f9;color:#475569}
+.t-teal{background:#ccfbf1;color:#0f766e}.t-purple{background:#ede9fe;color:#7c3aed}
+.sal{font-weight:700;color:var(--primary);font-family:'Josefin Sans',sans-serif;font-size:12px}
+.tbl-foot{display:flex;align-items:center;justify-content:space-between;padding:10px 18px;border-top:1px solid var(--border);flex-wrap:wrap;gap:8px}
+.pg-info{font-size:12px;color:var(--muted)}
+.pg-btns{display:flex;gap:3px}
+.pg-btn{width:28px;height:28px;border-radius:6px;border:1px solid var(--border);background:none;cursor:pointer;font-size:12px;font-weight:500;color:var(--text2);font-family:'Inter',sans-serif;transition:all .15s;display:flex;align-items:center;justify-content:center}
+.pg-btn:hover,.pg-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.pg-btn:disabled{opacity:.4;cursor:not-allowed}
+
+/* ── MISC ── */
+.empty{padding:36px;text-align:center;color:var(--muted)}
+.empty i{font-size:28px;margin-bottom:8px;opacity:.4;display:block}
+
+/* ── FORECAST CTA BANNER ── */
+.fc-banner{background:linear-gradient(135deg,var(--sb-bg) 0%,#1a3a6b 100%);border-radius:var(--r);padding:22px 28px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;gap:20px;overflow:hidden;position:relative}
+.fc-banner::before{content:'';position:absolute;right:-30px;top:-30px;width:180px;height:180px;border-radius:50%;background:rgba(42,115,204,.15);pointer-events:none}
+.fc-banner::after{content:'';position:absolute;right:80px;bottom:-50px;width:120px;height:120px;border-radius:50%;background:rgba(0,200,150,.08);pointer-events:none}
+.fc-banner-left{display:flex;align-items:center;gap:16px;min-width:0}
+.fc-banner-icon{width:44px;height:44px;border-radius:11px;background:rgba(0,200,150,.15);border:1px solid rgba(0,200,150,.3);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--accent);flex-shrink:0}
+.fc-banner-text h3{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:#fff;margin-bottom:3px}
+.fc-banner-text p{font-size:12px;color:rgba(255,255,255,.5);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fc-preview-cards{display:flex;gap:10px;flex-shrink:0}
+.fc-preview-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:9px;padding:10px 14px;min-width:110px;cursor:pointer;transition:all .2s;text-decoration:none}
+.fc-preview-card:hover{background:rgba(255,255,255,.13);transform:translateY(-2px)}
+.fc-preview-role{font-size:10px;font-weight:700;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.fc-preview-val{font-family:'Josefin Sans',sans-serif;font-size:18px;font-weight:700;color:#fff;line-height:1}
+.fc-preview-sub{font-size:10px;color:rgba(255,255,255,.4);margin-top:2px;display:flex;align-items:center;gap:3px}
+.fc-preview-trend{font-size:10px}
+.fc-trend-up{color:var(--accent)}.fc-trend-down{color:#f87171}.fc-trend-stable{color:rgba(255,255,255,.4)}
+.btn-go-forecast{padding:9px 18px;background:var(--accent);color:#0f1e35;border:none;border-radius:var(--rs);font-size:12px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;display:flex;align-items:center;gap:7px;transition:all .2s;white-space:nowrap;flex-shrink:0;text-decoration:none}
+.btn-go-forecast:hover{background:#00e0aa;transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,200,150,.4)}
+.fc-preview-skeleton{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:9px;min-width:110px;height:62px;animation:fcShimmer 1.4s infinite}
+@keyframes fcShimmer{0%,100%{opacity:.5}50%{opacity:1}}
+@media(max-width:900px){.fc-preview-cards{display:none}}
+@media(max-width:600px){.fc-banner{flex-direction:column;align-items:flex-start}.btn-go-forecast{width:100%;justify-content:center}}
+.toast{position:fixed;bottom:24px;right:24px;background:var(--sb-bg);color:#fff;padding:11px 18px;border-radius:10px;font-size:13px;font-weight:500;z-index:999;box-shadow:0 8px 32px rgba(0,0,0,.25);display:flex;align-items:center;gap:9px;transform:translateY(80px);opacity:0;transition:all .3s cubic-bezier(.4,0,.2,1)}
+.toast.show{transform:translateY(0);opacity:1}
+.ti-ok{color:var(--accent)}.ti-err{color:#ef4444}
+.load-bar{height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));position:fixed;top:0;left:0;z-index:9999;animation:lbar 1.5s ease forwards}
+@keyframes lbar{from{width:0}to{width:100%}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:1200px){.kpi-grid{grid-template-columns:repeat(3,1fr)}.charts-3{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.charts-2,.charts-3{grid-template-columns:1fr}.kpi-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  .sidebar{width:var(--sb-col)}.sidebar .sb-text,.sidebar .nav-lbl,.sidebar .sb-uinfo,.sidebar .sb-label{opacity:0}
+  .main{margin-left:var(--sb-col)}.topbar{padding:0 14px}.content{padding:14px}
+  .tb-search input{width:160px}
+}
+@media(max-width:480px){.kpi-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="load-bar"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sb">
+  <div class="sb-brand">
+    <a href="/" class="sb-logo" title="Home">TP</a>
+    <a href="/" class="sb-text">
+      <div class="sb-title">TechPulse EA</div>
+      <div class="sb-sub">IT Job Forecast</div>
+    </a>
+    <button class="toggle-btn" onclick="toggleSB()"><i class="fas fa-chevron-left" id="tgIcon"></i></button>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-label">Main</div>
+    <div class="nav-item active" data-section="overview"><i class="fas fa-th-large"></i><span class="nav-lbl">Overview</span></div>
+    <a href="/forecast" class="nav-item"><i class="fas fa-brain"></i><span class="nav-lbl">Forecast</span></a>
+    <div class="sb-label">Data</div>
+    <div class="nav-item" data-section="jobs"><i class="fas fa-briefcase"></i><span class="nav-lbl">Job Explorer</span></div>
+    <div class="nav-item" data-section="country"><i class="fas fa-globe-africa"></i><span class="nav-lbl">By Country</span></div>
+  </nav>
+  <div class="sb-footer">
+    <div class="sb-user">
+      <div class="sb-avatar">{{ user_name[:2].upper() }}</div>
+      <div class="sb-uinfo">
+        <div class="sb-uname">{{ user_name }}</div>
+        <div class="sb-urole">{{ user_email }}</div>
+      </div>
+    </div>
+    <a href="/auth/logout" class="sb-logout"><i class="fas fa-sign-out-alt"></i><span class="sb-uinfo">Log Out</span></a>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<div class="main" id="main">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-row1">
+      <div class="topbar-title">Dashboard</div>
+      <div class="topbar-right">
+        <div class="tb-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="gSearch" placeholder="Search jobs, companies…" oninput="applyFilters()">
+        </div>
+        <div class="tb-btn" title="Refresh" onclick="refreshAll()"><i class="fas fa-sync-alt" id="rIcon"></i></div>
+        <button class="btn-export" onclick="exportCSV()"><i class="fas fa-download"></i> Export</button>
+        <div style="position:relative" id="profWrap">
+          <div class="prof-btn" onclick="toggleProf()">{{ user_name[:2].upper() }}</div>
+          <div class="prof-dropdown" id="profDrop">
+            <div class="prof-info">
+              <div class="name">{{ user_name }}</div>
+              <div class="email">{{ user_email }}</div>
+            </div>
+            <a href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filter-row">
+      <span class="f-label">Filter:</span>
+      <select class="f-select" id="fCountry" onchange="applyFilters()">
+        <option value="">All Countries</option>
+      </select>
+      <div class="f-div"></div>
+      <select class="f-select" id="fJobType" onchange="applyFilters()">
+        <option value="">All Job Types</option>
+      </select>
+      <div class="f-div"></div>
+      <select class="f-select" id="fExp" onchange="applyFilters()">
+        <option value="">All Experience Levels</option>
+      </select>
+      <div class="f-div"></div>
+      <select class="f-select" id="fRemote" onchange="applyFilters()">
+        <option value="">Remote: Any</option>
+      </select>
+      <button class="btn-clear" onclick="clearFilters()"><i class="fas fa-times"></i> Clear</button>
+      <span class="f-badge" id="fBadge"></span>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- KPI CARDS -->
+    <div class="sec-head" id="sec-overview">
+      <div class="sec-title">Summary Metrics</div>
+    </div>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-head">
+          <div class="kpi-icon" style="background:#dbeafe;color:#2a73cc"><i class="fas fa-briefcase"></i></div>
+          <span class="kpi-badge" style="background:var(--primary-pale);color:var(--primary)">Total</span>
+        </div>
+        <div class="kpi-val" id="kJobs">{{ "{:,}".format(total_jobs) }}</div>
+        <div class="kpi-lbl">Job Postings</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-head">
+          <div class="kpi-icon" style="background:#dcfce7;color:#16a34a"><i class="fas fa-dollar-sign"></i></div>
+          <span class="kpi-badge" style="background:#dcfce7;color:#16a34a">Avg</span>
+        </div>
+        <div class="kpi-val" id="kSalary">${{ "{:,}".format(avg_salary) }}</div>
+        <div class="kpi-lbl">Average Salary (USD)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-head">
+          <div class="kpi-icon" style="background:#ede9fe;color:#7c3aed"><i class="fas fa-globe-africa"></i></div>
+          <span class="kpi-badge" style="background:#ede9fe;color:#7c3aed">EA</span>
+        </div>
+        <div class="kpi-val" id="kCountries">{{ countries }}</div>
+        <div class="kpi-lbl">Countries Covered</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-head">
+          <div class="kpi-icon" style="background:#ccfbf1;color:#0f766e"><i class="fas fa-laptop-house"></i></div>
+          <span class="kpi-badge" style="background:#ccfbf1;color:#0f766e">Remote</span>
+        </div>
+        <div class="kpi-val" id="kRemote">{{ remote_pct }}%</div>
+        <div class="kpi-lbl">Remote-Friendly</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-head">
+          <div class="kpi-icon" style="background:#ffedd5;color:#c2410c"><i class="fas fa-star"></i></div>
+          <span class="kpi-badge" style="background:#ffedd5;color:#c2410c">#1</span>
+        </div>
+        <div class="kpi-val sm" id="kRole">{{ top_role }}</div>
+        <div class="kpi-lbl">Top Role</div>
+      </div>
+    </div>
+
+    <!-- CHARTS ROW 1 -->
+    <div class="charts-2">
+      <div class="ch-card">
+        <div class="ch-title">Average Salary by Year</div>
+        <div style="height:185px"><canvas id="cSalary"></canvas></div>
+      </div>
+      <div class="ch-card" id="sec-country">
+        <div class="ch-title">Jobs by Country</div>
+        <div style="height:185px"><canvas id="cCountry"></canvas></div>
+      </div>
+    </div>
+
+    <!-- CHARTS ROW 2 -->
+    <div class="charts-3">
+      <div class="ch-card">
+        <div class="ch-title">Top 10 Job Roles</div>
+        <div style="height:200px"><canvas id="cRoles"></canvas></div>
+      </div>
+      <div class="ch-card">
+        <div class="ch-title">Experience Level</div>
+        <div style="height:200px"><canvas id="cExp"></canvas></div>
+      </div>
+      <div class="ch-card">
+        <div class="ch-title">Job Type</div>
+        <div style="height:200px"><canvas id="cType"></canvas></div>
+      </div>
+    </div>
+
+    <!-- FORECAST CTA BANNER -->
+    <div class="fc-banner" id="fcBanner">
+      <div class="fc-banner-left">
+        <div class="fc-banner-icon"><i class="fas fa-brain"></i></div>
+        <div class="fc-banner-text">
+          <h3>Prophet Demand Forecasting</h3>
+          <p>Predict job demand by role &amp; country using pre-trained ML models</p>
+        </div>
+      </div>
+      <!-- Top-3 demand preview cards (populated by JS) -->
+      <div class="fc-preview-cards" id="fcPreviewCards">
+        <div class="fc-preview-skeleton"></div>
+        <div class="fc-preview-skeleton"></div>
+        <div class="fc-preview-skeleton"></div>
+      </div>
+      <a href="/forecast" class="btn-go-forecast">
+        <i class="fas fa-bolt"></i> Open Forecast
+      </a>
+    </div>
+
+    <!-- TABLE -->
+    <div class="sec-head" id="sec-jobs">
+      <div class="sec-title">Job Listings Explorer</div>
+      <div id="tblCount" style="font-size:12px;color:var(--muted)"></div>
+    </div>
+    <div class="tbl-card">
+      <div class="tbl-toolbar">
+        <div class="tbl-search">
+          <i class="fas fa-search"></i>
+          <input type="text" id="tblSearch" placeholder="Filter by title, company, country…" oninput="applyFilters()">
+        </div>
+        <button class="btn-sec" onclick="exportCSV()"><i class="fas fa-file-csv"></i> Export CSV</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead id="tHead"></thead>
+          <tbody id="tBody">
+            <tr><td colspan="10"><div class="empty"><i class="fas fa-spinner fa-spin"></i><p>Loading…</p></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tbl-foot">
+        <div class="pg-info" id="pgInfo">—</div>
+        <div class="pg-btns" id="pgBtns"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <i class="fas fa-check-circle" id="toastIcon"></i>
+  <span id="toastMsg">Done</span>
+</div>
+
+<script>
+// ── CONSTANTS ──
+const PAL  = ['#2a73cc','#00c896','#f97316','#a855f7','#f59e0b','#ef4444','#10b981','#06b6d4','#ec4899','#84cc16'];
+const TT   = {backgroundColor:'#0f1e35',titleColor:'#fff',bodyColor:'rgba(255,255,255,.75)',cornerRadius:8,padding:10};
+const COLS = ['job_id','job_title','company','country','industry','salary_range_usd','experience_level','job_type','remote_work_option','application_deadline'];
+const CLBL = {job_id:'ID',job_title:'Job Title',company:'Company',country:'Country',industry:'Industry',salary_range_usd:'Salary (USD)',experience_level:'Experience',job_type:'Type',remote_work_option:'Remote',application_deadline:'Deadline'};
+const PAGE = 15;
+
+// ── STATE ──
+let allJobs=[], filtered=[], charts={};
+let curPage=1, sortCol=null, sortDir=1;
+let filters={country:'',jobType:'',exp:'',remote:''};
+let headBuilt=false;
+
+// ── SALARY TREND DATA (fetched once from server, uses pandas to_datetime) ──
+// Cached full-dataset trend from /api/chart/salary-trend.
+// When filters are active we recompute client-side from filtered rows,
+// falling back to the server data when no filters are applied.
+let salaryTrendFull = { labels: [], values: [] };
+
+// ── SIDEBAR ──
+let sbCol=false;
+function toggleSB(){
+  sbCol=!sbCol;
+  document.getElementById('sb').classList.toggle('col',sbCol);
+  document.getElementById('main').classList.toggle('col',sbCol);
+  document.getElementById('tgIcon').className=sbCol?'fas fa-chevron-right':'fas fa-chevron-left';
+}
+
+// ── NAV ──
+document.querySelectorAll('.nav-item[data-section]').forEach(el=>el.addEventListener('click',function(){
+  document.querySelectorAll('.nav-item').forEach(e=>e.classList.remove('active'));
+  this.classList.add('active');
+  const map={overview:'sec-overview',jobs:'sec-jobs',country:'sec-country'};
+  const t=document.getElementById(map[this.dataset.section]);
+  if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+  if(this.dataset.section==='jobs') setTimeout(()=>document.getElementById('tblSearch').focus(),500);
+  if(this.dataset.section==='country'){
+    t.style.boxShadow='0 0 0 3px rgba(42,115,204,.4)';
+    setTimeout(()=>t.style.boxShadow='',1500);
+  }
+}));
+
+// ── PROFILE ──
+function toggleProf(){
+  const d=document.getElementById('profDrop');
+  d.style.display=d.style.display==='block'?'none':'block';
+}
+document.addEventListener('click',e=>{
+  if(!document.getElementById('profWrap').contains(e.target))
+    document.getElementById('profDrop').style.display='none';
+});
+
+// ── TOAST ──
+function toast(msg,type='ok'){
+  document.getElementById('toastMsg').textContent=msg;
+  document.getElementById('toastIcon').className=type==='ok'?'fas fa-check-circle ti-ok':'fas fa-exclamation-circle ti-err';
+  const t=document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+// ── POPULATE DROPDOWNS FROM DATASET ──
+function populateDropdowns(jobs){
+  const unique=key=>[...new Set(jobs.map(j=>j[key]).filter(v=>v&&v!=='—'))].sort();
+  const fill=(id,vals)=>{
+    const sel=document.getElementById(id);
+    while(sel.options.length>1) sel.remove(1);
+    vals.forEach(v=>sel.add(new Option(v,v)));
+  };
+  fill('fCountry', unique('country'));
+  fill('fJobType', unique('job_type'));
+  fill('fExp',     unique('experience_level'));
+  fill('fRemote',  unique('remote_work_option'));
+}
+
+// ── APPLY FILTERS ──
+function applyFilters(){
+  filters.country = document.getElementById('fCountry').value;
+  filters.jobType = document.getElementById('fJobType').value;
+  filters.exp     = document.getElementById('fExp').value;
+  filters.remote  = document.getElementById('fRemote').value;
+  const q = (document.getElementById('tblSearch').value||document.getElementById('gSearch').value).toLowerCase();
+
+  filtered = allJobs.filter(r=>{
+    if(filters.country && r.country           !== filters.country) return false;
+    if(filters.jobType && r.job_type          !== filters.jobType) return false;
+    if(filters.exp     && r.experience_level  !== filters.exp)     return false;
+    if(filters.remote  && r.remote_work_option!== filters.remote)  return false;
+    if(q && !Object.values(r).some(v=>String(v||'').toLowerCase().includes(q))) return false;
+    return true;
+  });
+
+  // Mark active selects
+  ['fCountry','fJobType','fExp','fRemote'].forEach(id=>{
+    document.getElementById(id).classList.toggle('on',!!document.getElementById(id).value);
+  });
+
+  // Badge count
+  const n=Object.values(filters).filter(Boolean).length;
+  const b=document.getElementById('fBadge');
+  b.textContent=n?`${n} filter${n>1?'s':''} active`:'';
+  b.style.display=n?'inline-block':'none';
+
+  curPage=1;
+  renderTable();
+  rebuildCharts();
+  updateKPIs();
+}
+
+function clearFilters(){
+  ['fCountry','fJobType','fExp','fRemote'].forEach(id=>{
+    document.getElementById(id).value='';
+    document.getElementById(id).classList.remove('on');
+  });
+  document.getElementById('tblSearch').value='';
+  document.getElementById('gSearch').value='';
+  document.getElementById('fBadge').style.display='none';
+  filters={country:'',jobType:'',exp:'',remote:''};
+  filtered=[...allJobs];
+  curPage=1;
+  renderTable();
+  rebuildCharts();
+  updateKPIs();
+}
+
+// ── KPI UPDATE ──
+function updateKPIs(){
+  document.getElementById('kJobs').textContent=filtered.length.toLocaleString();
+  const sals=filtered.map(j=>{
+    const p=(j.salary_range_usd||'').split('-');
+    return p.length===2?(parseFloat(p[0])+parseFloat(p[1]))/2:NaN;
+  }).filter(v=>!isNaN(v));
+  const avg=sals.length?Math.round(sals.reduce((a,b)=>a+b,0)/sals.length):0;
+  document.getElementById('kSalary').textContent=avg?'$'+avg.toLocaleString():'—';
+  document.getElementById('kCountries').textContent=new Set(filtered.map(j=>j.country).filter(Boolean)).size;
+  const rem=filtered.filter(j=>(j.remote_work_option||'').toLowerCase()==='yes').length;
+  document.getElementById('kRemote').textContent=filtered.length?(rem/filtered.length*100).toFixed(1)+'%':'—';
+  const roles={};
+  filtered.forEach(j=>{ if(j.job_title) roles[j.job_title]=(roles[j.job_title]||0)+1; });
+  const top=Object.entries(roles).sort((a,b)=>b[1]-a[1])[0];
+  document.getElementById('kRole').textContent=top?top[0]:'—';
+}
+
+// ── SALARY TREND: client-side computation for filtered subsets ──
+// Tries common date formats: YYYY-MM-DD, MM/DD/YYYY, DD/MM/YYYY, YYYY/MM/DD
+function extractYear(dateStr) {
+  if (!dateStr || dateStr === '—') return null;
+  const s = String(dateStr).trim();
+
+  // ISO: 2024-03-15  or  2024/03/15
+  let m = s.match(/^(\d{4})[-\/]\d{2}[-\/]\d{2}/);
+  if (m) return m[1];
+
+  // MM/DD/YYYY or DD/MM/YYYY — year is always the last 4-digit group
+  m = s.match(/\d{1,2}[\/\-]\d{1,2}[\/\-](\d{4})/);
+  if (m) return m[1];
+
+  // Bare year
+  m = s.match(/^(\d{4})$/);
+  if (m) return m[1];
+
+  return null;
+}
+
+function salaryTrendFromFiltered(rows) {
+  const byY = {};
+  rows.forEach(j => {
+    const y = extractYear(j.posting_date);
+    const p = (j.salary_range_usd || '').split('-');
+    if (y && p.length === 2) {
+      const mid = (parseFloat(p[0]) + parseFloat(p[1])) / 2;
+      if (!isNaN(mid)) {
+        if (!byY[y]) byY[y] = [];
+        byY[y].push(mid);
+      }
+    }
+  });
+  const yrs = Object.keys(byY).sort();
+  return {
+    labels: yrs,
+    values: yrs.map(y => Math.round(byY[y].reduce((a, b) => a + b, 0) / byY[y].length))
+  };
+}
+
+// ── CHARTS ──
+function countBy(key,limit=0){
+  const m={};
+  filtered.forEach(j=>{ const v=j[key]; if(v&&v!=='—') m[v]=(m[v]||0)+1; });
+  const sorted=Object.entries(m).sort((a,b)=>b[1]-a[1]);
+  return limit?sorted.slice(0,limit):sorted;
+}
+
+function destroyChart(id){ if(charts[id]){ charts[id].destroy(); delete charts[id]; } }
+
+function rebuildCharts(){
+  // ── Average Salary by Year ──
+  // Use full server-computed trend when no filters are active (most accurate,
+  // because app.py uses pandas to_datetime which handles any date format).
+  // When filters narrow the dataset, recompute client-side from filtered rows.
+  const isFiltered = filtered.length < allJobs.length;
+  const trend = isFiltered ? salaryTrendFromFiltered(filtered) : salaryTrendFull;
+
+  destroyChart('cSalary');
+  charts.cSalary = new Chart(document.getElementById('cSalary'), {
+    type: 'line',
+    data: {
+      labels: trend.labels,
+      datasets: [{
+        data: trend.values,
+        borderColor: '#2a73cc',
+        backgroundColor: 'rgba(42,115,204,.1)',
+        borderWidth: 2.5,
+        fill: true,
+        tension: 0.4,
+        pointRadius: 4,
+        pointHoverRadius: 7,
+        pointBackgroundColor: '#2a73cc',
+        pointBorderColor: '#fff',
+        pointBorderWidth: 2
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: { ...TT, callbacks: { label: c => ' $' + Number(c.raw).toLocaleString() } }
+      },
+      scales: {
+        x: { grid: { color: 'rgba(0,0,0,.04)' }, ticks: { font: { size: 10 }, color: '#94a3b8' } },
+        y: {
+          grid: { color: 'rgba(0,0,0,.04)' },
+          ticks: { font: { size: 10 }, color: '#94a3b8', callback: v => '$' + Number(v).toLocaleString() },
+          beginAtZero: false
+        }
+      }
+    }
+  });
+
+  // Country doughnut
+  const cD=countBy('country');
+  destroyChart('cCountry');
+  charts.cCountry=new Chart(document.getElementById('cCountry'),{
+    type:'doughnut',
+    data:{labels:cD.map(d=>d[0]),datasets:[{data:cD.map(d=>d[1]),backgroundColor:PAL.slice(0,cD.length),borderWidth:3,borderColor:'#fff',hoverOffset:6}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{position:'right',labels:{font:{size:10},usePointStyle:true,padding:10}},tooltip:{...TT}}}
+  });
+
+  // Roles bar
+  const rD=countBy('job_title',10);
+  destroyChart('cRoles');
+  charts.cRoles=new Chart(document.getElementById('cRoles'),{
+    type:'bar',
+    data:{labels:rD.map(d=>d[0]),datasets:[{data:rD.map(d=>d[1]),backgroundColor:PAL.slice(0,rD.length),borderRadius:4,borderSkipped:false}]},
+    options:{responsive:true,maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{display:false},tooltip:{...TT}},
+      scales:{x:{grid:{color:'rgba(0,0,0,.04)'},ticks:{font:{size:10},color:'#94a3b8'}},y:{grid:{display:false},ticks:{font:{size:10},color:'#475569'}}}}
+  });
+
+  // Experience doughnut
+  const eD=countBy('experience_level');
+  destroyChart('cExp');
+  charts.cExp=new Chart(document.getElementById('cExp'),{
+    type:'doughnut',
+    data:{labels:eD.map(d=>d[0]),datasets:[{data:eD.map(d=>d[1]),backgroundColor:PAL.slice(0,eD.length),borderWidth:3,borderColor:'#fff',hoverOffset:6}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{position:'right',labels:{font:{size:10},usePointStyle:true,padding:8}},tooltip:{...TT}}}
+  });
+
+  // Job type doughnut
+  const tD=countBy('job_type');
+  destroyChart('cType');
+  charts.cType=new Chart(document.getElementById('cType'),{
+    type:'doughnut',
+    data:{labels:tD.map(d=>d[0]),datasets:[{data:tD.map(d=>d[1]),backgroundColor:PAL.slice(0,tD.length),borderWidth:3,borderColor:'#fff',hoverOffset:6}]},
+    options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{legend:{position:'right',labels:{font:{size:10},usePointStyle:true,padding:8}},tooltip:{...TT}}}
+  });
+}
+
+// ── TABLE ──
+function renderTable(){
+  const cols=COLS.filter(c=>allJobs[0]&&c in allJobs[0]);
+  if(!headBuilt){
+    document.getElementById('tHead').innerHTML='<tr>'+
+      cols.map((c,i)=>`<th onclick="sortBy(${i},'${c}')">${CLBL[c]||c} <i class="fas fa-sort" style="font-size:9px;opacity:.5"></i></th>`).join('')+'</tr>';
+    headBuilt=true;
+  }
+  const rows=filtered.slice((curPage-1)*PAGE,curPage*PAGE);
+  document.getElementById('tBody').innerHTML=rows.length
+    ?rows.map(r=>'<tr>'+cols.map(c=>`<td>${renderCell(c,r[c]||'—')}</td>`).join('')+'</tr>').join('')
+    :`<tr><td colspan="${cols.length}"><div class="empty"><i class="fas fa-search"></i><p>No matching records.</p></div></td></tr>`;
+
+  const total=filtered.length,pages=Math.max(1,Math.ceil(total/PAGE));
+  const s=(curPage-1)*PAGE+1,e=Math.min(curPage*PAGE,total);
+  document.getElementById('pgInfo').textContent=`Showing ${s.toLocaleString()}–${e.toLocaleString()} of ${total.toLocaleString()} records`;
+  document.getElementById('tblCount').textContent=total.toLocaleString()+' records';
+
+  const nums=[];
+  if(pages<=7){for(let i=1;i<=pages;i++)nums.push(i);}
+  else{nums.push(1);if(curPage>3)nums.push('…');for(let i=Math.max(2,curPage-1);i<=Math.min(pages-1,curPage+1);i++)nums.push(i);if(curPage<pages-2)nums.push('…');nums.push(pages);}
+  document.getElementById('pgBtns').innerHTML=
+    `<button class="pg-btn" ${curPage===1?'disabled':''} onclick="goPage(${curPage-1})"><i class="fas fa-chevron-left"></i></button>`+
+    nums.map(p=>p==='…'?`<button class="pg-btn" disabled>…</button>`:`<button class="pg-btn ${p===curPage?'active':''}" onclick="goPage(${p})">${p}</button>`).join('')+
+    `<button class="pg-btn" ${curPage===pages?'disabled':''} onclick="goPage(${curPage+1})"><i class="fas fa-chevron-right"></i></button>`;
+}
+
+function renderCell(col,v){
+  if(col==='job_id')           return `<span style="font-size:10px;font-weight:700;color:#94a3b8">${v}</span>`;
+  if(col==='job_title')        return `<span style="font-weight:600">${v}</span>`;
+  if(col==='salary_range_usd') return `<span class="sal">$${v}</span>`;
+  if(col==='experience_level'){const m={'Entry-Level':'t-green','Mid-Level':'t-blue','Senior':'t-purple','Executive':'t-orange'};return `<span class="tag ${m[v]||'t-gray'}">${v}</span>`;}
+  if(col==='job_type'){const m={'Full-time':'t-blue','Remote':'t-green','Contract':'t-orange','Hybrid':'t-teal','Part-time':'t-gray'};return `<span class="tag ${m[v]||'t-gray'}">${v}</span>`;}
+  if(col==='remote_work_option'){const m={'Yes':'t-green','No':'t-gray','Hybrid':'t-teal'};return `<span class="tag ${m[v]||'t-gray'}">${v}</span>`;}
+  if(col==='application_deadline') return `<span style="font-size:11px;color:var(--muted)">${v}</span>`;
+  return v;
+}
+
+function goPage(p){curPage=Math.max(1,Math.min(p,Math.ceil(filtered.length/PAGE)));renderTable();}
+
+function sortBy(idx,col){
+  if(sortCol===col)sortDir*=-1;else{sortCol=col;sortDir=1;}
+  filtered.sort((a,b)=>{
+    const va=a[col]||'',vb=b[col]||'';
+    if(!isNaN(va)&&!isNaN(vb))return(Number(va)-Number(vb))*sortDir;
+    return String(va).localeCompare(String(vb))*sortDir;
+  });
+  curPage=1;renderTable();
+}
+
+// ── EXPORT ──
+function exportCSV(){
+  if(!filtered.length){toast('No data to export','err');return;}
+  const cols=COLS.filter(c=>c in (filtered[0]||{}));
+  const rows=[cols.map(c=>CLBL[c]||c).join(','),...filtered.map(r=>cols.map(c=>`"${String(r[c]||'').replace(/"/g,'""')}"`).join(','))];
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(new Blob([rows.join('\n')],{type:'text/csv'}));
+  a.download='techpulse_jobs.csv';a.click();
+  toast(`Exported ${filtered.length.toLocaleString()} records`);
+}
+
+// ── LOAD DATA ──
+// Fetches jobs AND the server-computed salary trend in parallel.
+async function loadData(){
+  try{
+    // Fetch both endpoints concurrently
+    const [jobsRes, trendRes] = await Promise.all([
+      fetch('/api/jobs'),
+      fetch('/api/chart/salary-trend')
+    ]);
+
+    if(!jobsRes.ok)  throw new Error('Jobs API: ' + jobsRes.statusText);
+    if(!trendRes.ok) throw new Error('Trend API: ' + trendRes.statusText);
+
+    allJobs = await jobsRes.json();
+    const trendData = await trendRes.json();
+
+    // Cache the server-computed trend (pandas to_datetime handles any date format)
+    salaryTrendFull = {
+      labels: trendData.labels.map(String),
+      values: trendData.values.map(Math.round)
+    };
+
+    filtered = [...allJobs];
+    populateDropdowns(allJobs);
+    renderTable();
+    rebuildCharts();
+  }catch(e){
+    console.error(e);
+    toast('Failed to load data','err');
+    document.getElementById('tBody').innerHTML=`<tr><td colspan="10"><div class="empty"><i class="fas fa-exclamation-triangle"></i><p>Could not reach API — is Flask running?</p></div></td></tr>`;
+  }
+}
+
+async function refreshAll(){
+  const icon=document.getElementById('rIcon');
+  icon.classList.add('fa-spin');
+  headBuilt=false;
+  allJobs=[];filtered=[];salaryTrendFull={labels:[],values:[]};
+  document.getElementById('tHead').innerHTML='';
+  await loadData();
+  icon.classList.remove('fa-spin');
+  toast('Dashboard refreshed');
+}
+
+// ── FORECAST PREVIEW BANNER ──
+// Fetches /api/forecast/summary and renders the top-3 most in-demand
+// (job, country) combos as clickable mini cards in the banner.
+async function loadForecastPreview(){
+  try {
+    const res  = await fetch('/api/forecast/summary');
+    if (!res.ok) return;
+    const data = await res.json();
+
+    // Pick top 3 by last_demand descending
+    const top3 = data
+      .filter(d => d.last_demand != null)
+      .sort((a, b) => (b.last_demand ?? 0) - (a.last_demand ?? 0))
+      .slice(0, 3);
+
+    if (!top3.length) {
+      document.getElementById('fcPreviewCards').innerHTML = '';
+      return;
+    }
+
+    const tIcon  = t => t === 'up' ? 'fa-arrow-trend-up fc-trend-up' : t === 'down' ? 'fa-arrow-trend-down fc-trend-down' : 'fa-minus fc-trend-stable';
+    const params = d => `?job=${encodeURIComponent(d.job_title)}&country=${encodeURIComponent(d.country)}`;
+
+    document.getElementById('fcPreviewCards').innerHTML = top3.map(d => `
+      <a class="fc-preview-card" href="/forecast${params(d)}">
+        <div class="fc-preview-role">${d.job_title}</div>
+        <div class="fc-preview-val">${d.last_demand}</div>
+        <div class="fc-preview-sub">
+          <i class="fas ${tIcon(d.trend_12m)} fc-preview-trend"></i>
+          ${d.country} · ${d.last_month ?? ''}
+        </div>
+      </a>`).join('');
+  } catch(_) {
+    // Silently fail — the banner still shows with just the CTA button
+    document.getElementById('fcPreviewCards').innerHTML = '';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  loadData();
+  loadForecastPreview();
+});
+</script>
+</body>
+</html>

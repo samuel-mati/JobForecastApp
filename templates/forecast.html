@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechPulse EA — Forecast</title>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+/* ── DESIGN TOKENS (mirrored from dashboard.html) ── */
+:root {
+  --primary:#2a73cc; --primary-dark:#1a5aaa; --primary-light:#4d8fd9;
+  --primary-pale:#e8f1fb; --accent:#00c896; --accent2:#f97316;
+  --accent3:#a855f7;
+  --bg:#f6f8fa; --sb-bg:#0f1e35; --white:#fff;
+  --text:#1a2332; --text2:#64748b; --muted:#94a3b8; --border:#e2e8f0;
+  --shadow:0 1px 3px rgba(0,0,0,.06),0 4px 16px rgba(42,115,204,.08);
+  --shadow-h:0 8px 32px rgba(42,115,204,.18);
+  --sb-w:236px; --sb-col:64px; --r:12px; --rs:8px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+
+/* ── SIDEBAR (identical to dashboard) ── */
+.sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--sb-w);background:var(--sb-bg);z-index:100;display:flex;flex-direction:column;transition:width .3s cubic-bezier(.4,0,.2,1);overflow:hidden}
+.sidebar.col{width:var(--sb-col)}
+.sb-brand{display:flex;align-items:center;gap:10px;padding:0 18px;height:64px;border-bottom:1px solid rgba(255,255,255,.07)}
+.sb-logo{width:34px;height:34px;border-radius:8px;background:linear-gradient(135deg,var(--primary),#4d8fd9);display:flex;align-items:center;justify-content:center;font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(42,115,204,.4);text-decoration:none}
+.sb-text{transition:opacity .2s;white-space:nowrap;text-decoration:none}
+.sb-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:#fff}
+.sb-sub{font-size:10px;color:rgba(255,255,255,.4)}
+.sidebar.col .sb-text{opacity:0;pointer-events:none}
+.toggle-btn{margin-left:auto;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.1);border:none;color:rgba(255,255,255,.6);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:10px;flex-shrink:0;transition:all .2s}
+.toggle-btn:hover{background:var(--primary);color:#fff}
+.sb-nav{flex:1;padding:12px 0;overflow-y:auto;overflow-x:hidden}
+.sb-label{font-size:9px;font-weight:700;letter-spacing:1.2px;color:rgba(255,255,255,.3);text-transform:uppercase;padding:14px 20px 6px;white-space:nowrap;transition:opacity .2s}
+.sidebar.col .sb-label{opacity:0}
+.nav-item{display:flex;align-items:center;gap:12px;padding:10px 18px;margin:2px 10px;border-radius:8px;cursor:pointer;color:rgba(255,255,255,.6);font-size:13px;font-weight:500;transition:all .2s;white-space:nowrap;text-decoration:none}
+.nav-item:hover{background:rgba(255,255,255,.07);color:#fff}
+.nav-item.active{background:var(--primary);color:#fff;box-shadow:0 4px 12px rgba(42,115,204,.35)}
+.nav-item i{width:18px;text-align:center;font-size:14px;flex-shrink:0}
+.sidebar.col .nav-lbl{opacity:0;pointer-events:none}
+.sb-footer{padding:14px;border-top:1px solid rgba(255,255,255,.07)}
+.sb-user{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px}
+.sb-avatar{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,var(--primary-light),var(--accent));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0}
+.sb-uinfo{transition:opacity .2s;white-space:nowrap;min-width:0}
+.sb-uname{font-size:12px;font-weight:600;color:rgba(255,255,255,.9)}
+.sb-urole{font-size:10px;color:rgba(255,255,255,.4);overflow:hidden;text-overflow:ellipsis;max-width:130px}
+.sidebar.col .sb-uinfo{opacity:0}
+.sb-logout{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:7px;color:rgba(255,255,255,.4);font-size:12px;text-decoration:none;transition:all .2s;margin-top:2px}
+.sb-logout:hover{background:rgba(239,68,68,.15);color:#f87171}
+
+/* ── MAIN ── */
+.main{margin-left:var(--sb-w);min-height:100vh;display:flex;flex-direction:column;transition:margin-left .3s cubic-bezier(.4,0,.2,1)}
+.main.col{margin-left:var(--sb-col)}
+
+/* ── TOPBAR ── */
+.topbar{background:rgba(246,248,250,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;padding:0 24px;height:64px;display:flex;align-items:center;gap:12px}
+.topbar-title{font-family:'Josefin Sans',sans-serif;font-size:17px;font-weight:700;color:var(--text)}
+.topbar-right{margin-left:auto;display:flex;align-items:center;gap:8px}
+.prof-btn{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;cursor:pointer;box-shadow:0 2px 8px rgba(42,115,204,.3);transition:transform .2s}
+.prof-btn:hover{transform:scale(1.08)}
+.prof-dropdown{display:none;position:absolute;right:0;top:42px;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.12);min-width:200px;z-index:200;overflow:hidden}
+.prof-info{padding:14px 16px;border-bottom:1px solid var(--border)}
+.prof-info .name{font-size:13px;font-weight:600;color:var(--text)}
+.prof-info .email{font-size:11px;color:var(--muted);margin-top:2px}
+.prof-dropdown a{display:flex;align-items:center;gap:8px;padding:11px 16px;font-size:13px;color:#ef4444;text-decoration:none;transition:background .15s}
+.prof-dropdown a:hover{background:#fee2e2}
+
+/* ── CONTENT ── */
+.content{padding:24px;flex:1}
+.sec-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.sec-title{font-family:'Josefin Sans',sans-serif;font-size:15px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:8px}
+.sec-title::before{content:'';width:3px;height:16px;background:var(--primary);border-radius:2px}
+.sec-sub{font-size:12px;color:var(--muted)}
+
+/* ── HERO BANNER ── */
+.hero{background:linear-gradient(135deg,var(--sb-bg) 0%,#1a3a6b 100%);border-radius:var(--r);padding:28px 32px;margin-bottom:24px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.hero::before{content:'';position:absolute;right:-40px;top:-40px;width:240px;height:240px;border-radius:50%;background:rgba(42,115,204,.15);pointer-events:none}
+.hero::after{content:'';position:absolute;right:60px;bottom:-60px;width:160px;height:160px;border-radius:50%;background:rgba(0,200,150,.08);pointer-events:none}
+.hero-text h2{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:6px}
+.hero-text p{font-size:13px;color:rgba(255,255,255,.55);max-width:480px;line-height:1.6}
+.hero-stats{display:flex;gap:20px;flex-shrink:0}
+.hstat{text-align:center;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:14px 20px;min-width:80px}
+.hstat-val{font-family:'Josefin Sans',sans-serif;font-size:22px;font-weight:700;color:#fff;line-height:1}
+.hstat-lbl{font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;text-transform:uppercase;letter-spacing:.5px}
+
+/* ── TWO-COLUMN LAYOUT ── */
+.fc-layout{display:grid;grid-template-columns:340px 1fr;gap:20px;align-items:start}
+
+/* ── PREDICTION FORM CARD ── */
+.form-card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;position:sticky;top:84px}
+.form-card-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+.form-card-head-icon{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--primary),var(--primary-light));display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px}
+.form-card-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--text)}
+.form-card-sub{font-size:11px;color:var(--muted)}
+.form-body{padding:20px}
+.form-group{margin-bottom:16px}
+.form-label{font-size:11px;font-weight:600;color:var(--text2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;display:block}
+.form-select,.form-input{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:var(--rs);font-size:13px;font-family:'Inter',sans-serif;color:var(--text);background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;appearance:none}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%2364748b'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:28px}
+.form-select:focus,.form-input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(42,115,204,.12)}
+.form-select:disabled{opacity:.5;cursor:not-allowed;background-color:#f8fafc}
+.period-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.period-btn{padding:7px 4px;border:1px solid var(--border);border-radius:6px;background:#fff;font-size:12px;font-weight:500;color:var(--text2);cursor:pointer;text-align:center;transition:all .2s;font-family:'Inter',sans-serif}
+.period-btn:hover{border-color:var(--primary);color:var(--primary)}
+.period-btn.sel{background:var(--primary);color:#fff;border-color:var(--primary);box-shadow:0 2px 8px rgba(42,115,204,.3)}
+.btn-predict{width:100%;padding:11px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border:none;border-radius:var(--rs);font-size:13px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:all .2s;margin-top:4px}
+.btn-predict:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(42,115,204,.4)}
+.btn-predict:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.btn-predict .spinner{width:14px;height:14px;border:2px solid rgba(255,255,255,.3);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;display:none}
+.btn-predict.loading .spinner{display:block}
+.btn-predict.loading .btn-lbl{display:none}
+.form-error{background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:10px 12px;font-size:12px;color:#dc2626;margin-top:12px;display:none;align-items:center;gap:8px}
+.form-error i{flex-shrink:0}
+
+/* ── RESULTS PANEL ── */
+.results-panel{display:flex;flex-direction:column;gap:16px}
+
+/* ── SUMMARY CARDS ── */
+.summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sum-card{background:#fff;border-radius:var(--r);padding:16px;box-shadow:var(--shadow);border-left:3px solid transparent;transition:all .2s;animation:fadeUp .35s ease both}
+.sum-card.peak{border-left-color:var(--accent)}
+.sum-card.low{border-left-color:#ef4444}
+.sum-card.avg{border-left-color:var(--primary)}
+.sum-card.trend-up{border-left-color:var(--accent)}
+.sum-card.trend-down{border-left-color:#ef4444}
+.sum-card.trend-stable{border-left-color:var(--muted)}
+.sum-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-h)}
+.sum-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:13px;margin-bottom:10px}
+.sum-val{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--text);line-height:1;margin-bottom:3px}
+.sum-lbl{font-size:11px;color:var(--muted)}
+.sum-sub{font-size:10px;color:var(--muted);margin-top:2px}
+
+/* ── MAIN FORECAST CHART ── */
+.chart-card{background:#fff;border-radius:var(--r);padding:20px;box-shadow:var(--shadow)}
+.chart-card-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.chart-card-title{font-family:'Josefin Sans',sans-serif;font-size:14px;font-weight:700;color:var(--text)}
+.chart-card-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.chart-legend{display:flex;gap:14px;flex-wrap:wrap}
+.leg-item{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text2)}
+.leg-dot{width:10px;height:10px;border-radius:50%}
+.leg-line{width:16px;height:3px;border-radius:2px}
+.leg-band{width:16px;height:10px;border-radius:2px;opacity:.3}
+
+/* ── MONTHLY TABLE ── */
+.month-tbl-card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.month-tbl-head{padding:14px 18px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.month-tbl-title{font-family:'Josefin Sans',sans-serif;font-size:13px;font-weight:700;color:var(--text)}
+.btn-dl{padding:6px 12px;background:#fff;border:1px solid var(--border);border-radius:6px;font-size:11px;font-weight:600;color:var(--text2);cursor:pointer;font-family:'Inter',sans-serif;display:flex;align-items:center;gap:5px;transition:all .2s}
+.btn-dl:hover{border-color:var(--primary);color:var(--primary)}
+.month-tbl-wrap{overflow-x:auto;max-height:320px;overflow-y:auto}
+.month-tbl{width:100%;border-collapse:collapse;font-size:12px}
+.month-tbl thead th{position:sticky;top:0;padding:9px 14px;text-align:left;background:#f8fafc;color:var(--text2);font-size:10px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--border);white-space:nowrap}
+.month-tbl tbody td{padding:9px 14px;border-bottom:1px solid #f1f5f9;vertical-align:middle}
+.month-tbl tbody tr:last-child td{border-bottom:none}
+.month-tbl tbody tr:hover td{background:#fafcff}
+.demand-bar-wrap{display:flex;align-items:center;gap:8px}
+.demand-bar{height:6px;border-radius:3px;background:var(--primary);transition:width .4s ease;min-width:2px}
+.demand-val{font-weight:600;color:var(--text);min-width:30px}
+.range-text{font-size:11px;color:var(--muted)}
+.trend-tag{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:20px;font-size:10px;font-weight:600}
+
+/* ── OVERVIEW GRID ── */
+.overview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.ov-card{background:#fff;border-radius:var(--r);padding:14px 16px;box-shadow:var(--shadow);cursor:pointer;border:1px solid transparent;transition:all .2s;animation:fadeUp .4s ease both}
+.ov-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-h);border-color:rgba(42,115,204,.2)}
+.ov-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:8px}
+.ov-role{font-size:11px;font-weight:700;color:var(--text);font-family:'Josefin Sans',sans-serif;text-transform:capitalize}
+.ov-country{font-size:10px;color:var(--muted);margin-top:2px;display:flex;align-items:center;gap:4px}
+.ov-demand{font-family:'Josefin Sans',sans-serif;font-size:20px;font-weight:700;color:var(--text);line-height:1}
+.ov-next{font-size:10px;color:var(--muted);margin-top:2px}
+.ov-next span{font-weight:600}
+.trend-icon{font-size:11px}
+.t-up{color:var(--accent)}.t-down{color:#ef4444}.t-stable{color:var(--muted)}
+.ov-skeleton{background:linear-gradient(90deg,#f0f4f8 25%,#e2e8f0 50%,#f0f4f8 75%);background-size:200% 100%;animation:shimmer 1.4s infinite;border-radius:var(--r);height:90px}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ── EMPTY / PLACEHOLDER ── */
+.fc-placeholder{background:#fff;border-radius:var(--r);padding:60px 24px;text-align:center;box-shadow:var(--shadow)}
+.fc-placeholder-icon{font-size:40px;color:var(--border);margin-bottom:14px}
+.fc-placeholder h3{font-family:'Josefin Sans',sans-serif;font-size:16px;font-weight:700;color:var(--text2);margin-bottom:6px}
+.fc-placeholder p{font-size:13px;color:var(--muted);max-width:320px;margin:0 auto}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:24px;right:24px;background:var(--sb-bg);color:#fff;padding:11px 18px;border-radius:10px;font-size:13px;font-weight:500;z-index:999;box-shadow:0 8px 32px rgba(0,0,0,.25);display:flex;align-items:center;gap:9px;transform:translateY(80px);opacity:0;transition:all .3s cubic-bezier(.4,0,.2,1)}
+.toast.show{transform:translateY(0);opacity:1}
+.ti-ok{color:var(--accent)}.ti-err{color:#ef4444}
+.load-bar{height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));position:fixed;top:0;left:0;z-index:9999;animation:lbar 1.5s ease forwards}
+
+/* ── TABS ── */
+.tab-bar{display:flex;gap:4px;background:#f1f5f9;border-radius:10px;padding:4px;margin-bottom:20px}
+.tab-btn{flex:1;padding:8px 12px;border:none;border-radius:7px;background:none;font-size:12px;font-weight:600;font-family:'Inter',sans-serif;color:var(--muted);cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px}
+.tab-btn.active{background:#fff;color:var(--primary);box-shadow:0 1px 4px rgba(0,0,0,.08)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+
+/* ── ANIMATIONS ── */
+@keyframes lbar{from{width:0}to{width:100%}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){.fc-layout{grid-template-columns:1fr}.form-card{position:static}.summary-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:768px){
+  .sidebar{width:var(--sb-col)}.sidebar .sb-text,.sidebar .nav-lbl,.sidebar .sb-uinfo,.sidebar .sb-label{opacity:0}
+  .main{margin-left:var(--sb-col)}.content{padding:14px}
+  .hero{flex-direction:column;align-items:flex-start}.hero-stats{flex-wrap:wrap}
+  .summary-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){.summary-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="load-bar"></div>
+
+<!-- ═══════════════════════════════════════════════ SIDEBAR -->
+<aside class="sidebar" id="sb">
+  <div class="sb-brand">
+    <a href="/" class="sb-logo" title="Home">TP</a>
+    <a href="/" class="sb-text">
+      <div class="sb-title">TechPulse EA</div>
+      <div class="sb-sub">IT Job Forecast</div>
+    </a>
+    <button class="toggle-btn" onclick="toggleSB()"><i class="fas fa-chevron-left" id="tgIcon"></i></button>
+  </div>
+  <nav class="sb-nav">
+    <div class="sb-label">Main</div>
+    <a href="/dashboard" class="nav-item"><i class="fas fa-th-large"></i><span class="nav-lbl">Overview</span></a>
+    <a href="/forecast" class="nav-item active"><i class="fas fa-brain"></i><span class="nav-lbl">Forecast</span></a>
+    <div class="sb-label">Data</div>
+    <a href="/dashboard#sec-jobs" class="nav-item"><i class="fas fa-briefcase"></i><span class="nav-lbl">Job Explorer</span></a>
+    <a href="/dashboard#sec-country" class="nav-item"><i class="fas fa-globe-africa"></i><span class="nav-lbl">By Country</span></a>
+  </nav>
+  <div class="sb-footer">
+    <div class="sb-user">
+      <div class="sb-avatar">{{ user_name[:2].upper() }}</div>
+      <div class="sb-uinfo">
+        <div class="sb-uname">{{ user_name }}</div>
+        <div class="sb-urole">{{ user_email }}</div>
+      </div>
+    </div>
+    <a href="/auth/logout" class="sb-logout"><i class="fas fa-sign-out-alt"></i><span class="sb-uinfo">Log Out</span></a>
+  </div>
+</aside>
+
+<!-- ═══════════════════════════════════════════════ MAIN -->
+<div class="main" id="main">
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <div class="topbar-title">Job Demand Forecast</div>
+    <div class="topbar-right">
+      <div style="position:relative" id="profWrap">
+        <div class="prof-btn" onclick="toggleProf()">{{ user_name[:2].upper() }}</div>
+        <div class="prof-dropdown" id="profDrop">
+          <div class="prof-info">
+            <div class="name">{{ user_name }}</div>
+            <div class="email">{{ user_email }}</div>
+          </div>
+          <a href="/auth/logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-text">
+        <h2><i class="fas fa-brain" style="color:var(--accent);margin-right:8px"></i>Prophet-Powered Demand Forecasting</h2>
+        <p>Select a job role and country to visualise historical demand trends and generate a forward-looking forecast with confidence intervals — powered by pre-trained Facebook Prophet models.</p>
+      </div>
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="hstat-val" id="hModels">—</div>
+          <div class="hstat-lbl">Models</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-val" id="hRoles">—</div>
+          <div class="hstat-lbl">Job Roles</div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-val" id="hCountries">—</div>
+          <div class="hstat-lbl">Countries</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="switchTab('predict')" id="tab-predict">
+        <i class="fas fa-chart-line"></i> Predict Demand
+      </button>
+      <button class="tab-btn" onclick="switchTab('overview')" id="tab-overview">
+        <i class="fas fa-th"></i> All Forecasts
+      </button>
+    </div>
+
+    <!-- ── TAB: PREDICT ── -->
+    <div class="tab-pane active" id="pane-predict">
+      <div class="fc-layout">
+
+        <!-- LEFT: FORM -->
+        <div class="form-card">
+          <div class="form-card-head">
+            <div class="form-card-head-icon"><i class="fas fa-sliders-h"></i></div>
+            <div>
+              <div class="form-card-title">Prediction Parameters</div>
+              <div class="form-card-sub">Configure and run your forecast</div>
+            </div>
+          </div>
+          <div class="form-body">
+
+            <div class="form-group">
+              <label class="form-label" for="selJob">Job Title</label>
+              <select class="form-select" id="selJob" onchange="onJobChange()">
+                <option value="">— Select a job role —</option>
+                {% for jt in job_titles %}
+                <option value="{{ jt }}">{{ jt | title }}</option>
+                {% endfor %}
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="selCountry">Country</label>
+              <select class="form-select" id="selCountry" disabled>
+                <option value="">— Select job title first —</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Forecast Horizon</label>
+              <div class="period-grid" id="periodGrid">
+                <button class="period-btn" onclick="setPeriod(3)">3 mo</button>
+                <button class="period-btn sel" onclick="setPeriod(6)">6 mo</button>
+                <button class="period-btn" onclick="setPeriod(12)">12 mo</button>
+                <button class="period-btn" onclick="setPeriod(24)">24 mo</button>
+              </div>
+            </div>
+
+            <button class="btn-predict" id="btnPredict" onclick="runPrediction()" disabled>
+              <span class="spinner"></span>
+              <span class="btn-lbl"><i class="fas fa-bolt"></i> Run Forecast</span>
+            </button>
+
+            <div class="form-error" id="formError">
+              <i class="fas fa-exclamation-circle"></i>
+              <span id="formErrorMsg"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: RESULTS -->
+        <div class="results-panel" id="resultsPanel">
+
+          <!-- Placeholder (shown before first prediction) -->
+          <div class="fc-placeholder" id="fcPlaceholder">
+            <div class="fc-placeholder-icon"><i class="fas fa-chart-area"></i></div>
+            <h3>No Forecast Yet</h3>
+            <p>Select a job title and country, then click <strong>Run Forecast</strong> to generate demand predictions.</p>
+          </div>
+
+          <!-- Results (hidden until prediction runs) -->
+          <div id="fcResults" style="display:none;display:flex;flex-direction:column;gap:16px">
+
+            <!-- Summary cards -->
+            <div>
+              <div class="sec-head" style="margin-bottom:12px">
+                <div class="sec-title" id="resultTitle">Forecast Results</div>
+                <span class="sec-sub" id="resultSub"></span>
+              </div>
+              <div class="summary-grid" id="sumGrid"></div>
+            </div>
+
+            <!-- Chart -->
+            <div class="chart-card">
+              <div class="chart-card-head">
+                <div>
+                  <div class="chart-card-title">Historical Demand + Forecast</div>
+                  <div class="chart-card-sub">Shaded band shows 80% confidence interval</div>
+                </div>
+                <div class="chart-legend">
+                  <div class="leg-item"><div class="leg-line" style="background:#2a73cc"></div> Historical</div>
+                  <div class="leg-item"><div class="leg-line" style="background:#00c896"></div> Forecast</div>
+                  <div class="leg-item"><div class="leg-band" style="background:#00c896"></div> Confidence Band</div>
+                </div>
+              </div>
+              <div style="height:280px"><canvas id="fcChart"></canvas></div>
+            </div>
+
+            <!-- Monthly breakdown table -->
+            <div class="month-tbl-card">
+              <div class="month-tbl-head">
+                <div class="month-tbl-title">Monthly Breakdown</div>
+                <button class="btn-dl" onclick="exportPredictions()"><i class="fas fa-download"></i> Export CSV</button>
+              </div>
+              <div class="month-tbl-wrap">
+                <table class="month-tbl">
+                  <thead>
+                    <tr>
+                      <th>Month</th>
+                      <th>Forecast Demand</th>
+                      <th>Lower Bound</th>
+                      <th>Upper Bound</th>
+                      <th>vs Avg</th>
+                    </tr>
+                  </thead>
+                  <tbody id="monthTbody"></tbody>
+                </table>
+              </div>
+            </div>
+
+          </div><!-- /fcResults -->
+        </div><!-- /results-panel -->
+      </div><!-- /fc-layout -->
+    </div><!-- /pane-predict -->
+
+    <!-- ── TAB: OVERVIEW ── -->
+    <div class="tab-pane" id="pane-overview">
+      <div class="sec-head">
+        <div class="sec-title">All Trained Forecasts</div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <input type="text" id="ovSearch" placeholder="Search role or country…"
+            style="padding:7px 12px;border:1px solid var(--border);border-radius:var(--rs);font-size:12px;font-family:'Inter',sans-serif;outline:none;width:200px"
+            oninput="filterOverview()">
+        </div>
+      </div>
+      <div class="overview-grid" id="overviewGrid">
+        <!-- Skeleton loaders -->
+        <div class="ov-skeleton"></div><div class="ov-skeleton"></div>
+        <div class="ov-skeleton"></div><div class="ov-skeleton"></div>
+        <div class="ov-skeleton"></div><div class="ov-skeleton"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast">
+  <i class="fas fa-check-circle" id="toastIcon"></i>
+  <span id="toastMsg">Done</span>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════
+// STATE
+// ════════════════════════════════════════════════════
+const TT   = {backgroundColor:'#0f1e35',titleColor:'#fff',bodyColor:'rgba(255,255,255,.75)',cornerRadius:8,padding:10};
+let selectedPeriod = 6;
+let lastResult     = null;   // stores last successful prediction response
+let fcChart        = null;   // Chart.js instance
+let overviewData   = [];     // summary cards cache
+
+// ════════════════════════════════════════════════════
+// SIDEBAR
+// ════════════════════════════════════════════════════
+let sbCol = false;
+function toggleSB(){
+  sbCol = !sbCol;
+  document.getElementById('sb').classList.toggle('col', sbCol);
+  document.getElementById('main').classList.toggle('col', sbCol);
+  document.getElementById('tgIcon').className = sbCol ? 'fas fa-chevron-right' : 'fas fa-chevron-left';
+}
+
+// ════════════════════════════════════════════════════
+// PROFILE DROPDOWN
+// ════════════════════════════════════════════════════
+function toggleProf(){
+  const d = document.getElementById('profDrop');
+  d.style.display = d.style.display === 'block' ? 'none' : 'block';
+}
+document.addEventListener('click', e => {
+  if (!document.getElementById('profWrap').contains(e.target))
+    document.getElementById('profDrop').style.display = 'none';
+});
+
+// ════════════════════════════════════════════════════
+// TOAST
+// ════════════════════════════════════════════════════
+function toast(msg, type = 'ok'){
+  document.getElementById('toastMsg').textContent = msg;
+  document.getElementById('toastIcon').className  = type === 'ok'
+    ? 'fas fa-check-circle ti-ok' : 'fas fa-exclamation-circle ti-err';
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3200);
+}
+
+// ════════════════════════════════════════════════════
+// TABS
+// ════════════════════════════════════════════════════
+function switchTab(name){
+  ['predict','overview'].forEach(t => {
+    document.getElementById(`tab-${t}`).classList.toggle('active', t === name);
+    document.getElementById(`pane-${t}`).classList.toggle('active', t === name);
+  });
+  if (name === 'overview' && overviewData.length === 0) loadOverview();
+}
+
+// ════════════════════════════════════════════════════
+// PERIOD SELECTOR
+// ════════════════════════════════════════════════════
+function setPeriod(p){
+  selectedPeriod = p;
+  document.querySelectorAll('.period-btn').forEach(b => {
+    b.classList.toggle('sel', parseInt(b.textContent) === p);
+  });
+}
+
+// ════════════════════════════════════════════════════
+// JOB TITLE → cascade country dropdown
+// ════════════════════════════════════════════════════
+async function onJobChange(){
+  const jt  = document.getElementById('selJob').value;
+  const sel = document.getElementById('selCountry');
+  const btn = document.getElementById('btnPredict');
+
+  sel.disabled = true;
+  sel.innerHTML = '<option value="">Loading…</option>';
+  btn.disabled  = true;
+  hideError();
+
+  if (!jt) {
+    sel.innerHTML = '<option value="">— Select job title first —</option>';
+    return;
+  }
+
+  try {
+    const res  = await fetch(`/api/forecast/countries-for-job/${encodeURIComponent(jt)}`);
+    const data = await res.json();
+
+    if (!data.countries || data.countries.length === 0){
+      sel.innerHTML = '<option value="">No models available for this role</option>';
+      return;
+    }
+
+    sel.innerHTML = '<option value="">— Select a country —</option>' +
+      data.countries.map(c => `<option value="${c}">${c}</option>`).join('');
+    sel.disabled = false;
+
+    sel.onchange = () => {
+      btn.disabled = !sel.value;
+      hideError();
+    };
+  } catch(e){
+    sel.innerHTML = '<option value="">Error loading countries</option>';
+    toast('Failed to load countries', 'err');
+  }
+}
+
+// ════════════════════════════════════════════════════
+// RUN PREDICTION
+// ════════════════════════════════════════════════════
+async function runPrediction(){
+  const jobTitle = document.getElementById('selJob').value;
+  const country  = document.getElementById('selCountry').value;
+  const btn      = document.getElementById('btnPredict');
+
+  if (!jobTitle || !country) return;
+
+  // Loading state
+  btn.classList.add('loading');
+  btn.disabled = true;
+  hideError();
+
+  try {
+    const res  = await fetch('/api/forecast/user-predict', {
+      method:  'POST',
+      headers: {'Content-Type': 'application/json'},
+      body:    JSON.stringify({ job_title: jobTitle, country, periods: selectedPeriod })
+    });
+    const data = await res.json();
+
+    if (!data.ok){
+      showError(data.error || 'Forecast failed. Please try again.');
+      return;
+    }
+
+    lastResult = data;
+    renderResults(data);
+    toast(`Forecast ready — ${data.periods} months for ${data.job_title} / ${data.country}`);
+
+  } catch(e){
+    showError('Network error. Please check your connection.');
+    toast('Forecast request failed', 'err');
+  } finally {
+    btn.classList.remove('loading');
+    btn.disabled = false;
+  }
+}
+
+// ════════════════════════════════════════════════════
+// RENDER RESULTS
+// ════════════════════════════════════════════════════
+function renderResults(data){
+  document.getElementById('fcPlaceholder').style.display = 'none';
+  const fcResults = document.getElementById('fcResults');
+  fcResults.style.display = 'flex';
+
+  const { job_title, country, periods, predictions, summary } = data;
+
+  // Title
+  document.getElementById('resultTitle').textContent =
+    `${job_title.replace(/\b\w/g, c => c.toUpperCase())} · ${country}`;
+  document.getElementById('resultSub').textContent =
+    `${periods}-month forecast  ·  ${predictions[0].month} → ${predictions[predictions.length-1].month}`;
+
+  // ── Summary cards ──
+  const trendColor = summary.trend === 'up' ? '#00c896' : summary.trend === 'down' ? '#ef4444' : '#94a3b8';
+  const trendIcon  = summary.trend === 'up' ? 'fa-arrow-trend-up' : summary.trend === 'down' ? 'fa-arrow-trend-down' : 'fa-minus';
+  const trendLabel = summary.trend === 'up' ? 'Growing' : summary.trend === 'down' ? 'Declining' : 'Stable';
+
+  document.getElementById('sumGrid').innerHTML = `
+    <div class="sum-card avg" style="animation-delay:.05s">
+      <div class="sum-icon" style="background:#e8f1fb;color:var(--primary)"><i class="fas fa-chart-bar"></i></div>
+      <div class="sum-val">${summary.avg_demand}</div>
+      <div class="sum-lbl">Avg Monthly Demand</div>
+      <div class="sum-sub">over ${periods} months</div>
+    </div>
+    <div class="sum-card peak" style="animation-delay:.1s">
+      <div class="sum-icon" style="background:#dcfce7;color:#16a34a"><i class="fas fa-arrow-up"></i></div>
+      <div class="sum-val">${summary.peak_demand}</div>
+      <div class="sum-lbl">Peak Demand</div>
+      <div class="sum-sub">${summary.peak_month}</div>
+    </div>
+    <div class="sum-card low" style="animation-delay:.15s">
+      <div class="sum-icon" style="background:#fef2f2;color:#ef4444"><i class="fas fa-arrow-down"></i></div>
+      <div class="sum-val">${summary.low_demand}</div>
+      <div class="sum-lbl">Lowest Demand</div>
+      <div class="sum-sub">${summary.low_month}</div>
+    </div>
+    <div class="sum-card trend-${summary.trend}" style="animation-delay:.2s">
+      <div class="sum-icon" style="background:${trendColor}22;color:${trendColor}"><i class="fas ${trendIcon}"></i></div>
+      <div class="sum-val" style="color:${trendColor}">${trendLabel}</div>
+      <div class="sum-lbl">12-Month Trend</div>
+      <div class="sum-sub">${predictions[0].demand} → ${predictions[predictions.length-1].demand}</div>
+    </div>`;
+
+  // ── Chart ──
+  renderForecastChart(data);
+
+  // ── Table ──
+  const maxDemand = Math.max(...predictions.map(p => p.upper));
+  document.getElementById('monthTbody').innerHTML = predictions.map(p => {
+    const barW    = Math.round((p.demand / maxDemand) * 100);
+    const vs      = p.demand - summary.avg_demand;
+    const vsClass = vs > 0 ? 't-up' : vs < 0 ? 't-down' : 't-stable';
+    const vsIcon  = vs > 0 ? '↑' : vs < 0 ? '↓' : '=';
+    return `
+      <tr>
+        <td><strong>${p.month}</strong></td>
+        <td>
+          <div class="demand-bar-wrap">
+            <div class="demand-bar" style="width:${barW}%"></div>
+            <span class="demand-val">${p.demand}</span>
+          </div>
+        </td>
+        <td><span class="range-text">${p.lower}</span></td>
+        <td><span class="range-text">${p.upper}</span></td>
+        <td><span class="trend-tag ${vsClass}" style="background:${vs>0?'#dcfce7':vs<0?'#fef2f2':'#f1f5f9'};color:${vs>0?'#16a34a':vs<0?'#dc2626':'#64748b'}">${vsIcon} ${Math.abs(vs).toFixed(1)}</span></td>
+      </tr>`;
+  }).join('');
+}
+
+// ════════════════════════════════════════════════════
+// FORECAST CHART  (historical + forecast + confidence band)
+// ════════════════════════════════════════════════════
+async function renderForecastChart(data){
+  if (fcChart){ fcChart.destroy(); fcChart = null; }
+
+  const { job_title, country } = data;
+
+  // Fetch historical data alongside the forecast we already have
+  let histLabels = [], histValues = [];
+  try {
+    const res  = await fetch(
+      `/api/forecast/historical?job_title=${encodeURIComponent(job_title)}&country=${encodeURIComponent(country)}`
+    );
+    const hist = await res.json();
+    if (!hist.error){ histLabels = hist.labels; histValues = hist.values; }
+  } catch(_){}
+
+  const fcLabels = data.predictions.map(p => p.month);
+  const fcValues = data.predictions.map(p => p.demand);
+  const fcLower  = data.predictions.map(p => p.lower);
+  const fcUpper  = data.predictions.map(p => p.upper);
+
+  // Combine all labels for the x-axis
+  const allLabels = [...histLabels, ...fcLabels];
+
+  // Pad historical dataset with nulls for forecast range
+  const histPadded = [...histValues, ...Array(fcLabels.length).fill(null)];
+
+  // Pad forecast datasets with nulls for historical range
+  // (connect at the last historical point for visual continuity)
+  const fcPadded    = [...Array(histLabels.length - 1).fill(null), histValues[histValues.length - 1] ?? null, ...fcValues];
+  const lowerPadded = [...Array(histLabels.length - 1).fill(null), histValues[histValues.length - 1] ?? null, ...fcLower];
+  const upperPadded = [...Array(histLabels.length - 1).fill(null), histValues[histValues.length - 1] ?? null, ...fcUpper];
+
+  const ctx = document.getElementById('fcChart').getContext('2d');
+  fcChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: allLabels,
+      datasets: [
+        // Confidence band UPPER (invisible line, fill down to lower)
+        {
+          label: 'Upper Bound',
+          data:  upperPadded,
+          borderColor: 'transparent',
+          backgroundColor: 'rgba(0,200,150,.15)',
+          fill: '+1',        // fill between this and the next dataset
+          pointRadius: 0,
+          tension: 0.4,
+        },
+        // Confidence band LOWER (invisible line)
+        {
+          label: 'Lower Bound',
+          data:  lowerPadded,
+          borderColor: 'transparent',
+          backgroundColor: 'rgba(0,200,150,.15)',
+          fill: false,
+          pointRadius: 0,
+          tension: 0.4,
+        },
+        // Forecast line
+        {
+          label: 'Forecast',
+          data:  fcPadded,
+          borderColor: '#00c896',
+          backgroundColor: 'transparent',
+          borderWidth: 2.5,
+          borderDash: [6, 3],
+          fill: false,
+          tension: 0.4,
+          pointRadius: 3,
+          pointHoverRadius: 6,
+          pointBackgroundColor: '#00c896',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+        },
+        // Historical line
+        {
+          label: 'Historical',
+          data:  histPadded,
+          borderColor: '#2a73cc',
+          backgroundColor: 'rgba(42,115,204,.08)',
+          borderWidth: 2.5,
+          fill: true,
+          tension: 0.4,
+          pointRadius: 3,
+          pointHoverRadius: 6,
+          pointBackgroundColor: '#2a73cc',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 2,
+        },
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          ...TT,
+          callbacks: {
+            label: ctx => {
+              if (ctx.dataset.label === 'Upper Bound' || ctx.dataset.label === 'Lower Bound') return null;
+              return ` ${ctx.dataset.label}: ${ctx.raw ?? '—'}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(0,0,0,.04)' },
+          ticks: { font: { size: 10 }, color: '#94a3b8', maxTicksLimit: 14 }
+        },
+        y: {
+          grid: { color: 'rgba(0,0,0,.04)' },
+          ticks: { font: { size: 10 }, color: '#94a3b8' },
+          beginAtZero: true
+        }
+      }
+    }
+  });
+}
+
+// ════════════════════════════════════════════════════
+// EXPORT PREDICTIONS
+// ════════════════════════════════════════════════════
+function exportPredictions(){
+  if (!lastResult) return;
+  const { job_title, country, predictions } = lastResult;
+  const rows = [
+    'Month,Forecast Demand,Lower Bound,Upper Bound',
+    ...predictions.map(p => `${p.month},${p.demand},${p.lower},${p.upper}`)
+  ];
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([rows.join('\n')], { type: 'text/csv' }));
+  a.download = `forecast_${job_title}_${country}.csv`.replace(/\s+/g, '_');
+  a.click();
+  toast(`Exported ${predictions.length} months of forecast data`);
+}
+
+// ════════════════════════════════════════════════════
+// OVERVIEW GRID
+// ════════════════════════════════════════════════════
+async function loadOverview(){
+  try {
+    const res  = await fetch('/api/forecast/summary');
+    overviewData = await res.json();
+    renderOverview(overviewData);
+
+    // Update hero stats
+    const roles     = new Set(overviewData.map(d => d.job_title)).size;
+    const countries = new Set(overviewData.map(d => d.country)).size;
+    document.getElementById('hModels').textContent    = overviewData.length;
+    document.getElementById('hRoles').textContent     = roles;
+    document.getElementById('hCountries').textContent = countries;
+  } catch(e){
+    document.getElementById('overviewGrid').innerHTML =
+      `<p style="color:var(--muted);font-size:13px;grid-column:1/-1">Failed to load overview data.</p>`;
+  }
+}
+
+function renderOverview(data){
+  if (!data.length){
+    document.getElementById('overviewGrid').innerHTML =
+      `<p style="color:var(--muted);font-size:13px;grid-column:1/-1">No forecast models found.</p>`;
+    return;
+  }
+
+  document.getElementById('overviewGrid').innerHTML = data.map((d, i) => {
+    const tClass = d.trend_12m === 'up' ? 't-up' : d.trend_12m === 'down' ? 't-down' : 't-stable';
+    const tIcon  = d.trend_12m === 'up' ? 'fa-arrow-trend-up' : d.trend_12m === 'down' ? 'fa-arrow-trend-down' : 'fa-minus';
+    const delay  = Math.min(i * 0.03, 0.6);
+    return `
+      <div class="ov-card" style="animation-delay:${delay}s"
+           onclick="jumpToPredict('${d.job_title}', '${d.country}')">
+        <div class="ov-card-top">
+          <div>
+            <div class="ov-role">${d.job_title}</div>
+            <div class="ov-country"><i class="fas fa-map-marker-alt" style="font-size:9px"></i>${d.country}</div>
+          </div>
+          <i class="fas ${tIcon} trend-icon ${tClass}"></i>
+        </div>
+        <div class="ov-demand">${d.last_demand ?? '—'}</div>
+        <div class="ov-next">
+          Last: ${d.last_month ?? '—'} &nbsp;·&nbsp;
+          Next: <span style="color:var(--primary)">${d.next_month ?? '—'}</span>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function filterOverview(){
+  const q = document.getElementById('ovSearch').value.toLowerCase();
+  const filtered = overviewData.filter(d =>
+    d.job_title.toLowerCase().includes(q) || d.country.toLowerCase().includes(q)
+  );
+  renderOverview(filtered);
+}
+
+// Click an overview card → switch to predict tab and pre-fill the form
+async function jumpToPredict(jobTitle, country){
+  switchTab('predict');
+  const selJob = document.getElementById('selJob');
+
+  // Find and select the matching option
+  for (let opt of selJob.options){
+    if (opt.value === jobTitle){ opt.selected = true; break; }
+  }
+
+  await onJobChange();
+
+  // Wait for countries to load, then select the country
+  await new Promise(r => setTimeout(r, 300));
+  const selCountry = document.getElementById('selCountry');
+  for (let opt of selCountry.options){
+    if (opt.value === country){ opt.selected = true; break; }
+  }
+  selCountry.dispatchEvent(new Event('change'));
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  toast(`Ready to forecast ${jobTitle} · ${country}`);
+}
+
+// ════════════════════════════════════════════════════
+// ERROR HELPERS
+// ════════════════════════════════════════════════════
+function showError(msg){
+  const el = document.getElementById('formError');
+  document.getElementById('formErrorMsg').textContent = msg;
+  el.style.display = 'flex';
+}
+function hideError(){
+  document.getElementById('formError').style.display = 'none';
+}
+
+// ════════════════════════════════════════════════════
+// INIT — load hero stats on page load
+// ════════════════════════════════════════════════════
+async function initPage(){
+  try {
+    const res  = await fetch('/api/forecast/meta');
+    const meta = await res.json();
+    document.getElementById('hModels').textContent    = meta.model_keys.length;
+    document.getElementById('hRoles').textContent     = meta.job_titles.length;
+    document.getElementById('hCountries').textContent = meta.countries.length;
+  } catch(_){}
+
+  // ── Deep-link from dashboard banner ──
+  // If URL has ?job=accountant&country=Kenya, pre-fill the form and run forecast.
+  const params  = new URLSearchParams(window.location.search);
+  const jobParam = params.get('job');
+  const ctryParam = params.get('country');
+
+  if (jobParam) {
+    const selJob = document.getElementById('selJob');
+    // Find matching option (case-insensitive)
+    for (const opt of selJob.options) {
+      if (opt.value.toLowerCase() === jobParam.toLowerCase()) {
+        opt.selected = true;
+        break;
+      }
+    }
+    await onJobChange();
+
+    if (ctryParam) {
+      // Wait for country dropdown to populate
+      await new Promise(r => setTimeout(r, 400));
+      const selCountry = document.getElementById('selCountry');
+      for (const opt of selCountry.options) {
+        if (opt.value === ctryParam) { opt.selected = true; break; }
+      }
+      selCountry.dispatchEvent(new Event('change'));
+
+      // Auto-run forecast after a short delay
+      await new Promise(r => setTimeout(r, 200));
+      runPrediction();
+    }
+
+    // Clean URL so refreshing doesn't re-trigger the auto-run
+    window.history.replaceState({}, '', '/forecast');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initPage);
+</script>
+</body>
+</html>

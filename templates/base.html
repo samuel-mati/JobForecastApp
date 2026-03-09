@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Job Forecast{% endblock %}</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mint+Serif:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #4545d9;
+            --text-color: #000000;
+            --bg-color: #ffffff;
+            --sidebar-width: 220px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            height: 100vh;
+            width: var(--sidebar-width);
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--primary-color);
+            padding-top: 2rem;
+        }
+        .sidebar a {
+            display: block;
+            color: var(--bg-color);
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .sidebar a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Page content with sidebar */
+        .content {
+            margin-left: var(--sidebar-width);
+            padding: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            border: 2px solid var(--primary-color);
+        }
+        .card-title {
+            color: var(--primary-color);
+        }
+
+        /* Tables */
+        .table thead {
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+    {% include 'sidebar.html' %}
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>
